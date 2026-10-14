@@ -1,0 +1,10 @@
+{
+  "name": "text-to-ui-skill-compact",
+  "version": "3.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "scaffold": "node scripts/scaffold-project.mjs",
+    "generate": "node scripts/generate-page.mjs"
+  }
+}
