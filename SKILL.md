@@ -1,51 +1,54 @@
 ---
-name: text-to-ui
-description: Build HarmonyOS PC pages with canonical HTML components, Tokens, Patterns, and Pixso support. Use for new pages, exact revisions, HTML component work, Pixso handoff, and Skill maintenance.
+name: text-to-ui-compact
+description: Build HarmonyOS PC HTML pages using three-layer routing, focused stage task packs, canonical Tokens and Patterns, independently delivered components and CSS, dynamic rendering, and a Pixso handoff.
 ---
 
-# Text to UI · HTML
+# Text to UI Compact
 
-This folder is a complete HTML-only Text-to-UI repository. Treat this file as
-the entry point and this folder as `REPO_ROOT`. The actual component adapter is
-`packages/components-html/src/index.js`; use `renderHtmlComponent` for registered
-controls. The Pattern shell is owned by `packages/pattern-runtime`. Never
-substitute hand-drawn controls for a registered component.
+本目录是 RULES_ROOT：独立的 HTML/CSS/JavaScript 技能，含 49 个组件契约、HTML 运行时、Tokens 与 Pattern。HTML 脚本的 --repo 和 --skill-root 均指向本目录。Pixso 服务或插件运行需要完整仓库与对应连接。
 
-## Choose a task
+## 固定交付方式
 
-- **New page:** define information hierarchy and interactions in a page spec,
-  select a Pattern from `assets/design-system/pattern-contracts.json`, then
-  use `scripts/generate-page.mjs`. Read `references/html-page.md`.
-- **Exact revision:** change only the requested page spec, shared component, or
-  Token owner; regenerate and inspect the rendered page.
-- **Component work:** update the HTML adapter, its contract, and shared styles
-  together. Check real DOM state, keyboard behavior, and computed style.
-- **Pixso handoff:** use the active plugin packages in `pixso/`. Read
-  `references/pixso.md` and preserve linked component and Token evidence.
-- **Maintenance:** edit the full source repository, then regenerate this folder
-  with `tools/export-compact-html.mjs`. `PROVENANCE.json` identifies its source.
+所有 HTML 输出（包括首次预览）使用动态渲染：
+- index.html 只保留空 #app 和外部模块入口。
+- generated-page.js 引用 components/index.js；组件入口位于 components/<id>/，公共依赖保留在 components/_runtime/。
+- generated-entry.js 负责挂载、行为和 __tuiReady。
+- main.js 统一导入 styles/index.css；脚本装配标准样式，模型只写 styles/page-composition.css。
 
-## Create and inspect a page
+模型写 Blueprint、内容配方、绑定/行为计划、Token 业务布局；脚本准备组件与标准 CSS，再生成页面。禁止内联整页控件、重画已登记组件、覆盖组件内部或 Pattern 几何。运行时工厂仍包含公共集中注册代码，不能宣称运行载荷已完全按组件裁剪。
 
-From this repository root:
+## 三层路由与按需读取
 
-```bash
-node scripts/scaffold-project.mjs --project /absolute/path/to/page
-node scripts/generate-page.mjs --project /absolute/path/to/page --spec examples/page-spec.json
-cd /absolute/path/to/page && pnpm install && pnpm build && pnpm dev
-```
+1. Workflow：选择 references/routes/index.json 中的 new-page、micro-revision、existing-html-to-pixso、pixso-component-library、converter-diagnosis 或 skill-maintenance。
+2. Task：新建或改变业务结构时，用业务任务确定 references/index/task-routes.source.json 中的唯一 Task route。
+3. Pattern：采用该 Task 的布局契约，约束窗格、插槽、滚动与尺寸。
 
-The generator accepts only the HTML page spec described in
-`references/html-page.md`. It checks Pattern slots and registered HTML renderers
-before writing output. Provide business content through component options; do
-not reuse gallery fixture text. It creates an entry module that imports the real
-HTML adapter and Pattern runtime. Review the page in a browser at the actual
-viewport, including interactions and accessibility attributes. A build alone
-does not establish visual or runtime correctness.
+歧义时列候选并明确选择。未知业务必须明确 Pattern 与组件能力；不得静默替换已匹配路由的 Pattern。详见 references/routing-guide.md。
 
-Keep page CSS on page-owned content. Do not override Pattern panes, insets,
-dividers, navigation, Titlebar internals, or component state rules. Resolve
-colors, spacing, type, radii, and icons from the included Tokens and aliases.
+随后按阶段解析资源，这一步不增加路由层数。执行 references/routes/new-page.md 的流程：
+intake → design → discovery → bindings → styling → validation → pixso（按需）。
 
-For public distribution, use the source repository's reproducible export. The
-full source keeps additional framework adapters; this package exposes HTML only.
+resolve-context.mjs --discover --out <context.json> --brief-out <page-brief.json> 生成机器 Context Packet 和短导航摘要。模型从摘要 v2 取得路由/候选，再领取当前阶段任务包：
+
+~~~bash
+node "<RULES_ROOT>/scripts/query-resources.mjs" \
+  --stage design --context "<context.json>" --view api --out-dir "<task-pack-dir>"
+~~~
+
+读取导出的 task-pack.json 或 task-pack.md 之一。read-plan.json 记录来源、选择原因、依赖闭包和实测字节数。完整 Context Packet、聚合手册、总表与实现源码供脚本使用，普通页面任务不整份读取。
+
+discovery 只给组件名称/用途；读取 bindings 中的组件 API 必须明确 --component <id> --semantic-context <context> 或提供 --bindings <page-bindings.json>，只返回选中 API。按 --interaction 查询相应交互；按 --roles 查询 Token；--mapping 只查所选组件映射。summary 为定位，api 为当前任务参数，full 为诊断完整契约。命令与跨模型移交见 references/resource-workflow.md。
+
+## 生成、验证与 Pixso
+
+新页面按 references/routes/new-page.md 完成四份设计输入并运行 generate-compliant-page.mjs。该脚本验证 Blueprint/配方/语义/Token，准备独立 components/ 和 styles/，生成动态页面，并记录来源；手改受管文件会阻止覆盖。
+
+打开实际 HTTP 预览，等待 #app.__tuiReady，再检查布局与主要交互。生成、构建、浏览器和视觉结论分别报告；provisional 组件只能按成熟度政策用于预览。
+
+导入 Pixso 时切换 existing-html-to-pixso，按 readiness/capture/compile/publish/readback 阶段领包。输入为同一渲染页面，保留组件/样式清单、component-usage.json 与生成收据。捕获页面后锁定视口和状态，再编译、发布、回读与对比。实例/回退、页面存在、回读与像素差异分别报告；未实际执行不宣称通过。
+
+## 维护
+
+仅维护本精简版目录。references/resources/ 是主题资料的维护源，14 个旧手册路径为兼容聚合产物，不能双份手改。49 个组件契约仍在 packages/component-contracts/src/components/；Token、Pattern、映射 JSON 仍为各自唯一数据源。先检查调用关系再删除资料。
+
+刷新顺序：resources:build → catalog:build → index:build；对应 --check 均通过后刷新 .delivery-manifest.json。缺失、歧义、摘要过期或契约冲突时先修复依赖，不降级绕过。

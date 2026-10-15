@@ -121,8 +121,7 @@ const inputTagEntryState = ({ surface = "white", state = "default", label = "成
 const inputState = ({ surface = "white", state = "default", placeholder = "项目名称", disabled = false, value = "", variant = "default", ...options } = {}) => {
   if (variant === "tag-entry") return inputTagEntryState({ surface, state, placeholder, disabled, value, ...options });
   const resolvedState = disabled ? "disabled" : state;
-  // Surface describes the host context; the logical component remains the
-  // shared canonical contract entry.
+  // Surface describes the host context; the logical component stays the same.
   const logicalName = "Input/White Surface/Default";
   const valueAttr = value ? ` value="${escapeHtml(value)}"` : "";
   return `<label class="tui-component tui-input" ${attrs("input", logicalName, "default", resolvedState, ` data-surface="${surface}"`)}><input data-slot="value" data-typography-role="body-l" type="text" placeholder="${escapeHtml(placeholder)}" aria-label="${escapeHtml(placeholder)}"${valueAttr}${disabled ? " disabled" : ""}${state === "error" ? " aria-invalid=\"true\"" : ""} /></label>`;

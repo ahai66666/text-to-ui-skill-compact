@@ -1,0 +1,760 @@
+{
+  "scope": "text-to-ui-compact only",
+  "baselineReferenceFiles": 74,
+  "currentReferenceFiles": 214,
+  "resourceDocuments": 140,
+  "componentContracts": 49,
+  "compatibilityAggregates": [
+    {
+      "aggregate": "references/requirement-spec.md",
+      "beforeBytes": 13930,
+      "parts": [
+        "requirements.overview",
+        "requirements.contents",
+        "requirements.intake-principle",
+        "requirements.three-decision-layers",
+        "requirements.adaptive-question-policy",
+        "requirements.user-input-guidance",
+        "requirements.first-preview-planning",
+        "requirements.generated-requirement-contract",
+        "requirements.fixed-harmonyos-defaults-from-native-references",
+        "requirements.anti-patterns"
+      ],
+      "baselineHashPreserved": true,
+      "textualCallers": [
+        "references/routes/materials.source.json",
+        "scripts/resolve-context.mjs"
+      ]
+    },
+    {
+      "aggregate": "references/layout-system.md",
+      "beforeBytes": 20610,
+      "parts": [
+        "layout.overview",
+        "layout.window-foundation",
+        "layout.application-shell",
+        "layout.page-spacing",
+        "layout.grid",
+        "layout.resize-rules",
+        "layout.pixso-mapping",
+        "layout.html-mapping",
+        "layout.decisions-to-confirm"
+      ],
+      "baselineHashPreserved": true,
+      "textualCallers": [
+        "references/pc-framework-layout-gate.md",
+        "references/index/layout-routes.source.json",
+        "scripts/test-validate-pc-framework-layout.mjs",
+        "assets/design-system/pattern-contracts.json"
+      ]
+    },
+    {
+      "aggregate": "references/harmonyos-layout-patterns.md",
+      "beforeBytes": 26210,
+      "parts": [
+        "patterns.overview",
+        "patterns.shared-window-anatomy",
+        "patterns.global-title-layer",
+        "patterns.left-brand-anchor",
+        "patterns.primary-shell-global-primary-slot",
+        "patterns.context-area",
+        "patterns.right-action-and-window-area",
+        "patterns.final-pane-leading-slot",
+        "patterns.approved-shell-patterns",
+        "patterns.reusable-pattern-primary-navigation-shell",
+        "patterns.pattern-a-two-pane-navigation-content",
+        "patterns.reusable-pattern-secondary-page-hierarchy",
+        "patterns.pattern-b-three-pane-navigation-list-detail",
+        "patterns.pattern-c-navigation-tool-workspace",
+        "patterns.pattern-d-optional-inspector",
+        "patterns.pane-behavior",
+        "patterns.primary-navigation",
+        "patterns.secondary-pane",
+        "patterns.main-content",
+        "patterns.inspector",
+        "patterns.surface-and-divider-behavior",
+        "patterns.scrolling",
+        "patterns.system-ui-boundary",
+        "patterns.shell-selection-rule"
+      ],
+      "baselineHashPreserved": true,
+      "textualCallers": [
+        "references/pc-framework-layout-gate.md",
+        "references/layouts/html-layout-routing.md",
+        "references/index/layout-routes.source.json",
+        "scripts/test-validate-pc-framework-layout.mjs",
+        "scripts/test-disclosure-spacing.mjs",
+        "scripts/build-navigation-index.mjs",
+        "assets/harmonyos-layout-references/reference-manifest.md",
+        "assets/design-system/pattern-contracts.json"
+      ]
+    },
+    {
+      "aggregate": "references/interaction-spec.md",
+      "beforeBytes": 21085,
+      "parts": [
+        "interaction.overview",
+        "interaction.scope-and-source-levels",
+        "interaction.official-platform-principles",
+        "interaction.pointer-and-mouse",
+        "interaction.keyboard-and-focus",
+        "interaction.common-shortcuts",
+        "interaction.navigation-and-selection",
+        "interaction.window-and-resize-behavior",
+        "interaction.overlay-selection",
+        "interaction.forms-and-validation",
+        "interaction.state-feedback",
+        "interaction.undo-and-destructive-actions",
+        "interaction.motion-sound-and-accessibility",
+        "interaction.interactive-frontend-demonstration",
+        "interaction.per-interaction-record",
+        "interaction.interaction-qa-gate"
+      ],
+      "baselineHashPreserved": true,
+      "textualCallers": []
+    },
+    {
+      "aggregate": "references/components/page-composition.md",
+      "beforeBytes": 13839,
+      "parts": [
+        "composition.overview",
+        "composition.content-recipes-decide-before-binding",
+        "composition.style-and-behavior-plans",
+        "composition.executable-html-business-composites",
+        "composition.plans",
+        "composition.pattern-owned-navigation-shells",
+        "composition.stroke-ownership"
+      ],
+      "baselineHashPreserved": true,
+      "textualCallers": [
+        "references/governance/major-version-update-checklist.md",
+        "references/routes/materials.source.json",
+        "scripts/test-disclosure-spacing.mjs"
+      ]
+    },
+    {
+      "aggregate": "references/page-blueprint-design.md",
+      "beforeBytes": 4552,
+      "parts": [
+        "blueprint.overview",
+        "blueprint.required-decisions",
+        "blueprint.design-before-assembly",
+        "blueprint.pattern-b-assembly-decisions",
+        "blueprint.minimal-shape"
+      ],
+      "baselineHashPreserved": true,
+      "textualCallers": [
+        "references/routes/materials.source.json"
+      ]
+    },
+    {
+      "aggregate": "references/page-design-guidance.md",
+      "beforeBytes": 4136,
+      "parts": [
+        "design.overview",
+        "design.start-with-the-task-not-the-inventory",
+        "design.design-at-the-real-content-width",
+        "design.visual-alignment-and-grouping",
+        "design.reuse-controls-design-missing-business-composites",
+        "design.one-deliberate-first-preview"
+      ],
+      "baselineHashPreserved": true,
+      "textualCallers": [
+        "references/routes/materials.source.json",
+        "scripts/resolve-context.mjs"
+      ]
+    },
+    {
+      "aggregate": "references/component-specs-extended.md",
+      "beforeBytes": 14448,
+      "parts": [
+        "supplement.overview",
+        "supplement.universal-contract",
+        "supplement.navigation-and-disclosure",
+        "supplement.overlays-and-commands",
+        "supplement.form-composition",
+        "supplement.loading-data-and-dates",
+        "supplement.specialized-content-and-layout"
+      ],
+      "baselineHashPreserved": true,
+      "textualCallers": [
+        "scripts/test-disclosure-spacing.mjs"
+      ]
+    },
+    {
+      "aggregate": "references/components/titlebar-segments.md",
+      "beforeBytes": 10972,
+      "parts": [
+        "titlebar.overview",
+        "titlebar.scenarios",
+        "titlebar.title-typography",
+        "titlebar.trailing-inset",
+        "titlebar.executable-html-slots",
+        "titlebar.generated-titlebar-scene"
+      ],
+      "baselineHashPreserved": true,
+      "textualCallers": [
+        "references/layouts/html-layout-routing.md",
+        "scripts/resolve-context.mjs"
+      ]
+    },
+    {
+      "aggregate": "references/components/local-component-delivery.md",
+      "beforeBytes": 5628,
+      "parts": [
+        "delivery.overview",
+        "delivery.reading",
+        "delivery.project-output",
+        "delivery.prepare",
+        "delivery.styles",
+        "delivery.calling",
+        "delivery.pixso"
+      ],
+      "baselineHashPreserved": false,
+      "textualCallers": [
+        "README.md",
+        "references/routes/materials.source.json",
+        "references/routes/new-page.md",
+        "scripts/build-skill-catalog-index.mjs"
+      ]
+    },
+    {
+      "aggregate": "references/pixso-fidelity-import-pipeline.md",
+      "beforeBytes": 21033,
+      "parts": [
+        "pixso-pipeline.overview",
+        "pixso-pipeline.normal-fast-path-and-diagnostic-boundary",
+        "pixso-pipeline.start-an-isolated-run",
+        "pixso-pipeline.capture-browser-computed-evidence",
+        "pixso-pipeline.keep-two-evidence-layers-and-one-pixso-output",
+        "pixso-pipeline.compile-dom-visual-ir-only-from-the-current-run",
+        "pixso-pipeline.resolve-components-without-changing-geometry",
+        "pixso-pipeline.execute-transactionally",
+        "pixso-pipeline.acceptance-gates"
+      ],
+      "baselineHashPreserved": true,
+      "textualCallers": [
+        "references/pixso-import-details.md",
+        "references/routes/materials.source.json",
+        "references/routes/existing-html-to-pixso.md",
+        "references/routes/converter-diagnosis.md"
+      ]
+    },
+    {
+      "aggregate": "references/pixso-mcp.md",
+      "beforeBytes": 20455,
+      "parts": [
+        "pixso-mcp.overview",
+        "pixso-mcp.connection",
+        "pixso-mcp.target-page-and-path-preflight-failure-derived",
+        "pixso-mcp.creation-sequence",
+        "pixso-mcp.registered-reuse-performance-and-icon-gates",
+        "pixso-mcp.page-binding-bridge-token",
+        "pixso-mcp.token-gate",
+        "pixso-mcp.binding-audit",
+        "pixso-mcp.existing-design-and-html-handoff",
+        "pixso-mcp.failure-handling",
+        "pixso-mcp.deliverable-reference"
+      ],
+      "baselineHashPreserved": true,
+      "textualCallers": [
+        "references/pixso-component-bindings.md",
+        "references/routes/materials.source.json",
+        "references/routes/converter-diagnosis.md"
+      ]
+    },
+    {
+      "aggregate": "references/pixso-native-scene.md",
+      "beforeBytes": 19951,
+      "parts": [
+        "pixso-scene.overview",
+        "pixso-scene.html-computed-visual-state",
+        "pixso-scene.dom-visual-ir",
+        "pixso-scene.scene",
+        "pixso-scene.surface",
+        "pixso-scene.divider-ownership",
+        "pixso-scene.section-6",
+        "pixso-scene.section-7",
+        "pixso-scene.section-8",
+        "pixso-scene.mcp",
+        "pixso-scene.mcp-10",
+        "pixso-scene.section-11"
+      ],
+      "baselineHashPreserved": true,
+      "textualCallers": [
+        "references/routes/materials.source.json",
+        "references/routes/converter-diagnosis.md",
+        "references/routes/pixso-component-library.md"
+      ]
+    },
+    {
+      "aggregate": "references/pixso-import-details.md",
+      "beforeBytes": 10183,
+      "parts": [
+        "pixso-detail.overview",
+        "pixso-detail.html-text-sizing-and-truncation",
+        "pixso-detail.icon-sizing-stroke-and-hot-zone-contract",
+        "pixso-detail.cross-source-mapping-registry",
+        "pixso-detail.typography-mapping-policy",
+        "pixso-detail.pixso-component-facts-sync"
+      ],
+      "baselineHashPreserved": true,
+      "textualCallers": [
+        "references/routes/materials.source.json",
+        "references/routes/converter-diagnosis.md",
+        "references/routes/pixso-component-library.md"
+      ]
+    }
+  ],
+  "navigationComparisons": [
+    {
+      "task": "设置",
+      "oldBriefBytes": 33774,
+      "newBriefBytes": 2223,
+      "navigationReductionPercent": 93.42,
+      "stagePackBytes": {
+        "designPackBytes": 20331,
+        "discoveryPackBytes": 6933,
+        "buttonBindingPackBytes": 6620,
+        "stylingPackBytes": 6940
+      }
+    },
+    {
+      "task": "邮箱",
+      "oldBriefBytes": 50876,
+      "newBriefBytes": 3137,
+      "navigationReductionPercent": 93.83,
+      "stagePackBytes": {
+        "designPackBytes": 32732,
+        "discoveryPackBytes": 8868,
+        "buttonBindingPackBytes": 6624,
+        "stylingPackBytes": 7247
+      }
+    },
+    {
+      "task": "文件管理",
+      "oldBriefBytes": 40903,
+      "newBriefBytes": 2592,
+      "navigationReductionPercent": 93.66,
+      "stagePackBytes": {
+        "designPackBytes": 20432,
+        "discoveryPackBytes": 7829,
+        "buttonBindingPackBytes": 6625,
+        "stylingPackBytes": 6794
+      }
+    }
+  ],
+  "routingChecks": {
+    "ok": true,
+    "tests": 10,
+    "results": [
+      {
+        "name": "compatibility aggregates preserve ordered source fragments",
+        "passed": true,
+        "documents": 14
+      },
+      {
+        "name": "设置 three-layer route and staged packets",
+        "passed": true,
+        "briefBytes": 2223,
+        "designPackBytes": 20331,
+        "discoveryPackBytes": 6933,
+        "buttonBindingPackBytes": 6620,
+        "stylingPackBytes": 6940
+      },
+      {
+        "name": "邮箱 three-layer route and staged packets",
+        "passed": true,
+        "briefBytes": 3137,
+        "designPackBytes": 32732,
+        "discoveryPackBytes": 8868,
+        "buttonBindingPackBytes": 6624,
+        "stylingPackBytes": 7247
+      },
+      {
+        "name": "文件管理 three-layer route and staged packets",
+        "passed": true,
+        "briefBytes": 2592,
+        "designPackBytes": 20432,
+        "discoveryPackBytes": 7829,
+        "buttonBindingPackBytes": 6625,
+        "stylingPackBytes": 6794
+      },
+      {
+        "name": "precise revision omits broad composition guidance",
+        "passed": true,
+        "modelPackBytes": 6498,
+        "selectedSourceBytes": 13644,
+        "selectedFileCount": 5,
+        "tokenCount": null
+      },
+      {
+        "name": "confirmation dialog selects overlays and keyboard",
+        "passed": true,
+        "modelPackBytes": 11239,
+        "selectedSourceBytes": 16396,
+        "selectedFileCount": 8,
+        "tokenCount": null
+      },
+      {
+        "name": "Pixso stage filters and canonical component mapping",
+        "passed": true
+      },
+      {
+        "name": "ambiguity, missing resources, unknown selectors, conflict and budget fail closed",
+        "passed": true
+      },
+      {
+        "name": "exported JSON, Markdown and read plan agree",
+        "passed": true
+      },
+      {
+        "name": "stale, missing, corrupted and cyclic temporary resources fail closed",
+        "passed": true
+      }
+    ]
+  },
+  "browserCheck": {
+    "ok": true,
+    "build": "esbuild 0.28.2 offline, real JS/CSS bundle",
+    "viewport": {
+      "width": 1728,
+      "height": 1152
+    },
+    "state": {
+      "ready": "ready",
+      "display": "grid",
+      "gap": "16px",
+      "components": [
+        "titlebar",
+        "button",
+        "button",
+        "button",
+        "primary-navigation-item",
+        "button"
+      ],
+      "statusVisible": true
+    },
+    "toggleHideAndRestore": true,
+    "pageErrors": [],
+    "runtimeComponentCount": 6,
+    "visualParity": "not measured",
+    "pixso": "not published"
+  },
+  "additionalChecks": [
+    "component bundle deterministic verification",
+    "style bundle deterministic verification",
+    "strict source component reuse",
+    "actual bindings and Blueprint handoff export",
+    "edited managed styles rejected",
+    "modified scripts parse",
+    "Skill YAML/name/description via Ruby/Psych"
+  ],
+  "limitations": {
+    "officialSkillQuickValidate": "Unavailable: Python PyYAML dependency missing; Ruby/Psych metadata check passed",
+    "runtimeFactory": "Canonical numberSelector registry has two identical keys; esbuild reports a duplicate-key warning. Runtime snapshot unchanged.",
+    "viteBuild": "Used offline esbuild for the real JS/CSS bundle; did not claim a Vite build.",
+    "glm": "No live external GLM evaluation",
+    "pixso": "Stage routing/readiness checked only; no live capture/import/publication",
+    "visualParity": "No reference screenshot pixel diff"
+  },
+  "readingPolicy": "Navigation reduction measures brief bytes only. Stage bodies are read separately. No tokenizer run; no total-session reduction claim.",
+  "baselineInventory": [
+    {
+      "path": "references/approved-pages/README.md",
+      "bytes": 1324
+    },
+    {
+      "path": "references/approved-pages/index.json",
+      "bytes": 224
+    },
+    {
+      "path": "references/component-coverage.md",
+      "bytes": 1228
+    },
+    {
+      "path": "references/component-package-integration.md",
+      "bytes": 3363
+    },
+    {
+      "path": "references/component-specs-extended.md",
+      "bytes": 14448
+    },
+    {
+      "path": "references/components/component-readiness-policy.json",
+      "bytes": 1422
+    },
+    {
+      "path": "references/components/component-selection-rules.json",
+      "bytes": 4730
+    },
+    {
+      "path": "references/components/core-component-acceptance.json",
+      "bytes": 649
+    },
+    {
+      "path": "references/components/local-component-delivery.md",
+      "bytes": 5628
+    },
+    {
+      "path": "references/components/page-composition.md",
+      "bytes": 13839
+    },
+    {
+      "path": "references/components/source-resolution.md",
+      "bytes": 3021
+    },
+    {
+      "path": "references/components/titlebar-segments.md",
+      "bytes": 10972
+    },
+    {
+      "path": "references/design-system.md",
+      "bytes": 7043
+    },
+    {
+      "path": "references/domains/email-workbench.md",
+      "bytes": 3693
+    },
+    {
+      "path": "references/dual-output-contract.md",
+      "bytes": 12623
+    },
+    {
+      "path": "references/governance/major-version-update-checklist.md",
+      "bytes": 4745
+    },
+    {
+      "path": "references/governance/skill-catalog-refresh.md",
+      "bytes": 1205
+    },
+    {
+      "path": "references/harmonyos-component-mapping-table.md",
+      "bytes": 14245
+    },
+    {
+      "path": "references/harmonyos-layout-patterns.md",
+      "bytes": 26210
+    },
+    {
+      "path": "references/html-component-mapping.md",
+      "bytes": 2204
+    },
+    {
+      "path": "references/html-component-reuse-gate.md",
+      "bytes": 3389
+    },
+    {
+      "path": "references/html-draft-delivery.md",
+      "bytes": 1577
+    },
+    {
+      "path": "references/html-output-rules.md",
+      "bytes": 2500
+    },
+    {
+      "path": "references/icon-selection.md",
+      "bytes": 9695
+    },
+    {
+      "path": "references/index/capability-aliases.source.json",
+      "bytes": 512
+    },
+    {
+      "path": "references/index/generated/component-index.json",
+      "bytes": 15508
+    },
+    {
+      "path": "references/index/generated/layout-index.json",
+      "bytes": 29581
+    },
+    {
+      "path": "references/index/generated/route-material-index.json",
+      "bytes": 23993
+    },
+    {
+      "path": "references/index/generated/skill-catalog-index.json",
+      "bytes": 28524
+    },
+    {
+      "path": "references/index/generated/task-router.json",
+      "bytes": 4383
+    },
+    {
+      "path": "references/index/generated/token-index.json",
+      "bytes": 118153
+    },
+    {
+      "path": "references/index/generated/validation-index.json",
+      "bytes": 8681
+    },
+    {
+      "path": "references/index/generated/workflow-route-index.json",
+      "bytes": 1618
+    },
+    {
+      "path": "references/index/layout-routes.source.json",
+      "bytes": 2249
+    },
+    {
+      "path": "references/index/task-routes.source.json",
+      "bytes": 2299
+    },
+    {
+      "path": "references/input-checklist.md",
+      "bytes": 3807
+    },
+    {
+      "path": "references/interaction-spec.md",
+      "bytes": 21085
+    },
+    {
+      "path": "references/layout-system.md",
+      "bytes": 20610
+    },
+    {
+      "path": "references/layouts/html-layout-routing.md",
+      "bytes": 1547
+    },
+    {
+      "path": "references/mapping-registry.md",
+      "bytes": 104303
+    },
+    {
+      "path": "references/offline-distribution.md",
+      "bytes": 1386
+    },
+    {
+      "path": "references/page-blueprint-design.md",
+      "bytes": 4552
+    },
+    {
+      "path": "references/page-contract.md",
+      "bytes": 4305
+    },
+    {
+      "path": "references/page-design-guidance.md",
+      "bytes": 4136
+    },
+    {
+      "path": "references/pc-framework-layout-gate.md",
+      "bytes": 4010
+    },
+    {
+      "path": "references/pixso-component-bindings.md",
+      "bytes": 7979
+    },
+    {
+      "path": "references/pixso-component-maintenance.md",
+      "bytes": 13817
+    },
+    {
+      "path": "references/pixso-component-usage.md",
+      "bytes": 13439
+    },
+    {
+      "path": "references/pixso-execution-invariants.md",
+      "bytes": 6655
+    },
+    {
+      "path": "references/pixso-fidelity-import-pipeline.md",
+      "bytes": 21033
+    },
+    {
+      "path": "references/pixso-fidelity-routing.md",
+      "bytes": 6268
+    },
+    {
+      "path": "references/pixso-import-details.md",
+      "bytes": 10183
+    },
+    {
+      "path": "references/pixso-mcp.md",
+      "bytes": 20455
+    },
+    {
+      "path": "references/pixso-native-scene.md",
+      "bytes": 19951
+    },
+    {
+      "path": "references/pixso-performance.md",
+      "bytes": 3203
+    },
+    {
+      "path": "references/pixso-visual-parity.md",
+      "bytes": 4660
+    },
+    {
+      "path": "references/progressive-review-gates.md",
+      "bytes": 2373
+    },
+    {
+      "path": "references/registered-reuse-mode.md",
+      "bytes": 1871
+    },
+    {
+      "path": "references/requirement-spec.md",
+      "bytes": 13930
+    },
+    {
+      "path": "references/routes/converter-diagnosis.md",
+      "bytes": 956
+    },
+    {
+      "path": "references/routes/existing-html-to-pixso.md",
+      "bytes": 6801
+    },
+    {
+      "path": "references/routes/index.json",
+      "bytes": 1365
+    },
+    {
+      "path": "references/routes/materials.source.json",
+      "bytes": 6955
+    },
+    {
+      "path": "references/routes/micro-revision.md",
+      "bytes": 908
+    },
+    {
+      "path": "references/routes/new-page.md",
+      "bytes": 5928
+    },
+    {
+      "path": "references/routes/pixso-component-library.md",
+      "bytes": 2939
+    },
+    {
+      "path": "references/routes/skill-maintenance.md",
+      "bytes": 2910
+    },
+    {
+      "path": "references/routing-guide.md",
+      "bytes": 10941
+    },
+    {
+      "path": "references/skill-update-workflow.md",
+      "bytes": 1172
+    },
+    {
+      "path": "references/tool-design-intelligence.md",
+      "bytes": 8660
+    },
+    {
+      "path": "references/tool-design-qa.md",
+      "bytes": 3071
+    },
+    {
+      "path": "references/visual-qa.md",
+      "bytes": 1830
+    },
+    {
+      "path": "references/workflows/fast-preview.md",
+      "bytes": 1322
+    },
+    {
+      "path": "references/workflows/release-validation.md",
+      "bytes": 924
+    }
+  ]
+}

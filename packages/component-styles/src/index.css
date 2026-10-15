@@ -757,9 +757,8 @@
 .tui-attachment__menu { top: calc(100% + var(--space-2)); right: 0; left: auto; }
 .tui-attachment[data-state="disabled"] .tui-attachment__actions { opacity: var(--state-disabled-opacity); }
 
-/* Full contract adapters.  These rules intentionally use only canonical
-   tokens; framework source files provide structure and behavior, while this
-   file remains the single visual authority for HTML. */
+/* HTML contract adapters use canonical Tokens. Component source provides
+   structure and behavior; this file provides their shared appearance. */
 .tui-generated,
 .tui-generated * { box-sizing: border-box; }
 .tui-generated { color: var(--color-text); font-family: var(--font-sans); font-size: var(--type-body-l-size); line-height: var(--type-body-l-leading); }

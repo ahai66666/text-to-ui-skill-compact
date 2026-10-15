@@ -1,0 +1,1420 @@
+{
+  "schemaVersion": 1,
+  "kind": "text-to-ui-skill-catalog-index",
+  "authority": "skill-support/references/governance/skill-catalog-refresh.md",
+  "policy": {
+    "canonicalSource": "compact SKILL.md + bundled references/scripts/packages",
+    "externalServicesAreNotHtmlGenerationDependencies": true,
+    "refreshBeforeMaintenance": true,
+    "missingOrHashDriftIsBlocking": true,
+    "mirrorsAreValidatedAfterCanonicalChecks": true
+  },
+  "derivedProducts": {
+    "generatedIndexes": "skill-support/references/index/generated/*.json",
+    "builder": "pnpm index:build",
+    "validator": "pnpm index:check"
+  },
+  "deliveryTargets": [
+    "skill/ (local generated mirror; Git-ignored)",
+    "$CODEX_HOME/skills/text-to-ui-compact",
+    "$TEXT_TO_UI_PLUGIN_DELIVERY_ROOT"
+  ],
+  "groups": [
+    {
+      "id": "routing-and-receipts",
+      "purpose": "Route selection, Context Packet material closure, and read-receipt verification.",
+      "files": [
+        {
+          "path": "skill-support/references/routes/index.json",
+          "sha256": "b39f4049bbf25392ce881ec294700e74335eab5bece4974c2972a8d5054099ca",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/routes/materials.source.json",
+          "sha256": "8cd617eecfd42ca16d6e70625dfdba3b40c926acc88065d3dbc0364cc60294ee",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/routes/skill-maintenance.md",
+          "sha256": "b116f817f58403a0c80bcd67e18b90ef5b502a636a97f5aa55e9f426442ce275",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/scripts/resolve-workflow-route.mjs",
+          "sha256": "74633211eded85abf2b9dc8bd2ac9b1be0df7c42d3d9bbd3408e90832c5e69fd",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/scripts/task-route-lib.mjs",
+          "sha256": "9e0b570fbb8c53de758032318a5a39c7892d49ab158da2821bdf2a2ab7ae1c09",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/scripts/resolve-context.mjs",
+          "sha256": "9767364b6a60233216273f000d1b9c72e40d07b07ac04f55db252d8f1989d62b",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/scripts/test-task-route-resolution.mjs",
+          "sha256": "ce324d2a598fecf90d30fd24554357f8e885994039173d3cd2ccad83092e812f",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/scripts/verify-route-materials.mjs",
+          "sha256": "dcc9a101b4fe61a56ff4262a95adedea4dccfc02d742d0316f66a5ac67e2fd2b",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/scripts/verify-context-materials.mjs",
+          "sha256": "f8b6e9850b248c11abc31c3929acc2a226b2dfd9c39d477567cf253a495e6e3f",
+          "availability": "local"
+        }
+      ]
+    },
+    {
+      "id": "patterns-and-runtime",
+      "purpose": "Pattern contracts, Skeleton/Runtime renderers, deterministic Titlebar scenes, and Secondary Page composition.",
+      "files": [
+        {
+          "path": "skill-support/assets/design-system/pattern-contracts.json",
+          "sha256": "7c281c8924ddb4533422b34d680c196a2910147c39944b0d7061d3344babd93e",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/assets/design-system/pattern-contracts.schema.json",
+          "sha256": "30871a1c7620f1c58a7cc45c0025ea76755e4d0bb8db6b6247f88927a0231d4d",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/assets/design-system/titlebar-scene-contracts.json",
+          "sha256": "56c53568f289e221dc8084f2377a5ee74b3ac6076e5146ae18ec1725b42c2565",
+          "availability": "local"
+        },
+        {
+          "path": "packages/pattern-runtime/src/index.js",
+          "sha256": "8a268fb1cb3245fab52e2fd8929a5e996c31d3d7489d5cea26c33e751636adc3",
+          "availability": "local"
+        },
+        {
+          "path": "packages/pattern-runtime/src/styles.css",
+          "sha256": "f4502c91b7b40f519fa1c857aaf226d259bce18d75964b6722b28cdc93fa8128",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/scripts/resolve-pattern-contract.mjs",
+          "sha256": "1514c5f58ddb865879128b2a0d237fa95623998e215d0b422aae389a43bec52a",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/scripts/titlebar-scene.mjs",
+          "sha256": "13dc49447f6a374d33e4099c44d1a35d04e404999dd36ee1fdd820ad263f3208",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/scripts/validate-pattern-contracts.mjs",
+          "sha256": "6d53ecbda62ac2a1483ef3acc707273e88896fd3f3a59ab6b268d55428a1971f",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/scripts/test-pattern-runtime.mjs",
+          "sha256": "937a2e1b70c990aa839f59d4a5601352a0c882b8b437313114a07cddef299bd3",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/scripts/test-ui-scene-pattern-binding.mjs",
+          "sha256": "be63c4ad0f24d72f40acbc14af5d65d23e67f65a79b58561501cd1359de27ae8",
+          "availability": "local"
+        }
+      ]
+    },
+    {
+      "id": "component-contracts-and-adapters",
+      "purpose": "HTML component identity, Props, Slots, selection, readiness, adapters, and registered reuse.",
+      "files": [
+        {
+          "path": "packages/component-contracts/src/components.json",
+          "sha256": "65b7d4ae603b5dcc829f87c692d21c6e1d2ff463049169935456088c4d9548fc",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/registry.json",
+          "sha256": "1b7e0da34ee92e594b05bc462f251b77f162a064ee37934d0e95c85c074b2e28",
+          "availability": "local"
+        },
+        {
+          "path": "packages/components-html/src/index.js",
+          "sha256": "3134ffafc97eeb359a7c7a809bfa3350afe0fc2ba00bfa6748eb0675d08b7509",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/titlebar-segments.js",
+          "sha256": "f845ee76d7b26a95d9166a4e3881e58a67f831716b7aefa7dc7dfdb56d19699b",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/components/component-selection-rules.json",
+          "sha256": "16eebc2aaab67c7430c340e889d902b19a5b03bcb13a6c9f64b5e090a6854d02",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/components/component-readiness-policy.json",
+          "sha256": "ef8b27bdf8dfb1c718830da454236e1a9894904a6c5ef2c4119d92742c980e47",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/assets/design-system/html-component-adapter-map.json",
+          "sha256": "001a6d5e35bf589a266e7b36407dc168be99504e11e3f4a4239642cf08b92eff",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/scripts/query-components.mjs",
+          "sha256": "0377c2cb61deb1a10ee051151788c585a11d9b5273d3f78433af998a3b04dca1",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/scripts/validate-runtime-component-reuse.mjs",
+          "sha256": "533632a0a8d63f389ddbe8436934a4b670307c186fc246bf48a43b10000a9a5a",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/scripts/validate-web-component-reuse.mjs",
+          "sha256": "d30a21a80c1f65bbca3d57dab74807ac3073f64a9609d1c0e5138088509a36aa",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/accordion.json",
+          "sha256": "34997266674b5eada3fd7d1d0f24d7608c026badfc9fd560926e87c8c82d936c",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/alert-dialog.json",
+          "sha256": "3eddcdce074177ea25d561b3e2c73dc4ef46b24c523064f85d9bfd0c688b4138",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/alert.json",
+          "sha256": "58f8fd002538bb77c3a1edf9c73ce5edd1f8512b5259ec3b754e7d5a06d4dcea",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/attachment.json",
+          "sha256": "25b6e56a70d8b5f866d97c8c75d2b0357a7721ffcad91114ebcb0f09f0b2a9da",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/avatar.json",
+          "sha256": "85b125b9124e602ce64027bb091ed96e1fd6c13ee7c5099cd3c68117934b7d66",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/badge.json",
+          "sha256": "51c6f7ed8cbd93836b8d2d884b8ee8939557bd594397ecad4219c994d1c97342",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/breadcrumb.json",
+          "sha256": "155e94b27bf9288b8428b8f5e5b942bcd70262169f0dd5af45b10d43547d4385",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/button.json",
+          "sha256": "6a0a601bacba32b899b85bbb5fa69bdc891e6157d786876acbdf9300abde78ae",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/calendar.json",
+          "sha256": "cdaf6d13613579d84df26884a559ffbf97597cd529ae480c0dee5ceb5c495bf6",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/checkbox.json",
+          "sha256": "e8b66e42f4c4de814f8df77b1bd7bb009985ee8177f8b85717a88044b1ba4e7b",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/chips.json",
+          "sha256": "9b01efb731c93229cd30cac009ae33cf0bf01f45153f101eea2c51a37518b42f",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/collapsible.json",
+          "sha256": "1b1862897b81bb5dc19ff0fb219e7aaa8b5df2564095cf72ab5485faa830574e",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/color-picker.json",
+          "sha256": "ea40c18dc5d24a83517f3cad3528a6df5d9eef425fddbf96de03348dd7407649",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/combobox.json",
+          "sha256": "5bb74a89b6079f01c69daec58c6e2fe0572fb315c8182eb2c9ae027a13cf99bf",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/context-menu.json",
+          "sha256": "b5bec0ea9321ebc4b06953d18cce87b1915e64da54b7b80a5d613d788e75801c",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/date-picker.json",
+          "sha256": "000d6f87c3f97d0ba1c30b1486ce7d64eee8bb67b9824054a40f52a3d75405e4",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/dialog.json",
+          "sha256": "dad2fe2671df1cba6897f7455fff35501ac77c0cbb58e05b1d32cda5c020561b",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/dropdown-menu.json",
+          "sha256": "3c22962f7aa1e4bb1eac577e102760caee765cc688736948cb0ef47f827ffab8",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/field.json",
+          "sha256": "65b8c9506c3d8e873522a3ffec98152a0e28990c31b8008c37451b85e8c9d353",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/form-field.json",
+          "sha256": "b09d41a4abdfe20e5b442e5f838327cb8785825ce14ea70294599f7ac9945d90",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/hover-card.json",
+          "sha256": "58116659ed39d2b93f7f1908dfff04ed18f854ac8bfa0acc64cfa7dd19dc64b0",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/input.json",
+          "sha256": "c50333a2b064cb14defcb3ee9454833c78db17790826664408cf1e5510b81062",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/label.json",
+          "sha256": "df4a8a21d190c058db6aed2c4840ccc9f5de8741821878739b4a621274c08d22",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/list-card.json",
+          "sha256": "1561067934fc95b8974c82ff4379eb14efb4a013fe0d1460c2095b45709bc61b",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/menubar.json",
+          "sha256": "a4814444e4c021a7cc0d01a67e39b843cd7a2c41ddfdb04c6eeea31a1eac605a",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/native-select.json",
+          "sha256": "0b01cbf27cc1ea2a42ab5566ff5c74af21ec2367899ee5453f0ca7dc07190a38",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/number-selector.json",
+          "sha256": "95b9561ba059881d90cd3e438bcd4431ab1f5ddd7d96afe7c82a9342509950c3",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/pagination.json",
+          "sha256": "e3e5a411e3e4a28a5780f98f5b0a3df2df9a90d16e3565c04b2385efdac1f0c2",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/popover.json",
+          "sha256": "bf16b589e0cf26ab3588a1186235b6ebce0b08edc373724dab6bab36dd66d246",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/primary-navigation-item.json",
+          "sha256": "bbcb0abe41ea62dbe4a7e5824ceddf43da261e961267289df9c87a7e26a0dd6d",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/progress.json",
+          "sha256": "f0bf09193674b9297ebb5e3d83f363d1bf4618bf93605c7bbaa4cf2faacd0f17",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/radio-group.json",
+          "sha256": "f17ba4e2d2df17194077c6e782e7cf3179f8748c56f966db9a6ef35cc4bde005",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/radio.json",
+          "sha256": "63960a3162641c281723aebb7a13933127e6e497c374cc6e7dd1083f900edfad",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/search.json",
+          "sha256": "bc985283700b4b6e48e3e125bce7bcdbd553a9eec7f94adab106d985f21c4093",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/segmented-button.json",
+          "sha256": "12865a74cfc009d3aa91662993ccde8af741b027ece32e4c68a80a71f858e63d",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/select.json",
+          "sha256": "7103d821cb9921de1ad021b7268860f246ab8f67e25e9d3b221b5bc773db5b12",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/semi-modal.json",
+          "sha256": "fc06fffe7d088d0dbd34535a97296c29953464f65278f5a012641c5b30254642",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/sidebar.json",
+          "sha256": "f1a36195fa43e9c916737de5db45d0c74f07c8bde33d1d28b275a7c78303495e",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/slider.json",
+          "sha256": "5bc21e5d71e0976fa90becad2decd0c8dc92b759451723c74b27222d6b70294c",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/snackbar.json",
+          "sha256": "b6d6d24b9dbe0bcf88b6a9499c70bdceb5478831cf76aaf09485835bfe635186",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/sub-tabs.json",
+          "sha256": "da44811b68707d1f9ad46568bf75dc9eaefd093a4857b055fca623f6e56bfb4f",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/switch.json",
+          "sha256": "b8f34ef9690fe8f2533340bd62a49415009130fd1c93b2c13cd310a6fcb918c0",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/table.json",
+          "sha256": "d3b47cc5437bf13f40521f86f47f351fafdffa3fd0a5a4cb411ffe8d3e86f24b",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/tabs.json",
+          "sha256": "11e1367f0ddba28552459bdb1b6cae4e13082cd0929b6b8aa9b8a74c880310ae",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/textarea.json",
+          "sha256": "e7f44c58c32ae12d0d37e6b3958cae1cfa41015f851a073860f0ab0548d94fb6",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/time-picker.json",
+          "sha256": "84dcfea53c731d00d8240e5d5d00b569450c86c9863d9f409d5415a1d4a054af",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/titlebar.json",
+          "sha256": "74b292c75a069c793d6561e479f74c4365d1c60bc473af142dfbc6f9f429a1ad",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/tooltip.json",
+          "sha256": "e72653cf95c8e6b04f744da985c54f157fac2c60eed094821abb25ded8765d40",
+          "availability": "local"
+        },
+        {
+          "path": "packages/component-contracts/src/components/tree-view.json",
+          "sha256": "47554d8df250635aefb5c3b7a4e11996b75dd35d155ac05484d976eaf9e7de22",
+          "availability": "local"
+        }
+      ]
+    },
+    {
+      "id": "tokens-type-and-icons",
+      "purpose": "Semantic Token maps, colors, typography, layout, and icon aliases.",
+      "files": [
+        {
+          "path": "packages/tokens/src/token-runtime-map.json",
+          "sha256": "5f084420874b4f8147e1f8a6176e93343750a6f5db93d3a9e1e70a5eb14c84ff",
+          "availability": "local"
+        },
+        {
+          "path": "packages/tokens/src/tokens.colors.css",
+          "sha256": "00c25b283287b5c42ba5676efa11a497541710a3269c6e06c80fd19f28b4a94c",
+          "availability": "local"
+        },
+        {
+          "path": "packages/tokens/src/tokens.typography.css",
+          "sha256": "a41abd576aec72d5697aa9d4be5c7d7ed7df7373fd2121f9517741dd4ba66d06",
+          "availability": "local"
+        },
+        {
+          "path": "packages/tokens/src/tokens.layout.css",
+          "sha256": "6a6bd5f3be075de0797091a4c742f6f0af62c3cc3385a62119c6572a382e73ed",
+          "availability": "local"
+        },
+        {
+          "path": "packages/tokens/src/tokens.spacing.css",
+          "sha256": "75cc5f9781105b5037f32d6dab05e561ce03dbebdb419dcb3cb11c9f5063b506",
+          "availability": "local"
+        },
+        {
+          "path": "packages/tokens/src/tokens.icon.css",
+          "sha256": "e4f2e7f649a7d9842b53bba06de12812590b161495f68246c963f526442e5883",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/assets/icons/icon-aliases.json",
+          "sha256": "ca3cd2bd5020185fda34cfe4fde1b648537fba9e439f1605beac9c1ef54e7b78",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/assets/design-system/pixso-icon-map.json",
+          "sha256": "4a9544355cd80c0b9cc0910e99d8b952b38d9afcf56ab9ec71dd5a4db4050ab9",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/scripts/validate-page-token-usage.mjs",
+          "sha256": "639b09f9603c04b6acdec8c03213fc0d95ccae8ba874b70037a8187e13bc44b9",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/scripts/validate-pixso-icon-map.mjs",
+          "sha256": "5c2be8b7b70d05be41f856bd17033bb256c96037d1c0e145b4661dc0e3193c53",
+          "availability": "local"
+        }
+      ]
+    },
+    {
+      "id": "ui-scene-and-generation",
+      "purpose": "Shared UI Scene, page decision layers, compiler, and strict page generation.",
+      "files": [
+        {
+          "path": "skill-support/assets/design-system/ui-scene.schema.json",
+          "sha256": "c44acfaaaeb575258229b4eb6c66075e501df251a76f3bc94ee9547a485cabcc",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/assets/design-system/page-spec.schema.json",
+          "sha256": "c34b5b947c216f83e4057be939b42fbe8ceb70e7f858ff5fbf82af3548103e19",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/scripts/page-ui-scene.mjs",
+          "sha256": "965f78083933ec7615caa19ad61bb313cd3249fdd5bc2e0e3abb53d20a5e7165",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/scripts/compile-ui-scene.mjs",
+          "sha256": "c707272609f3d3ae3016c3d4297da4ed2e8be29c80790d3b2f473907632939c3",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/scripts/page-blueprint.mjs",
+          "sha256": "480c04c178afe24fd8c7357377d1295889e1be75bee88848df2a6714ecbaa75b",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/scripts/page-content-recipes.mjs",
+          "sha256": "0995389e0bb7bce1869f74458979bef44b45c941e7bba2e658a497d94b0c027c",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/scripts/generate-html-page.mjs",
+          "sha256": "b3b16c439098e00553560feef7e94d068e7df9a8e0e7b7d437c9772eae668877",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/scripts/generate-compliant-page.mjs",
+          "sha256": "f0ec3159ef49a7bc065992988bf8ed06f70cd6bd0213fb1906bdd35ecc2bdc74",
+          "availability": "local"
+        }
+      ]
+    },
+    {
+      "id": "gates-and-runtime-evidence",
+      "purpose": "Reuse, Token, layout, artifact, and browser Runtime evidence gates.",
+      "files": [
+        {
+          "path": "skill-support/scripts/validate-page-composite-boundaries.mjs",
+          "sha256": "2abe2798048f648afae9658570eac9762a01954ad0799595c7d7047271a746c7",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/scripts/validate-page-css-boundaries.mjs",
+          "sha256": "a8090327a47eec6e7b14d67267b6b4f6bb132db750bbf45e342f4520fec9ff6e",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/scripts/validate-page-layout-binding.mjs",
+          "sha256": "2dc16cd8b3f1116405b6813770a4123cbb88fd927edaf567e57c8b4d37c9bdcb",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/scripts/verify-html-artifact.mjs",
+          "sha256": "1c1c6457c8f6203a4c5e7f685085a55da0b264c5b2a682b9d352c36851664494",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/scripts/stamp-html-artifact.mjs",
+          "sha256": "747e3a004b765483f6930c89fb436320672a2ad9b24365bb7092bdbc0ac9c346",
+          "availability": "local"
+        },
+        {
+          "path": "tools/validate-runtime-evidence.mjs",
+          "sha256": null,
+          "availability": "external-full-repository"
+        },
+        {
+          "path": "skill-support/references/workflows/fast-preview.md",
+          "sha256": "df11e0ea0417ac8be1fbf072ad6f2183be6c6f1a3075e30df55446ef40c5264d",
+          "availability": "local"
+        }
+      ]
+    },
+    {
+      "id": "delivery-mirrors",
+      "purpose": "Canonical delivery source, maintenance commands, and mirror synchronization implementation.",
+      "files": [
+        {
+          "path": "package.json",
+          "sha256": "0a82faed70a998b84d990b573cbe7ae70623a2fa7783bf9777de3ff274e6cbef",
+          "availability": "local"
+        },
+        {
+          "path": "SKILL.md",
+          "sha256": "9184ddf48906eb567b4c28c659ed9c875eaaaeea344d85d0e77ab3a552fb9089",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/package.json",
+          "sha256": "0a82faed70a998b84d990b573cbe7ae70623a2fa7783bf9777de3ff274e6cbef",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/scripts/skill-delivery.mjs",
+          "sha256": "f8e2d5dec41533534c2d5ec2f23985690505a4d9e0a5e5a3307251b253114d7a",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/governance/major-version-update-checklist.md",
+          "sha256": "5fc944b549c4ea60c0e0f0847de8c04471f89316065a53ac0547b8aab83140a9",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/governance/skill-catalog-refresh.md",
+          "sha256": "5f96a7b59c4350c54a21e62199e1dc16d102597743783ed9d2d85866a76327db",
+          "availability": "local"
+        }
+      ]
+    },
+    {
+      "id": "gallery-preview-and-baseline",
+      "purpose": "Current Gallery/Preview source and runtime checks.",
+      "files": [
+        {
+          "path": "apps/component-gallery/runtime-catalog.js",
+          "sha256": null,
+          "availability": "external-full-repository"
+        },
+        {
+          "path": "apps/component-gallery/pattern-baseline.js",
+          "sha256": null,
+          "availability": "external-full-repository"
+        },
+        {
+          "path": "apps/component-gallery/preview.js",
+          "sha256": null,
+          "availability": "external-full-repository"
+        },
+        {
+          "path": "apps/component-gallery/gallery.css",
+          "sha256": null,
+          "availability": "external-full-repository"
+        },
+        {
+          "path": "tools/test-gallery-readiness.mjs",
+          "sha256": null,
+          "availability": "external-full-repository"
+        },
+        {
+          "path": "tools/validate-gallery-dist.mjs",
+          "sha256": null,
+          "availability": "external-full-repository"
+        }
+      ]
+    },
+    {
+      "id": "dynamic-local-components",
+      "purpose": "Selected component modules, unified stylesheet delivery, compact model brief and dynamic HTML workflow.",
+      "files": [
+        {
+          "path": "skill-support/scripts/prepare-page-components.mjs",
+          "sha256": "298ecb501912c7a876679f0c9691cde2e207c23277513c0f28b67d49a6803d54",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/scripts/prepare-page-styles.mjs",
+          "sha256": "0d4164811fb89c75a5684afd3d876d0b84ad86f9c00b1bf3f6c0b8aa5a03101f",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/scripts/scaffold-standalone-project.mjs",
+          "sha256": "4222d1b6a5a976b44a8cb835541fc72cbbb724b30dcbcec38bc408d8a43b8c3b",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/scripts/component-selection.mjs",
+          "sha256": "58d34f202988e07131f97d6d657db7e93a4473548ada964118ee50b5db7ba22a",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/components/local-component-delivery.md",
+          "sha256": "d6634122f3f7fa7bdf24dd42c2590bd45a792cffed3d3ee2278b0fe52dbe0076",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/routes/new-page.md",
+          "sha256": "c54ab6d4f7ffdd7e2477d6532df444e0149df1163b337ab62eab7a3da96e6cc6",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/html-output-rules.md",
+          "sha256": "6fdd31ec6eeb47e9e8fa5e9523923b034f7178f6e89a265862ab31bb6cbb4ed3",
+          "availability": "local"
+        }
+      ]
+    },
+    {
+      "id": "focused-stage-resources",
+      "purpose": "Thematic source fragments, compatibility aggregates, exact resource queries and stage handoff packs.",
+      "files": [
+        {
+          "path": "skill-support/references/resource-workflow.md",
+          "sha256": "86c2fbc75fda97e385b53215a0ff757e9e679fb285d298ab6b4f84b1b259b004",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/source.json",
+          "sha256": "e3dc0a0ef589121a1600ee46d299bf86518ddea86d2db9b8c2cf4a7a3124fb3f",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/source.schema.json",
+          "sha256": "95a194a5e2741ce256d7928e5aea10c4190ace7508b29372e7778939f70ccbc5",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/index/generated/resource-index.json",
+          "sha256": "dc70e5e1c2f4290a7b107624532bc7367c5c83b94a22158338f6dadee51fe806",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/scripts/resource-index-lib.mjs",
+          "sha256": "2c644f57241ad3e517343c5ebd03b362e53c159b1827f5d488ad512f4c7c7341",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/scripts/build-resource-index.mjs",
+          "sha256": "cb04df4f28ca02eb1e0b18507b3e1ff8957718f0d616da202527c377734f1167",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/scripts/stage-context-lib.mjs",
+          "sha256": "422edfb3d01c36cc928c33ab51eef0c2c60dbb0aee671ee5d799828d3481e3e7",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/scripts/query-resources.mjs",
+          "sha256": "b3fed12bb37fcc031ae3fcaf17fdec063eb8339e33a11b451ad97e6b9af95876",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/scripts/test-resource-routing.mjs",
+          "sha256": "2e26b4329f800d40ab4ff9ab9aa1365c95eee358d3c4ab27a8c03a65058c8d48",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/requirements/overview.md",
+          "sha256": "e4e73fb4038bd1758a1392364b4c450d3a61913d6b428e80679b0444c544bf15",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/requirements/contents.md",
+          "sha256": "c3b576fcb91ececae2ef72acf9aceb90a2b21374e87508453a389ae63904887a",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/requirements/intake-principle.md",
+          "sha256": "aa2ca87775186a57a85befdff91bfd0ce30de9c6ec180ec74250541cd40ddb81",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/requirements/three-decision-layers.md",
+          "sha256": "8730c50fad741d7362eb37c14d3cf7f3ff65248f52f9d5bb97990d69534433f5",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/requirements/adaptive-question-policy.md",
+          "sha256": "a95ffc0dc6c1be872764d7b0df986dac8b3dd0d0974c51def71e1649a37134f7",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/requirements/user-input-guidance.md",
+          "sha256": "f8bdede69e84d1ff193290c56e0875763ee7f94f8f03c957bf44364cc86e3198",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/requirements/first-preview-planning.md",
+          "sha256": "f3e25a60ea2dd5bb5011f28cfa2ac9de0cb6a56335f218e695b3a943f4b20583",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/requirements/generated-requirement-contract.md",
+          "sha256": "18f5ef4f9f779790f333d49d9ef84b32d0a9a54f2183e7e12a2517b14cc0e8fd",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/requirements/fixed-harmonyos-defaults-from-native-references.md",
+          "sha256": "47d334bb165ce699e8a0588ea85c88126969bb432ed4ea958510e79bc0ffaf56",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/requirements/anti-patterns.md",
+          "sha256": "47c43da39f70b43050df6ab1e082747a434742b2d4230c9b1c16898911561848",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/layout/overview.md",
+          "sha256": "bd0dfe9745376cee22f20b30bbb0b147cbb410123a81092a8af1a13d6289af38",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/layout/window-foundation.md",
+          "sha256": "94dcf33f5ee855b2ace43df513f256858cdc46606fed825532503356f50ced58",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/layout/application-shell.md",
+          "sha256": "e6758d2324bb1041f338fbc58700f9f72f418a13d9b0f426203106a3198614bd",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/layout/page-spacing.md",
+          "sha256": "06a37f47d67f4ad3201656f67b65a84d2ff5c121ff3551e01acf4f0b9ec54a1b",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/layout/grid.md",
+          "sha256": "f2c6810d2a1d8cd908bfc58cb3a0b5ef291df1a5a3bf86846308c03e53f1a6b2",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/layout/resize-rules.md",
+          "sha256": "6bf6c2b0951be0d093780d4d65da6f1fdf37f913a573fe29e3a57e8423256aa1",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/layout/pixso-mapping.md",
+          "sha256": "b510ec9b358f955853c68c39846db0179cd94329f4dded5e128beea8dfb439d4",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/layout/html-mapping.md",
+          "sha256": "46990409a2284ec1761d20035b244ede4823a7d714c609a103b84abd531bd06e",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/layout/decisions-to-confirm.md",
+          "sha256": "445d5d240d7c468f2c585c995e2490f07c8bcb2337cdc29bc237cdac1493af25",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/patterns/overview.md",
+          "sha256": "56743e04cbbd643ca6b4ed1a9cbb31b39521b0f92a8388166a11ad52f6e8f341",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/patterns/shared-window-anatomy.md",
+          "sha256": "59400e77c989230a39fe3646e8598c22687d20f4dcde25bcce79d06595d87ecb",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/patterns/global-title-layer.md",
+          "sha256": "09f5c108e9a9aa9b8a3ceedd2d43e78b3607e379d7d3d62f355118eb4336f03d",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/patterns/left-brand-anchor.md",
+          "sha256": "e76bc73c51100892f30a12e38336072a3373ff63880b586fa74617fc67b10598",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/patterns/primary-shell-global-primary-slot.md",
+          "sha256": "0c6ba4f3b70e9279f3bdee20fefc9ebf25bd8ff634faf35e92a3fb80d6d79b41",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/patterns/context-area.md",
+          "sha256": "dd427b2d01d2f55c72e086d982e8d184d8594c7871c06eb4c1189a11c95a0e01",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/patterns/right-action-and-window-area.md",
+          "sha256": "69f9a908567edf8ad92a70b8413d7869056c8e692136f4f5e530f17316536592",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/patterns/final-pane-leading-slot.md",
+          "sha256": "b8c90b51eb999828930d01ee3b4d8ee81bab0681f58ed23c4b087dcceec2f5e7",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/patterns/approved-shell-patterns.md",
+          "sha256": "9fde0c93f37ca16e41650af7251ef8e29f63208e69d7ac43ab30bb25b0ab755b",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/patterns/reusable-pattern-primary-navigation-shell.md",
+          "sha256": "f340794b6791e8564f0d34ef5677a8512457e3c3b903aba28e5ac766222a2602",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/patterns/pattern-a-two-pane-navigation-content.md",
+          "sha256": "4d51cc44ef20055cca37e5bb06b25396712f2ec773bc990b839bdbd304d7cb97",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/patterns/reusable-pattern-secondary-page-hierarchy.md",
+          "sha256": "c0f0b890cd1da4ebc3dfb369bcdb0370d8c16463a2fa70067f6599391bffa46d",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/patterns/pattern-b-three-pane-navigation-list-detail.md",
+          "sha256": "a7713b949ab6da8ae59011522edbbd85efcbc24beff16eb9ddf1918d427ca152",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/patterns/pattern-c-navigation-tool-workspace.md",
+          "sha256": "387db891b95ea633995d10534ca6d085b5b1d42a9aff0718b057b48d34c61638",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/patterns/pattern-d-optional-inspector.md",
+          "sha256": "b87ef7f17cbbaa2b1007b170523ae3c8d22649869ef1c18f06c4344d02079d82",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/patterns/pane-behavior.md",
+          "sha256": "3e1dbaacb4434e07b5412b28b532c29664a8457489766f14e5bfb3a612e705fa",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/patterns/primary-navigation.md",
+          "sha256": "8eaab4cc83f36e4eca0691fce9ba92ea3a1c276ec24f9e7fbcef7fedea283e15",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/patterns/secondary-pane.md",
+          "sha256": "583baea08ec4f8e1d4054f01b02d4cd924248e456dcfb4a6f1d48317a46c3660",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/patterns/main-content.md",
+          "sha256": "81e922005965a2ef4fa9a8fe0b35ffe8558a517c42af88860aaf01687d2278f6",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/patterns/inspector.md",
+          "sha256": "ab7da72e1d9e9aaa55df50639d41bb71f5cd673acb60d4c2a0d94c184c622584",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/patterns/surface-and-divider-behavior.md",
+          "sha256": "4f709a324f3c7b67e2167caed4f5fb54df8e9166be42319ca43c3f8f86c633b6",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/patterns/scrolling.md",
+          "sha256": "f7aaad5a7c6f0fca1b0364c0379af7f59cfb70246f414176a1ce59efc0bb8576",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/patterns/system-ui-boundary.md",
+          "sha256": "fab65389807eeb7581d32a82c1c8c7fcc42907e29cded8063bec1b7eb8383ccf",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/patterns/shell-selection-rule.md",
+          "sha256": "c1b4f8296828bad8e7600ca8a60d6bfa5e45faa9ff9fb777460b5d7f07b3a73f",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/interaction/overview.md",
+          "sha256": "8b67a7b57a0e9b5974d6df2f005deaa829901cea7197fe16f0089150bb7f63e4",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/interaction/scope-and-source-levels.md",
+          "sha256": "39fb917a993c4a957008c0d5804ed3ee59fc93e7feffe5772cf2a86a1a13d3f2",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/interaction/official-platform-principles.md",
+          "sha256": "d8e2ad775193b581e2617f3a2f7c89aabb11210e9524cadcfce5f41c6ee7057f",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/interaction/pointer-and-mouse.md",
+          "sha256": "517a413a6913351b788790d1044817efaaa6cc8c38698d3c18e9852f79d66ba7",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/interaction/keyboard-and-focus.md",
+          "sha256": "fec07785e9ccae09b6015f2ff1dff04726ed4a1d1a8cb3801e0b30a383b3ae9f",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/interaction/common-shortcuts.md",
+          "sha256": "0101486fdd764df412233a5cc9a379bb9e43bb549697c289be25a13d90e82f01",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/interaction/navigation-and-selection.md",
+          "sha256": "bae4e29b471353fd78970aec1d298c4aa84adc42cd8c11eabc9a4f77f77e0eb6",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/interaction/window-and-resize-behavior.md",
+          "sha256": "56c9b7edb0e0c50e134567c135a85ab2e001565a8e3dd2a7f973dd9120fd35c8",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/interaction/overlay-selection.md",
+          "sha256": "e658301098e0cd2b8da93b9988c8096f8c72bd6803be98d73316c04d24c47acd",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/interaction/forms-and-validation.md",
+          "sha256": "9a7862aa522545917138323977dc09d537bffce8ec9635fe0040bf11a3ac4a77",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/interaction/state-feedback.md",
+          "sha256": "fb15aef974bd3b607da9ce8fd7aaecc9ae4e6cd13a7ac3aabd54e65fb9eabd84",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/interaction/undo-and-destructive-actions.md",
+          "sha256": "e2e68306a240bd15ac3d096af374ce53041a6ae09843b93c0ceb966d23731668",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/interaction/motion-sound-and-accessibility.md",
+          "sha256": "957bf0966d4a70dcb5a3727891f9277574f0738514c9463997fb2552726104b5",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/interaction/interactive-frontend-demonstration.md",
+          "sha256": "99db17d083773f4cb7f9792ed76bfad96c81e9bb9258c9bed1e2c8c667fa3536",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/interaction/per-interaction-record.md",
+          "sha256": "1b11d2b717baa8146b873381f590e18ad8e911516a25fc0e22fde3f1cf144b16",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/interaction/interaction-qa-gate.md",
+          "sha256": "87b6d259d7ec4fc54c4ab1382cf35a4585011dd0de7eb7283ff761926f7e5955",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/composition/overview.md",
+          "sha256": "93766a787d0619121f5d6225e54837d2479a14cae6d51102cd2fa7f30c45d41b",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/composition/content-recipes-decide-before-binding.md",
+          "sha256": "f5f0a42d7f717a5d862785f4109307b78f55ff66cce2bb67b2d5162ff0d9d342",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/composition/style-and-behavior-plans.md",
+          "sha256": "5ca61f1b3b36e00cacf1051177df68dac351d2d2938013fc0cea29bfc3037a6f",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/composition/executable-html-business-composites.md",
+          "sha256": "104c5dee34f6a3d593ece1491d60ce0c29e7c399b1055dba297631a50d8a5705",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/composition/plans.md",
+          "sha256": "b97a58eaa9b71a44364d319dd8f350b47945ccc695fd605774242e2f17dd9b18",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/composition/pattern-owned-navigation-shells.md",
+          "sha256": "434f226cf4dec948075d0834cb93d5276d4a780506f2f5cc7c9750fc463d85fa",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/composition/stroke-ownership.md",
+          "sha256": "a65e185a40b380a8dbc89cb55c838348348a38771e414a959941a19fdd9f9bce",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/blueprint/overview.md",
+          "sha256": "a7c7118929af077934baa555f137ec5c59560deca157b0b7073dfc10ec04ab08",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/blueprint/required-decisions.md",
+          "sha256": "51fd7700569cbc52fc6eb4db5b24d4c106c999aac319c5c5dfd872291592834c",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/blueprint/design-before-assembly.md",
+          "sha256": "e74b2277d6a11bfd0217a8e23fabfacad0a2dee408afb8d407e8faf1a24d03b0",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/blueprint/pattern-b-assembly-decisions.md",
+          "sha256": "f179d94f1258d0197b75bf14635a895e3272087046ceae05d7d59472f438d48e",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/blueprint/minimal-shape.md",
+          "sha256": "af53adeab4659c56e379ca0e36a53f6bdd0c53da5f98ce8a673c6d18cf0f7c30",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/design/overview.md",
+          "sha256": "f06673b40d05dcb635d436f80598f57c0d6e559b3ba43f66223aa5b5b876bceb",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/design/start-with-the-task-not-the-inventory.md",
+          "sha256": "bcff80a80b2d1b48c5dba715cbb4a54bbffa3f63a9d0b72bf1c7de9930857d4e",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/design/design-at-the-real-content-width.md",
+          "sha256": "ef6298c89575869cba19954c5464014f368962e1c87599ca420d7a458b6c84d0",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/design/visual-alignment-and-grouping.md",
+          "sha256": "d0cb864e105e189ea2e81baf09eac629709e3dfc2e54f49f2907c64b446a3833",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/design/reuse-controls-design-missing-business-composites.md",
+          "sha256": "f890c44d5c08545c4716a8e4a7e161b99a41c2b7a9ff35c5524acdb228328943",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/design/one-deliberate-first-preview.md",
+          "sha256": "93f1861b34a94e26a72c0bbdfc48940bb708f31ae291ab7f3514739042237882",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/supplement/overview.md",
+          "sha256": "302d6872026c3c13e482ed74c0ce991d3a69e1cd79fda98a994bf4227bca7301",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/supplement/universal-contract.md",
+          "sha256": "c852568d2ca9984d855fe2ad73e6c50a2455e58e484c511157f947a251d04303",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/supplement/navigation-and-disclosure.md",
+          "sha256": "a87fc88587c603899ea908d9181cd853562e4021eff465b7a1d5349aeb779ec4",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/supplement/overlays-and-commands.md",
+          "sha256": "a3c991321be271525020ed810aa4bcf1155ddbbb425f0609973191c07ef83fb4",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/supplement/form-composition.md",
+          "sha256": "d1c0b952624ceddd02f33ff5d8b741e7871dce69812aa4ef5e818dca76f6d7a0",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/supplement/loading-data-and-dates.md",
+          "sha256": "2b1f797fe6db5469f7690996f9cd09a9c6b71d1e26240cbdd61ba5c668b47be2",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/supplement/specialized-content-and-layout.md",
+          "sha256": "af2fa4e89253cca291f1568734a6f963c2f33923ba2482b9291923d21653c410",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/titlebar/overview.md",
+          "sha256": "2d324fe2d0112903a5cbb53ccefcc3e02bfb695b110c86b58b868f17a39477f1",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/titlebar/scenarios.md",
+          "sha256": "d3eb1ad6896ddd3c21cc0467c417245d3a80c54f53030ea5e9b19cadcd231e25",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/titlebar/title-typography.md",
+          "sha256": "dcc7276e986c8c54ab761b54a80563af783087ab12cc88f00fd84401bece210a",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/titlebar/trailing-inset.md",
+          "sha256": "83aa2307bc23c0c489eadd62e797ab16b95eb42ac3f2871e93fc6f7823716400",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/titlebar/executable-html-slots.md",
+          "sha256": "10207d436833c97d829fee01f8a86097afd0d9eafbc3607a591410a490991993",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/titlebar/generated-titlebar-scene.md",
+          "sha256": "ed93a1dc74baf3387f85cb53986faf8b87072e6811dc2cadbce82fdf6858a999",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/delivery/overview.md",
+          "sha256": "c95b33d3505aab56a76565b3763edf51db133f53fa5d364656a14fb84e216b3c",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/delivery/reading.md",
+          "sha256": "19adfa0ec3ea6e28bbb693cb34d82caccf700339e73ba861b6d3db0b1450f876",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/delivery/project-output.md",
+          "sha256": "129517549490e52400f6605e7f7780e9994ee2c09ccdd4bbf28d36343e9408bd",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/delivery/prepare.md",
+          "sha256": "d5c9ae8f8444e9cacf1e804e872ffdd95521d61717110ac79304b675564b84fd",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/delivery/styles.md",
+          "sha256": "d9d47511e46701579a3ef039745b39f0d223b08d281a55a10b8b87feabc38af2",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/delivery/calling.md",
+          "sha256": "09ebc38b011fab8341062b2bd8bdb1085a80817040636d5e5337cfae0840fd78",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/delivery/pixso.md",
+          "sha256": "743ea017d66ddbd69400b6f570a907cb5144aa567ce6fdb30095e30b445875cf",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/pixso-pipeline/overview.md",
+          "sha256": "4801ade09f8378776454cdc5ffd7f6ef76d91688ad5d34e1753aecfc04d10a90",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/pixso-pipeline/normal-fast-path-and-diagnostic-boundary.md",
+          "sha256": "6980beb934aab1983898b5b8ef6660bbe7b0cb58be40bbd3f3a97c2a3ba7be8d",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/pixso-pipeline/start-an-isolated-run.md",
+          "sha256": "f900f042f9033deeeec31ab30e405fe4e59ac1c17b0543791e5dc41e9f14add8",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/pixso-pipeline/capture-browser-computed-evidence.md",
+          "sha256": "8f6236939d9bd6f91726d6528d73dc53b77eb43558a8276690992ce4a0901c20",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/pixso-pipeline/keep-two-evidence-layers-and-one-pixso-output.md",
+          "sha256": "0a37f4d3aa87c2a903f4c1c7d34dfc973b5cf4178ab661ed9a5e84bc2ef0c53f",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/pixso-pipeline/compile-dom-visual-ir-only-from-the-current-run.md",
+          "sha256": "1b7e1e07c79232a60b6a822ec580f619bb1a2366daad20b5832729cb24a1be42",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/pixso-pipeline/resolve-components-without-changing-geometry.md",
+          "sha256": "6aa03082e1e4062ca329234854bd9d86a4f14add256eb454d495b1253ce51170",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/pixso-pipeline/execute-transactionally.md",
+          "sha256": "13590f52fb79d601fa42b3df8396c5c857c8b5fd00406075812ea97519c324e7",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/pixso-pipeline/acceptance-gates.md",
+          "sha256": "ae3b60a77da73f1fc3fa699696a640f374cf87a8bb7176912e6d50488a190f75",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/pixso-mcp/overview.md",
+          "sha256": "e938293b2fc2ab0d925d78e894708b2df82e7c5a9a0b45f064bbf45b288c6ccc",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/pixso-mcp/connection.md",
+          "sha256": "432ddc17f57b6f84599a0f21de1974a58f7291d08785bfe39a045489cc51a19f",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/pixso-mcp/target-page-and-path-preflight-failure-derived.md",
+          "sha256": "a9b47b087f9c158a708daa4091c595c431a7cdec2b51c470ad80ce4e5c99aec7",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/pixso-mcp/creation-sequence.md",
+          "sha256": "5cdc818b5da3bb4f91dd247e2984357e7d7ceff7430e77e3d20f25c6b44d5668",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/pixso-mcp/registered-reuse-performance-and-icon-gates.md",
+          "sha256": "0dd851a8256167fc1830d8c8cd5f06de3a4086472c1e90414c1cacf4e49534ac",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/pixso-mcp/page-binding-bridge-token.md",
+          "sha256": "426409e09fc344fe674bb319756477b548f528a7d78167ffdb10818225329666",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/pixso-mcp/token-gate.md",
+          "sha256": "2b6b2003b9a7ca7e7951e2623cf6545b4ba2f13926de1c569eb1b3cf18e56a6d",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/pixso-mcp/binding-audit.md",
+          "sha256": "ff1b823e381e7b0095139a45516d587ef11cb27aa335cb26ff3e2ca754079a21",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/pixso-mcp/existing-design-and-html-handoff.md",
+          "sha256": "142e29e0743793fe98e2842f771ffd9fcd7f71d98ea9ced47e91713b5009636d",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/pixso-mcp/failure-handling.md",
+          "sha256": "332f25be8eab1a8854c5abbac6ef09d5ed9e69284af794e6500fc4af6efade12",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/pixso-mcp/deliverable-reference.md",
+          "sha256": "4717c910aa984a20d6cb1ca08beffd20e6a54f7ea1c6e71edfdd08dd80518e19",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/pixso-scene/overview.md",
+          "sha256": "7f928718fb0dea04d121faa6706984258527649d99fc5a7a69b0fe414894ab99",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/pixso-scene/html-computed-visual-state.md",
+          "sha256": "61fa183c67134b8aa513f83b3ac47837e68dc8081eb0b4a9ca44097c5f51d8aa",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/pixso-scene/dom-visual-ir.md",
+          "sha256": "031bd5d40fc9a74ac68fa2697b6b50615ed9b21267048f71d49b3a5356cd670f",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/pixso-scene/scene.md",
+          "sha256": "d654910301e246321e1775b8e0961e3c9ee1461fe46bb103f603045806f81ce7",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/pixso-scene/surface.md",
+          "sha256": "64412a20785af31bb80b47fe57dc290ee268a68984d6c4a8397e442233b6126b",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/pixso-scene/divider-ownership.md",
+          "sha256": "7fbd37ee555a3e8bed53976a3eb23259dd5c5f324da819a66032bff718977275",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/pixso-scene/section-6.md",
+          "sha256": "e6193653d9ea76941efbaa4f2da6cf116ba516689de07a8fe8a3b8bc0247ba1d",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/pixso-scene/section-7.md",
+          "sha256": "35e27832c6cda539b96015f58fb9f363da406f0039ec8c7b2ffb01862ba72612",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/pixso-scene/section-8.md",
+          "sha256": "d0a2e2f3aa6ccd0e4043e20f80a62f081f6f563e015dd65c94b0c0fdd95472bd",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/pixso-scene/mcp.md",
+          "sha256": "ce1c9d1faa0eca2d144cc51793530cd5c8e6c848b9e578cb4f320b286b52f222",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/pixso-scene/mcp-10.md",
+          "sha256": "cf7da034f8232a893208cf4de2c3c17d084b917c73e7cde636ea89ade37e418f",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/pixso-scene/section-11.md",
+          "sha256": "8a29b1979f8fae3d1b1be133daed681a82d0a6c066e74e390660439b5108ed34",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/pixso-detail/overview.md",
+          "sha256": "3ab05a1ee4ec6d3690530a143fb5618b258bcf4ba9f56ae0b64a206955b1a247",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/pixso-detail/html-text-sizing-and-truncation.md",
+          "sha256": "5555e808ac97175d5aec62a1ed219ad41baaf89ee048688ffd8d52c74abb4d4c",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/pixso-detail/icon-sizing-stroke-and-hot-zone-contract.md",
+          "sha256": "cad15341b0155f7eda636f500d90b8b75af1cc0bdd6be61a20287e8a007c0d4d",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/pixso-detail/cross-source-mapping-registry.md",
+          "sha256": "4d8d01f31847edff581db89056efd1a221a0df96092563ff52ad0e79837e9c86",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/pixso-detail/typography-mapping-policy.md",
+          "sha256": "a4c90acee38c5f9cfb2227a8b5630d1bc2cd6e1939491fe06514536ed1762aa0",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/pixso-detail/pixso-component-facts-sync.md",
+          "sha256": "3242b68865bc1ebbdb2c678886a858ea78248da417a125e4bfdf5721452378bc",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/core/delivery.md",
+          "sha256": "27fd274f7f8ed89a14ca90a48bb5c4887127674cee6dfc6eaa5bde57a0a8d218",
+          "availability": "local"
+        }
+      ]
+    }
+  ],
+  "digest": "5f96a7b59c4350c54a21e62199e1dc16d102597743783ed9d2d85866a76327db"
+}

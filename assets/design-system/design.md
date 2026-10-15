@@ -73,7 +73,7 @@ Fill or adjust the priority for this project:
 4. global.css / CSS variables:
 5. Existing page/component code:
 6. User description:
-7. shadcn preset/component defaults:
+7. Registered HTML component defaults:
 ```
 
 ### Existing Sources
@@ -83,13 +83,11 @@ Fill or adjust the priority for this project:
 - Existing codebase:
 - Existing global CSS:
 - Tailwind config:
-- Component library: shadcn/ui
-- shadcn preset: b7ClMfrGK
-- New Next.js init: `npx shadcn@latest init --preset b7ClMfrGK --template next`
+- Component library: `@text-to-ui/components-html`
 - Brand guide:
 - Reference pages:
 
-shadcn is the default component source for new reusable Next.js projects. Its preset defaults are implementation assets, not design truth; map this document's tokens over the generated theme and component variants.
+Use the registered HTML component contracts and canonical Tokens for implementation. Component defaults do not override this document's approved design decisions.
 
 ## 3. Assets
 
@@ -439,7 +437,7 @@ Use `typography-style-map.json` as the single mapping table. New visible UI is l
 
 - HTML always uses `--font-sans`, which is a browser fallback stack.
 - Pixso uses only `font/family/sans = HarmonyOS Sans` and the 13 formal Text Styles. A fallback family never becomes a separate Pixso Text Style.
-- `body-s` and `caption-m` are formal Pixso Text Style counterparts for 12px and 10px supporting text.
+- `body-s` and `caption-m` are formal Pixso Text Style counterparts. The old `caption-l` token is deprecated: migrate 12px supporting text to `body-s` and 10px supporting text to `caption-m`; do not create `Typography/Caption_L`.
 - `Typography/Component/*` are imported native-component dependencies, not public Text to UI styles. Do not select them for new page content; audit component references before any deletion. The unused legacy `Body_YaHei14` and `Body_YaHei16` styles were removed from Pixso.
 
 ### HTML ↔ Pixso Effect Mapping
@@ -1247,7 +1245,7 @@ Keep the two sibling hit regions independent: scope selector on the left; search
 
 Form Field / 表单字段 stacks its title above its control. The title uses `body-m` (14px / 20px / Regular 400), `--color-text`, and a tokenized `--gap-field-label` (8px) before the control. Adjacent fields use `--gap-form-field` (16px). In a multi-column form grid, the grid owns both axes with that same 16px row and column gap: all same-row fields start on the same horizontal baseline, and sibling vertical margins are reset to zero. Textarea and form Select inherit the same white/default and gray/subtle surface state mappings as Input. Default and Hover have no visible border on white surfaces. Focus retains the approved background with no focus border. Error uses a 1px `--color-input-error-border`; Disabled applies `--state-disabled-opacity` (40%) once to the complete control.
 
-Whenever white/default and gray/subtle surface examples are presented together, keep their component matrix semantically identical: the same Input, Search, Textarea, form Select, Input/Field Error, and Disabled examples in the same order. Only the surface-specific fill and hover treatment may differ. Both contexts must include an operable form Select, visible Error examples attached to Input/Field controls only, and Disabled Input, Search, and Select examples. Search never has an Error state. At supported desktop widths, present the two surface contexts as equal left/right columns; do not collapse them merely because an embedded framework preview is narrower than the page canvas. A one-column fallback is reserved for genuinely narrow widths below the two-column minimum.
+Whenever white/default and gray/subtle surface examples are presented together, keep their component matrix semantically identical: the same Input, Search, Textarea, form Select, Input/Field Error, and Disabled examples in the same order. Only the surface-specific fill and hover treatment may differ. Both contexts must include an operable form Select, visible Error examples attached to Input/Field controls only, and Disabled Input, Search, and Select examples. Search never has an Error state. At supported desktop widths, present the two surface contexts as equal left/right columns; do not collapse them merely because an embedded HTML component preview is narrower than the page canvas. A one-column fallback is reserved for genuinely narrow widths below the two-column minimum.
 
 Form Select presents a field value, uses `role="combobox"`, controls a `role="listbox"`, and exposes `aria-expanded`, `aria-controls`, and `aria-activedescendant` when open. Pointer click, `Enter`, or `Space` opens it; Arrow keys, Home, and End move the active option; `Enter` or `Space` commits the active option; `Escape` closes without changing the value and restores focus to the trigger. A pointer or focus move outside the Select closes the listbox without committing a draft value.
 
@@ -1534,19 +1532,9 @@ Components -> @layer components
 }
 ```
 
-### shadcn Token Map
+### HTML Token Use
 
-Use shadcn/ui preset `b7ClMfrGK` for new reusable Next.js projects. Load project tokens after the preset and use `tokens.shadcn-map.css` as the adapter.
-
-Mapping artifacts:
-
-```text
-tokens.shadcn-map.css   Runtime CSS adapter
-tokens.shadcn-map.json  Machine-readable mapping state
-shadcn-token-map.md     Human review table and missing decisions
-```
-
-Project tokens remain authoritative. `secondary`, `accent`, sidebar accent, and dedicated input-state semantics are approved and mapped. `accent-foreground` remains inherited from the preset, while optional feedback foreground aliases remain pending until explicitly approved.
+HTML pages use the canonical Token CSS and the registered component styles. Resolve semantic color, spacing, typography, and state roles through the bundled Token package; document any missing semantic role before adding a page-specific value.
 
 ## 8. Page Templates
 

@@ -1,0 +1,114 @@
+# 新建页面任务流程：动态页面引用独立组件
+
+适用于本 Skill 生成的所有 HTML 页面，包括第一版预览。页面、组件和运行样式分别存放，其他模型只需设计页面参数。
+
+## 固定文件职责
+
+| 文件 | 职责 |
+| --- | --- |
+| index.html | 空的 #app 挂载点和外部模块入口 |
+| components/<id>/index.js | 选中组件的独立调用入口 |
+| components/<id>/contract.json | 此组件的原始契约 |
+| components/index.js | 本页可调用的组件注册表 |
+| components/_runtime/ | 公共 HTML 工厂、Pattern、CSS 与 Token 依赖 |
+| generated-page.js | 按 Pattern 动态组合并调用本地组件 |
+| generated-entry.js | 挂载、事件绑定和渲染就绪信号 |
+| main.js | 唯一导入 styles/index.css，再调用挂载模块 |
+| styles/index.css | 脚本生成的样式总入口，按顺序引用标准样式与页面 CSS |
+| styles/base.css | 脚本生成的视口基础样式 |
+| styles/style-manifest.json | 脚本记录样式依赖、顺序和来源摘要 |
+| styles/page-composition.css | 使用 Token 的业务分组布局 |
+
+把整页控件内联进 HTML、重写现有组件 DOM 或复制组件样式，均不满足交付条件。
+
+## 1. 先走三层路由
+
+先选择 new-page 操作路由，再根据用户业务任务选择 Task route，最后解析该任务的 Layout Pattern。任务多义时明确候选 ID，不按组件外观猜布局。
+
+RULES_ROOT 是本精简版 Skill 的绝对路径，PROJECT_DIR 是页面项目目录。HTML 生成可直接使用本精简版目录。
+
+~~~bash
+node "<RULES_ROOT>/scripts/resolve-workflow-route.mjs" \
+  --route new-page --repo "<RULES_ROOT>" \
+  --receipt-out "<PROJECT_DIR>/.text-to-ui/route-read-receipt.json"
+
+node "<RULES_ROOT>/scripts/resolve-context.mjs" \
+  --task "<用户的业务任务>" --workflow-route new-page \
+  --framework html --mode fast-preview --discover \
+  --repo "<RULES_ROOT>" --skill-root "<RULES_ROOT>" \
+  --out "<PROJECT_DIR>/.text-to-ui/context-discovery.json" \
+  --brief-out "<PROJECT_DIR>/.text-to-ui/page-brief.json"
+~~~
+
+## 2. 按阶段领取短任务包
+
+page-brief.json v2 只含路由、窗格/插槽、组件候选和下一步查询，不再预装组件 API 或全部 Token。完整 context-discovery.json 继续由脚本校验。先读取设计包：
+
+~~~bash
+node "<RULES_ROOT>/scripts/query-resources.mjs" \
+  --stage design --context "<PROJECT_DIR>/.text-to-ui/context-discovery.json" \
+  --view api --out-dir "<PROJECT_DIR>/.text-to-ui/packs/design"
+~~~
+
+读取包内 card 与 resources、pattern，完成 Blueprint；再用 discovery 包定位组件。先查询 bindings（不传组件）领取一次共用组合规范，然后按组件查询 API，避免重复读取整页组合规则。例如查询保存按钮：
+
+~~~bash
+node "<RULES_ROOT>/scripts/query-resources.mjs" \
+  --stage bindings --context "<PROJECT_DIR>/.text-to-ui/context-discovery.json" \
+  --component button --semantic-context page-primary-action \
+  --view api --out-dir "<PROJECT_DIR>/.text-to-ui/packs/button"
+~~~
+
+先形成配方和绑定，再可用 --bindings "<PROJECT_DIR>/page-bindings.json" 一次校对本页实际选择；不会预装路由默认所有组件。需要可选组件时，先在 resolve-context 中加 --capabilities <精确ID> 重新解析。styling 阶段按需传 --roles space/5,color/text；validation 只带当前模式的检查；Pixso 按阶段查询。
+
+每次只读当前 task-pack.json 或 task-pack.md 之一。read-plan.json 用于追溯，聚合手册和实现源码无需进入常规页面上下文。使用没有本地工具的模型时，把当前包、任务与已确认的页面决策交给它，收回设计输入后由有工具的环境执行脚本。详见 references/resource-workflow.md。
+
+## 3. 模型写页面输入
+
+| 文件 | 必须记录 |
+| --- | --- |
+| page-blueprint.json | 用户任务、分组、实体、状态、交互、成功条件和 Pattern |
+| page-content-recipes.json | 每个 Blueprint 分组如何通过组件组合实现 |
+| page-bindings.json | logicalName、支持的 options/slots、semanticContext、behaviorPlan、stylePlan、composition |
+| styles/page-composition.css | Token 布局和业务容器样式 |
+
+只使用登记的组件能力。能力缺失时定位契约并通过维护流程补齐共享组件。业务组合模块可通过 renderComponent 调用组件。
+
+## 4. 脚本先准备组件与样式
+
+一键入口自动执行 scripts/prepare-page-components.mjs：按实际绑定创建独立组件入口，复制依赖，记录来源摘要，阻止未登记组件和不支持的参数。分阶段准备的命令见 references/components/local-component-delivery.md。
+
+随后 scripts/prepare-page-styles.mjs 生成 styles/index.css、base.css 和样式清单，并接入 main.js。模型只写 styles/page-composition.css：不写 @import，不读写标准组件 CSS，不覆盖 Pattern 几何。标准 CSS 保留原始依赖并由统一入口加载，详见 references/components/local-component-delivery.md。
+
+components/ 与上述样式管理文件由脚本维护。公共工厂当前仍有集中注册代码，共享运行时只复制一次，不通过文本截取拆分工厂。
+
+## 5. 页面引用组件并动态渲染
+
+~~~bash
+node "<RULES_ROOT>/scripts/generate-compliant-page.mjs" \
+  --project "<PROJECT_DIR>" --repo "<RULES_ROOT>" --skill-root "<RULES_ROOT>" \
+  --framework html --task "<同一业务任务>" --route new-page --mode fast-preview \
+  --blueprint "<PROJECT_DIR>/page-blueprint.json" \
+  --content-recipes "<PROJECT_DIR>/page-content-recipes.json" \
+  --bindings "<PROJECT_DIR>/page-bindings.json" \
+  --page-css "<PROJECT_DIR>/styles/page-composition.css"
+~~~
+
+此入口解析已确认的 Context Packet，验证 Layout Contract、Blueprint、配方、绑定、Token 和组件来源，然后准备组件与统一样式入口，再生成页面模块。页面通过 components/index.js 调用真实 HTML 工厂。失败时修正对应输入并重新生成。
+
+## 6. 查看真实页面
+
+在项目安装可用的 Vite 依赖，构建并打开 HTTP 预览。等待 document.querySelector("#app").__tuiReady，确认 data-tui-ready="ready"，再检查实际布局、主要交互和组件证据。
+
+完成条件：
+1. index.html 为宿主；页面、组件和样式分别存放，main.js 统一加载 CSS。
+2. 组件来自当前路由，参数符合契约，来源摘要有效。
+3. Pattern 管理窗格、标题、插槽和滚动；业务 CSS 使用 Token。
+4. 组件实际渲染，主要交互可操作。
+5. 明确报告生成、构建、浏览器和视觉检查各自的完成状态。
+
+## 7. 按需导入 Pixso
+
+用户需要 Pixso 时切换到 existing-html-to-pixso 路由。使用刚才预览的同一页面，等待动态渲染、字体和图片就绪，再固定视口与状态，捕获、编译、发布、回读和对比。先领取 pixso --phase readiness 任务包；后续只领取当前捕获/编译/发布/回读阶段的资料。保留组件清单、styles/style-manifest.json、component-usage.json 和生成收据，遵守 references/routes/existing-html-to-pixso.md。
+
+不要根据描述在 Pixso 中另画一版，不要把构建成功当作导入或视觉一致性通过。

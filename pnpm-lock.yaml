@@ -1,0 +1,46 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      lucide:
+        specifier: 1.24.0
+        version: 1.24.0
+
+  packages/component-contracts: {}
+
+  packages/component-styles:
+    dependencies:
+      '@text-to-ui/tokens':
+        specifier: workspace:*
+        version: link:../tokens
+
+  packages/components-html:
+    dependencies:
+      '@text-to-ui/component-contracts':
+        specifier: workspace:*
+        version: link:../component-contracts
+      '@text-to-ui/component-styles':
+        specifier: workspace:*
+        version: link:../component-styles
+      '@text-to-ui/tokens':
+        specifier: workspace:*
+        version: link:../tokens
+
+  packages/pattern-runtime: {}
+
+  packages/tokens: {}
+
+packages:
+
+  lucide@1.24.0:
+    resolution: {integrity: sha512-oMAaeuNDc5VCnBb3IjwKYGRT56tqanUm1fyDFT5Tl8hWSZND59gztgjvXje08jKLPVAq0gHJcwZUE8GCQxzBeg==}
+
+snapshots:
+
+  lucide@1.24.0: {}
