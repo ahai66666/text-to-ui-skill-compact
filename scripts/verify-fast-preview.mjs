@@ -3,9 +3,19 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import crypto from 'node:crypto';
+import { fileURLToPath } from 'node:url';
 import { parseArgs, readJson } from './navigation-index-lib.mjs';
 
 const args = parseArgs(process.argv.slice(2));
+const dynamicProject = path.resolve(args.project || args["project-root"] || path.dirname(path.resolve(args.artifact || ".")));
+if (fs.existsSync(path.join(dynamicProject,"styles/style-manifest.json"))) {
+  const skillRoot = path.resolve(args["skill-root"] || fileURLToPath(new URL("..",import.meta.url)));
+  const forwarded = ["--project",dynamicProject,"--skill-root",skillRoot,"--mode","fast-preview","--require-runtime"];
+  if (args["framework-manifest"]) forwarded.push("--manifest",path.resolve(args["framework-manifest"]));
+  if (args["runtime-evidence"]) forwarded.push("--runtime-evidence",path.resolve(args["runtime-evidence"]));
+  const result = spawnSync(process.execPath,[path.join(skillRoot,"scripts/validate-page-project.mjs"),...forwarded],{stdio:"inherit"});
+  process.exit(result.status || (result.error ? 1 : 0));
+}
 const requiredArgs = ['context', 'layout-contract', 'page-spec', 'component-usage', 'framework-manifest', 'artifact'];
 for (const name of requiredArgs) if (!args[name]) throw new Error(`Missing --${name}`);
 for (const name of requiredArgs) {

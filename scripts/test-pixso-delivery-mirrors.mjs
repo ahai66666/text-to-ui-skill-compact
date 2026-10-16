@@ -8,7 +8,7 @@ import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-const repository = path.resolve(fileURLToPath(new URL("../..", import.meta.url)));
+const repository = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const source = path.join(repository, "skill-support");
 const mirrors = [
   { name: "repository skill mirror", root: path.join(repository, "skill") },

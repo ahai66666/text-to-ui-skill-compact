@@ -33,3 +33,5 @@ hosts for bound components. The generated HTML entry dispatches a
 `text-to-ui:behavior` event to the page controller, so page-owned behavior is
 connected through the declared plan rather than invented ad hoc in page code.
 
+
+- Reuse first: query shared and existing project components. Existing component DOM/CSS is referenced unchanged through supported options/slots. Only missing business capability permits a page-composite; declare an independent pageModules source and stylesheet. Each standard control inside it still uses renderComponent.

@@ -1,3 +1,5 @@
+## 2. Global Title Layer
+
 ### Left Brand Anchor
 
 - Place application icon and application name at the top-left.

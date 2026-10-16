@@ -44,20 +44,17 @@
       "parts": [
         "patterns.overview",
         "patterns.shared-window-anatomy",
-        "patterns.global-title-layer",
         "patterns.left-brand-anchor",
         "patterns.primary-shell-global-primary-slot",
         "patterns.context-area",
         "patterns.right-action-and-window-area",
         "patterns.final-pane-leading-slot",
-        "patterns.approved-shell-patterns",
         "patterns.reusable-pattern-primary-navigation-shell",
         "patterns.pattern-a-two-pane-navigation-content",
         "patterns.reusable-pattern-secondary-page-hierarchy",
         "patterns.pattern-b-three-pane-navigation-list-detail",
         "patterns.pattern-c-navigation-tool-workspace",
         "patterns.pattern-d-optional-inspector",
-        "patterns.pane-behavior",
         "patterns.primary-navigation",
         "patterns.secondary-pane",
         "patterns.main-content",
@@ -79,6 +76,8 @@
         "interaction.official-platform-principles",
         "interaction.pointer-and-mouse",
         "interaction.keyboard-and-focus",
+        "interaction.date-picker",
+        "interaction.time-picker",
         "interaction.common-shortcuts",
         "interaction.navigation-and-selection",
         "interaction.window-and-resize-behavior",
@@ -100,7 +99,6 @@
       "parts": [
         "composition.overview",
         "composition.content-recipes-decide-before-binding",
-        "composition.style-and-behavior-plans",
         "composition.executable-html-business-composites",
         "composition.plans",
         "composition.pattern-owned-navigation-shells",
@@ -263,7 +261,8 @@
         "aggregate": "references/requirement-spec.md",
         "ordinal": 0,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "requirements.contents",
@@ -276,7 +275,8 @@
         "aggregate": "references/requirement-spec.md",
         "ordinal": 1,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "requirements.intake-principle",
@@ -291,7 +291,8 @@
         "aggregate": "references/requirement-spec.md",
         "ordinal": 2,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "requirements.three-decision-layers",
@@ -306,7 +307,8 @@
         "aggregate": "references/requirement-spec.md",
         "ordinal": 3,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "requirements.adaptive-question-policy",
@@ -321,7 +323,8 @@
         "aggregate": "references/requirement-spec.md",
         "ordinal": 4,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "requirements.user-input-guidance",
@@ -336,7 +339,8 @@
         "aggregate": "references/requirement-spec.md",
         "ordinal": 5,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "requirements.first-preview-planning",
@@ -349,7 +353,8 @@
         "aggregate": "references/requirement-spec.md",
         "ordinal": 6,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "requirements.generated-requirement-contract",
@@ -362,7 +367,8 @@
         "aggregate": "references/requirement-spec.md",
         "ordinal": 7,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "requirements.fixed-harmonyos-defaults-from-native-references",
@@ -375,7 +381,8 @@
         "aggregate": "references/requirement-spec.md",
         "ordinal": 8,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "requirements.anti-patterns",
@@ -388,7 +395,8 @@
         "aggregate": "references/requirement-spec.md",
         "ordinal": 9,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "layout.overview",
@@ -401,7 +409,8 @@
         "aggregate": "references/layout-system.md",
         "ordinal": 0,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "layout.window-foundation",
@@ -414,7 +423,8 @@
         "aggregate": "references/layout-system.md",
         "ordinal": 1,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "layout.application-shell",
@@ -427,7 +437,8 @@
         "aggregate": "references/layout-system.md",
         "ordinal": 2,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "layout.page-spacing",
@@ -440,7 +451,8 @@
         "aggregate": "references/layout-system.md",
         "ordinal": 3,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "layout.grid",
@@ -455,7 +467,8 @@
         "aggregate": "references/layout-system.md",
         "ordinal": 4,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "layout.resize-rules",
@@ -468,7 +481,8 @@
         "aggregate": "references/layout-system.md",
         "ordinal": 5,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "layout.pixso-mapping",
@@ -481,7 +495,8 @@
         "aggregate": "references/layout-system.md",
         "ordinal": 6,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "layout.html-mapping",
@@ -494,7 +509,8 @@
         "aggregate": "references/layout-system.md",
         "ordinal": 7,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "layout.decisions-to-confirm",
@@ -507,7 +523,8 @@
         "aggregate": "references/layout-system.md",
         "ordinal": 8,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "patterns.overview",
@@ -520,7 +537,8 @@
         "aggregate": "references/harmonyos-layout-patterns.md",
         "ordinal": 0,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "patterns.shared-window-anatomy",
@@ -535,20 +553,8 @@
         "aggregate": "references/harmonyos-layout-patterns.md",
         "ordinal": 1,
         "linkBase": "references"
-      }
-    },
-    {
-      "id": "patterns.global-title-layer",
-      "path": "references/resources/patterns/global-title-layer.md",
-      "purpose": "2. Global Title Layer",
-      "stage": [],
-      "appliesTo": {},
-      "requires": [],
-      "source": {
-        "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 2,
-        "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "patterns.left-brand-anchor",
@@ -565,9 +571,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 3,
+        "ordinal": 2,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "patterns.primary-shell-global-primary-slot",
@@ -584,9 +591,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 4,
+        "ordinal": 3,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "patterns.context-area",
@@ -603,9 +611,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 5,
+        "ordinal": 4,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "patterns.right-action-and-window-area",
@@ -622,9 +631,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 6,
+        "ordinal": 5,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "patterns.final-pane-leading-slot",
@@ -641,22 +651,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 7,
+        "ordinal": 6,
         "linkBase": "references"
-      }
-    },
-    {
-      "id": "patterns.approved-shell-patterns",
-      "path": "references/resources/patterns/approved-shell-patterns.md",
-      "purpose": "3. Approved Shell Patterns",
-      "stage": [],
-      "appliesTo": {},
-      "requires": [],
-      "source": {
-        "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 8,
-        "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "patterns.reusable-pattern-primary-navigation-shell",
@@ -667,9 +665,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 9,
+        "ordinal": 7,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "patterns.pattern-a-two-pane-navigation-content",
@@ -686,9 +685,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 10,
+        "ordinal": 8,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "patterns.reusable-pattern-secondary-page-hierarchy",
@@ -705,9 +705,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 11,
+        "ordinal": 9,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "patterns.pattern-b-three-pane-navigation-list-detail",
@@ -724,9 +725,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 12,
+        "ordinal": 10,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "patterns.pattern-c-navigation-tool-workspace",
@@ -743,9 +745,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 13,
+        "ordinal": 11,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "patterns.pattern-d-optional-inspector",
@@ -762,22 +765,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 14,
+        "ordinal": 12,
         "linkBase": "references"
-      }
-    },
-    {
-      "id": "patterns.pane-behavior",
-      "path": "references/resources/patterns/pane-behavior.md",
-      "purpose": "4. Pane Behavior",
-      "stage": [],
-      "appliesTo": {},
-      "requires": [],
-      "source": {
-        "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 15,
-        "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "patterns.primary-navigation",
@@ -790,9 +781,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 16,
+        "ordinal": 13,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "patterns.secondary-pane",
@@ -809,9 +801,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 17,
+        "ordinal": 14,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "patterns.main-content",
@@ -824,9 +817,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 18,
+        "ordinal": 15,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "patterns.inspector",
@@ -843,9 +837,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 19,
+        "ordinal": 16,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "patterns.surface-and-divider-behavior",
@@ -858,9 +853,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 20,
+        "ordinal": 17,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "patterns.scrolling",
@@ -873,9 +869,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 21,
+        "ordinal": 18,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "patterns.system-ui-boundary",
@@ -888,9 +885,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 22,
+        "ordinal": 19,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "patterns.shell-selection-rule",
@@ -901,9 +899,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 23,
+        "ordinal": 20,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "interaction.overview",
@@ -916,7 +915,8 @@
         "aggregate": "references/interaction-spec.md",
         "ordinal": 0,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "interaction.scope-and-source-levels",
@@ -929,7 +929,8 @@
         "aggregate": "references/interaction-spec.md",
         "ordinal": 1,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "interaction.official-platform-principles",
@@ -942,7 +943,8 @@
         "aggregate": "references/interaction-spec.md",
         "ordinal": 2,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "interaction.pointer-and-mouse",
@@ -961,7 +963,8 @@
         "aggregate": "references/interaction-spec.md",
         "ordinal": 3,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "interaction.keyboard-and-focus",
@@ -980,7 +983,8 @@
         "aggregate": "references/interaction-spec.md",
         "ordinal": 4,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "interaction.common-shortcuts",
@@ -991,16 +995,16 @@
       ],
       "appliesTo": {
         "interactions": [
-          "date",
-          "time"
+          "keyboard"
         ]
       },
       "requires": [],
       "source": {
         "aggregate": "references/interaction-spec.md",
-        "ordinal": 5,
+        "ordinal": 7,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "interaction.navigation-and-selection",
@@ -1017,9 +1021,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/interaction-spec.md",
-        "ordinal": 6,
+        "ordinal": 8,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "interaction.window-and-resize-behavior",
@@ -1036,9 +1041,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/interaction-spec.md",
-        "ordinal": 7,
+        "ordinal": 9,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "interaction.overlay-selection",
@@ -1055,9 +1061,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/interaction-spec.md",
-        "ordinal": 8,
+        "ordinal": 10,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "interaction.forms-and-validation",
@@ -1074,9 +1081,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/interaction-spec.md",
-        "ordinal": 9,
+        "ordinal": 11,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "interaction.state-feedback",
@@ -1093,9 +1101,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/interaction-spec.md",
-        "ordinal": 10,
+        "ordinal": 12,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "interaction.undo-and-destructive-actions",
@@ -1112,9 +1121,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/interaction-spec.md",
-        "ordinal": 11,
+        "ordinal": 13,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "interaction.motion-sound-and-accessibility",
@@ -1131,9 +1141,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/interaction-spec.md",
-        "ordinal": 12,
+        "ordinal": 14,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "interaction.interactive-frontend-demonstration",
@@ -1144,9 +1155,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/interaction-spec.md",
-        "ordinal": 13,
+        "ordinal": 15,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "interaction.per-interaction-record",
@@ -1163,9 +1175,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/interaction-spec.md",
-        "ordinal": 14,
+        "ordinal": 16,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "interaction.interaction-qa-gate",
@@ -1182,9 +1195,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/interaction-spec.md",
-        "ordinal": 15,
+        "ordinal": 17,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "composition.overview",
@@ -1199,7 +1213,8 @@
         "aggregate": "references/components/page-composition.md",
         "ordinal": 0,
         "linkBase": "references/components"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "composition.content-recipes-decide-before-binding",
@@ -1214,20 +1229,8 @@
         "aggregate": "references/components/page-composition.md",
         "ordinal": 1,
         "linkBase": "references/components"
-      }
-    },
-    {
-      "id": "composition.style-and-behavior-plans",
-      "path": "references/resources/composition/style-and-behavior-plans.md",
-      "purpose": "Style and behavior plans",
-      "stage": [],
-      "appliesTo": {},
-      "requires": [],
-      "source": {
-        "aggregate": "references/components/page-composition.md",
-        "ordinal": 2,
-        "linkBase": "references/components"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "composition.executable-html-business-composites",
@@ -1244,9 +1247,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/components/page-composition.md",
-        "ordinal": 3,
+        "ordinal": 2,
         "linkBase": "references/components"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "composition.plans",
@@ -1261,9 +1265,10 @@
       ],
       "source": {
         "aggregate": "references/components/page-composition.md",
-        "ordinal": 4,
+        "ordinal": 3,
         "linkBase": "references/components"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "composition.pattern-owned-navigation-shells",
@@ -1278,9 +1283,10 @@
       ],
       "source": {
         "aggregate": "references/components/page-composition.md",
-        "ordinal": 5,
+        "ordinal": 4,
         "linkBase": "references/components"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "composition.stroke-ownership",
@@ -1293,9 +1299,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/components/page-composition.md",
-        "ordinal": 6,
+        "ordinal": 5,
         "linkBase": "references/components"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "blueprint.overview",
@@ -1308,7 +1315,8 @@
         "aggregate": "references/page-blueprint-design.md",
         "ordinal": 0,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "blueprint.required-decisions",
@@ -1323,7 +1331,8 @@
         "aggregate": "references/page-blueprint-design.md",
         "ordinal": 1,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "blueprint.design-before-assembly",
@@ -1338,7 +1347,8 @@
         "aggregate": "references/page-blueprint-design.md",
         "ordinal": 2,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "blueprint.pattern-b-assembly-decisions",
@@ -1357,7 +1367,8 @@
         "aggregate": "references/page-blueprint-design.md",
         "ordinal": 3,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "blueprint.minimal-shape",
@@ -1370,7 +1381,8 @@
         "aggregate": "references/page-blueprint-design.md",
         "ordinal": 4,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "design.overview",
@@ -1383,7 +1395,8 @@
         "aggregate": "references/page-design-guidance.md",
         "ordinal": 0,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "design.start-with-the-task-not-the-inventory",
@@ -1398,7 +1411,8 @@
         "aggregate": "references/page-design-guidance.md",
         "ordinal": 1,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "design.design-at-the-real-content-width",
@@ -1413,7 +1427,8 @@
         "aggregate": "references/page-design-guidance.md",
         "ordinal": 2,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "design.visual-alignment-and-grouping",
@@ -1428,7 +1443,8 @@
         "aggregate": "references/page-design-guidance.md",
         "ordinal": 3,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "design.reuse-controls-design-missing-business-composites",
@@ -1443,7 +1459,8 @@
         "aggregate": "references/page-design-guidance.md",
         "ordinal": 4,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "design.one-deliberate-first-preview",
@@ -1458,7 +1475,8 @@
         "aggregate": "references/page-design-guidance.md",
         "ordinal": 5,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "supplement.overview",
@@ -1471,7 +1489,8 @@
         "aggregate": "references/component-specs-extended.md",
         "ordinal": 0,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "supplement.universal-contract",
@@ -1490,7 +1509,8 @@
         "aggregate": "references/component-specs-extended.md",
         "ordinal": 1,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "supplement.navigation-and-disclosure",
@@ -1515,7 +1535,8 @@
         "aggregate": "references/component-specs-extended.md",
         "ordinal": 2,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "supplement.overlays-and-commands",
@@ -1531,8 +1552,7 @@
           "context-menu",
           "dropdown-menu",
           "popover",
-          "tooltip",
-          "command"
+          "tooltip"
         ]
       },
       "requires": [],
@@ -1540,7 +1560,11 @@
         "aggregate": "references/component-specs-extended.md",
         "ordinal": 3,
         "linkBase": "references"
-      }
+      },
+      "extensionReferences": [
+        "command"
+      ],
+      "readPolicy": "stage"
     },
     {
       "id": "supplement.form-composition",
@@ -1559,7 +1583,11 @@
           "combobox",
           "native-select",
           "select",
-          "slider"
+          "slider",
+          "field",
+          "form-field",
+          "label",
+          "number-selector"
         ]
       },
       "requires": [],
@@ -1567,7 +1595,8 @@
         "aggregate": "references/component-specs-extended.md",
         "ordinal": 4,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "supplement.loading-data-and-dates",
@@ -1582,9 +1611,7 @@
           "date-picker",
           "time-picker",
           "progress",
-          "skeleton",
-          "table",
-          "data-table"
+          "table"
         ]
       },
       "requires": [],
@@ -1592,7 +1619,12 @@
         "aggregate": "references/component-specs-extended.md",
         "ordinal": 5,
         "linkBase": "references"
-      }
+      },
+      "extensionReferences": [
+        "skeleton",
+        "data-table"
+      ],
+      "readPolicy": "stage"
     },
     {
       "id": "supplement.specialized-content-and-layout",
@@ -1606,10 +1638,7 @@
           "attachment",
           "avatar",
           "badge",
-          "list-item",
-          "resizable",
-          "scroll-area",
-          "separator",
+          "list-card",
           "titlebar"
         ]
       },
@@ -1618,7 +1647,13 @@
         "aggregate": "references/component-specs-extended.md",
         "ordinal": 6,
         "linkBase": "references"
-      }
+      },
+      "extensionReferences": [
+        "resizable",
+        "scroll-area",
+        "separator"
+      ],
+      "readPolicy": "stage"
     },
     {
       "id": "titlebar.overview",
@@ -1631,7 +1666,8 @@
         "aggregate": "references/components/titlebar-segments.md",
         "ordinal": 0,
         "linkBase": "references/components"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "titlebar.scenarios",
@@ -1645,12 +1681,17 @@
           "titlebar"
         ]
       },
-      "requires": [],
+      "requires": [
+        "titlebar.overview",
+        "titlebar.title-typography",
+        "titlebar.trailing-inset"
+      ],
       "source": {
         "aggregate": "references/components/titlebar-segments.md",
         "ordinal": 1,
         "linkBase": "references/components"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "titlebar.title-typography",
@@ -1663,7 +1704,8 @@
         "aggregate": "references/components/titlebar-segments.md",
         "ordinal": 2,
         "linkBase": "references/components"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "titlebar.trailing-inset",
@@ -1676,7 +1718,8 @@
         "aggregate": "references/components/titlebar-segments.md",
         "ordinal": 3,
         "linkBase": "references/components"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "titlebar.executable-html-slots",
@@ -1690,12 +1733,17 @@
           "titlebar"
         ]
       },
-      "requires": [],
+      "requires": [
+        "titlebar.overview",
+        "titlebar.title-typography",
+        "titlebar.trailing-inset"
+      ],
       "source": {
         "aggregate": "references/components/titlebar-segments.md",
         "ordinal": 4,
         "linkBase": "references/components"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "titlebar.generated-titlebar-scene",
@@ -1709,12 +1757,17 @@
           "titlebar"
         ]
       },
-      "requires": [],
+      "requires": [
+        "titlebar.overview",
+        "titlebar.title-typography",
+        "titlebar.trailing-inset"
+      ],
       "source": {
         "aggregate": "references/components/titlebar-segments.md",
         "ordinal": 5,
         "linkBase": "references/components"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "delivery.overview",
@@ -1727,7 +1780,8 @@
         "aggregate": "references/components/local-component-delivery.md",
         "ordinal": 0,
         "linkBase": "references/components"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "delivery.reading",
@@ -1740,7 +1794,8 @@
         "aggregate": "references/components/local-component-delivery.md",
         "ordinal": 1,
         "linkBase": "references/components"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "delivery.project-output",
@@ -1753,7 +1808,8 @@
         "aggregate": "references/components/local-component-delivery.md",
         "ordinal": 2,
         "linkBase": "references/components"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "delivery.prepare",
@@ -1766,7 +1822,8 @@
         "aggregate": "references/components/local-component-delivery.md",
         "ordinal": 3,
         "linkBase": "references/components"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "delivery.styles",
@@ -1781,7 +1838,8 @@
         "aggregate": "references/components/local-component-delivery.md",
         "ordinal": 4,
         "linkBase": "references/components"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "delivery.calling",
@@ -1794,7 +1852,8 @@
         "aggregate": "references/components/local-component-delivery.md",
         "ordinal": 5,
         "linkBase": "references/components"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "delivery.pixso",
@@ -1807,7 +1866,8 @@
         "aggregate": "references/components/local-component-delivery.md",
         "ordinal": 6,
         "linkBase": "references/components"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "pixso-pipeline.overview",
@@ -1820,7 +1880,8 @@
         "aggregate": "references/pixso-fidelity-import-pipeline.md",
         "ordinal": 0,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "pixso-pipeline.normal-fast-path-and-diagnostic-boundary",
@@ -1839,7 +1900,8 @@
         "aggregate": "references/pixso-fidelity-import-pipeline.md",
         "ordinal": 1,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "pixso-pipeline.start-an-isolated-run",
@@ -1858,7 +1920,8 @@
         "aggregate": "references/pixso-fidelity-import-pipeline.md",
         "ordinal": 2,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "pixso-pipeline.capture-browser-computed-evidence",
@@ -1877,7 +1940,8 @@
         "aggregate": "references/pixso-fidelity-import-pipeline.md",
         "ordinal": 3,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "pixso-pipeline.keep-two-evidence-layers-and-one-pixso-output",
@@ -1896,7 +1960,8 @@
         "aggregate": "references/pixso-fidelity-import-pipeline.md",
         "ordinal": 4,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "pixso-pipeline.compile-dom-visual-ir-only-from-the-current-run",
@@ -1915,7 +1980,8 @@
         "aggregate": "references/pixso-fidelity-import-pipeline.md",
         "ordinal": 5,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "pixso-pipeline.resolve-components-without-changing-geometry",
@@ -1934,7 +2000,8 @@
         "aggregate": "references/pixso-fidelity-import-pipeline.md",
         "ordinal": 6,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "pixso-pipeline.execute-transactionally",
@@ -1953,7 +2020,8 @@
         "aggregate": "references/pixso-fidelity-import-pipeline.md",
         "ordinal": 7,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "pixso-pipeline.acceptance-gates",
@@ -1972,7 +2040,8 @@
         "aggregate": "references/pixso-fidelity-import-pipeline.md",
         "ordinal": 8,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "pixso-mcp.overview",
@@ -1985,7 +2054,8 @@
         "aggregate": "references/pixso-mcp.md",
         "ordinal": 0,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "pixso-mcp.connection",
@@ -1998,7 +2068,8 @@
         "aggregate": "references/pixso-mcp.md",
         "ordinal": 1,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "pixso-mcp.target-page-and-path-preflight-failure-derived",
@@ -2011,7 +2082,8 @@
         "aggregate": "references/pixso-mcp.md",
         "ordinal": 2,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "pixso-mcp.creation-sequence",
@@ -2024,7 +2096,8 @@
         "aggregate": "references/pixso-mcp.md",
         "ordinal": 3,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "pixso-mcp.registered-reuse-performance-and-icon-gates",
@@ -2037,7 +2110,8 @@
         "aggregate": "references/pixso-mcp.md",
         "ordinal": 4,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "pixso-mcp.page-binding-bridge-token",
@@ -2050,7 +2124,8 @@
         "aggregate": "references/pixso-mcp.md",
         "ordinal": 5,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "pixso-mcp.token-gate",
@@ -2063,7 +2138,8 @@
         "aggregate": "references/pixso-mcp.md",
         "ordinal": 6,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "pixso-mcp.binding-audit",
@@ -2076,7 +2152,8 @@
         "aggregate": "references/pixso-mcp.md",
         "ordinal": 7,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "pixso-mcp.existing-design-and-html-handoff",
@@ -2089,7 +2166,8 @@
         "aggregate": "references/pixso-mcp.md",
         "ordinal": 8,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "pixso-mcp.failure-handling",
@@ -2108,7 +2186,8 @@
         "aggregate": "references/pixso-mcp.md",
         "ordinal": 9,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "pixso-mcp.deliverable-reference",
@@ -2121,7 +2200,8 @@
         "aggregate": "references/pixso-mcp.md",
         "ordinal": 10,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "pixso-scene.overview",
@@ -2134,7 +2214,8 @@
         "aggregate": "references/pixso-native-scene.md",
         "ordinal": 0,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "pixso-scene.html-computed-visual-state",
@@ -2153,7 +2234,8 @@
         "aggregate": "references/pixso-native-scene.md",
         "ordinal": 1,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "pixso-scene.dom-visual-ir",
@@ -2166,7 +2248,8 @@
         "aggregate": "references/pixso-native-scene.md",
         "ordinal": 2,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "pixso-scene.scene",
@@ -2179,7 +2262,8 @@
         "aggregate": "references/pixso-native-scene.md",
         "ordinal": 3,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "pixso-scene.surface",
@@ -2192,7 +2276,8 @@
         "aggregate": "references/pixso-native-scene.md",
         "ordinal": 4,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "pixso-scene.divider-ownership",
@@ -2205,7 +2290,8 @@
         "aggregate": "references/pixso-native-scene.md",
         "ordinal": 5,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "pixso-scene.section-6",
@@ -2218,7 +2304,8 @@
         "aggregate": "references/pixso-native-scene.md",
         "ordinal": 6,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "pixso-scene.section-7",
@@ -2231,7 +2318,8 @@
         "aggregate": "references/pixso-native-scene.md",
         "ordinal": 7,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "pixso-scene.section-8",
@@ -2244,7 +2332,8 @@
         "aggregate": "references/pixso-native-scene.md",
         "ordinal": 8,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "pixso-scene.mcp",
@@ -2257,7 +2346,8 @@
         "aggregate": "references/pixso-native-scene.md",
         "ordinal": 9,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "pixso-scene.mcp-10",
@@ -2270,7 +2360,8 @@
         "aggregate": "references/pixso-native-scene.md",
         "ordinal": 10,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "pixso-scene.section-11",
@@ -2283,7 +2374,8 @@
         "aggregate": "references/pixso-native-scene.md",
         "ordinal": 11,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "pixso-detail.overview",
@@ -2296,7 +2388,8 @@
         "aggregate": "references/pixso-import-details.md",
         "ordinal": 0,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "pixso-detail.html-text-sizing-and-truncation",
@@ -2316,7 +2409,8 @@
         "aggregate": "references/pixso-import-details.md",
         "ordinal": 1,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "pixso-detail.icon-sizing-stroke-and-hot-zone-contract",
@@ -2336,7 +2430,8 @@
         "aggregate": "references/pixso-import-details.md",
         "ordinal": 2,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "pixso-detail.cross-source-mapping-registry",
@@ -2355,7 +2450,8 @@
         "aggregate": "references/pixso-import-details.md",
         "ordinal": 3,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "pixso-detail.typography-mapping-policy",
@@ -2374,7 +2470,8 @@
         "aggregate": "references/pixso-import-details.md",
         "ordinal": 4,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "stage"
     },
     {
       "id": "pixso-detail.pixso-component-facts-sync",
@@ -2387,7 +2484,8 @@
         "aggregate": "references/pixso-import-details.md",
         "ordinal": 5,
         "linkBase": "references"
-      }
+      },
+      "readPolicy": "explicit-query"
     },
     {
       "id": "core.delivery",
@@ -2403,7 +2501,8 @@
         "pixso"
       ],
       "appliesTo": {},
-      "requires": []
+      "requires": [],
+      "readPolicy": "stage"
     },
     {
       "id": "validation.preview",
@@ -2415,7 +2514,8 @@
       "appliesTo": {},
       "requires": [
         "core.delivery"
-      ]
+      ],
+      "readPolicy": "stage"
     },
     {
       "id": "validation.release",
@@ -2425,7 +2525,8 @@
       "appliesTo": {},
       "requires": [
         "core.delivery"
-      ]
+      ],
+      "readPolicy": "explicit-query"
     },
     {
       "id": "pixso.invariants",
@@ -2437,7 +2538,8 @@
       "appliesTo": {},
       "requires": [
         "core.delivery"
-      ]
+      ],
+      "readPolicy": "stage"
     },
     {
       "id": "components.resolution",
@@ -2449,7 +2551,175 @@
       "appliesTo": {},
       "requires": [
         "core.delivery"
-      ]
+      ],
+      "readPolicy": "stage"
+    },
+    {
+      "id": "interaction.date-picker",
+      "path": "references/resources/interaction/date-picker.md",
+      "purpose": "date-picker keyboard and commit behavior",
+      "stage": [
+        "bindings"
+      ],
+      "appliesTo": {
+        "interactions": [
+          "date"
+        ]
+      },
+      "requires": [
+        "interaction.keyboard-and-focus"
+      ],
+      "readPolicy": "stage",
+      "source": {
+        "aggregate": "references/interaction-spec.md",
+        "ordinal": 5,
+        "linkBase": "references"
+      }
+    },
+    {
+      "id": "interaction.time-picker",
+      "path": "references/resources/interaction/time-picker.md",
+      "purpose": "time-picker keyboard and commit behavior",
+      "stage": [
+        "bindings"
+      ],
+      "appliesTo": {
+        "interactions": [
+          "time"
+        ]
+      },
+      "requires": [
+        "interaction.keyboard-and-focus"
+      ],
+      "readPolicy": "stage",
+      "source": {
+        "aggregate": "references/interaction-spec.md",
+        "ordinal": 6,
+        "linkBase": "references"
+      }
+    },
+    {
+      "id": "foundations.colors",
+      "path": "references/resources/foundations/colors.md",
+      "purpose": "Colors：共享规范维护深度参考",
+      "stage": [],
+      "appliesTo": {},
+      "requires": [],
+      "readPolicy": "explicit-query"
+    },
+    {
+      "id": "foundations.typography",
+      "path": "references/resources/foundations/typography.md",
+      "purpose": "Typography：共享规范维护深度参考",
+      "stage": [],
+      "appliesTo": {},
+      "requires": [],
+      "readPolicy": "explicit-query"
+    },
+    {
+      "id": "foundations.spacing",
+      "path": "references/resources/foundations/spacing.md",
+      "purpose": "Spacing：共享规范维护深度参考",
+      "stage": [],
+      "appliesTo": {},
+      "requires": [],
+      "readPolicy": "explicit-query"
+    },
+    {
+      "id": "foundations.radius",
+      "path": "references/resources/foundations/radius.md",
+      "purpose": "Radius：共享规范维护深度参考",
+      "stage": [],
+      "appliesTo": {},
+      "requires": [],
+      "readPolicy": "explicit-query"
+    },
+    {
+      "id": "foundations.size",
+      "path": "references/resources/foundations/size.md",
+      "purpose": "Size and Dimensions：共享规范维护深度参考",
+      "stage": [],
+      "appliesTo": {},
+      "requires": [],
+      "readPolicy": "explicit-query"
+    },
+    {
+      "id": "foundations.shadows",
+      "path": "references/resources/foundations/shadows.md",
+      "purpose": "Shadows：共享规范维护深度参考",
+      "stage": [],
+      "appliesTo": {},
+      "requires": [],
+      "readPolicy": "explicit-query"
+    },
+    {
+      "id": "component-visual.buttons",
+      "path": "references/resources/component-visual/buttons.md",
+      "purpose": "Buttons：共享规范维护深度参考",
+      "stage": [],
+      "appliesTo": {},
+      "requires": [],
+      "readPolicy": "explicit-query"
+    },
+    {
+      "id": "component-visual.inputs",
+      "path": "references/resources/component-visual/inputs.md",
+      "purpose": "Inputs：共享规范维护深度参考",
+      "stage": [],
+      "appliesTo": {},
+      "requires": [],
+      "readPolicy": "explicit-query"
+    },
+    {
+      "id": "component-visual.cards",
+      "path": "references/resources/component-visual/cards.md",
+      "purpose": "Cards：共享规范维护深度参考",
+      "stage": [],
+      "appliesTo": {},
+      "requires": [],
+      "readPolicy": "explicit-query"
+    },
+    {
+      "id": "component-visual.navigation-and-lists",
+      "path": "references/resources/component-visual/navigation-and-lists.md",
+      "purpose": "Tabs, Navigation, and Lists：共享规范维护深度参考",
+      "stage": [],
+      "appliesTo": {},
+      "requires": [],
+      "readPolicy": "explicit-query"
+    },
+    {
+      "id": "component-visual.data",
+      "path": "references/resources/component-visual/data.md",
+      "purpose": "Data Display：共享规范维护深度参考",
+      "stage": [],
+      "appliesTo": {},
+      "requires": [],
+      "readPolicy": "explicit-query"
+    },
+    {
+      "id": "component-visual.feedback-and-overlays",
+      "path": "references/resources/component-visual/feedback-and-overlays.md",
+      "purpose": "Modals / Toasts：共享规范维护深度参考",
+      "stage": [],
+      "appliesTo": {},
+      "requires": [],
+      "readPolicy": "explicit-query"
+    },
+    {
+      "id": "component-visual.tooltip",
+      "path": "references/resources/component-visual/tooltip.md",
+      "purpose": "Tooltip：共享规范维护深度参考",
+      "stage": [],
+      "appliesTo": {},
+      "requires": [],
+      "readPolicy": "explicit-query"
     }
-  ]
+  ],
+  "aliases": {
+    "patterns.global-title-layer": "patterns.left-brand-anchor",
+    "patterns.approved-shell-patterns": "patterns.reusable-pattern-primary-navigation-shell",
+    "patterns.pane-behavior": "patterns.primary-navigation",
+    "composition.style-and-behavior-plans": "composition.plans"
+  }
 }

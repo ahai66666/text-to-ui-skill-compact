@@ -1,4 +1,4 @@
 interface:
   display_name: "Text to UI Compact"
-  short_description: "Build dynamic HTML pages with separate local components"
-  default_prompt: "Use $text-to-ui-compact to follow Workflow → Task → Pattern routing, prepare separate local HTML components, dynamically render my page by importing them with canonical Tokens, and use the HTML-to-Pixso route when requested."
+  short_description: "Reuse existing components; create missing business modules with CSS"
+  default_prompt: "Use $text-to-ui-compact to follow Workflow → Task → Pattern routing, reuse existing components and their CSS first; only for missing capabilities create independent business modules/styles, then dynamically render my page by referencing them with canonical Tokens, and use the HTML-to-Pixso route when requested."

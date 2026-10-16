@@ -32,9 +32,9 @@ evidence files in `constraintContract.acceptance`. Stamp the spec with a fresh
 reuse plans, Pixso audits, and the run manifest must carry that same run ID and
 page-spec hash; a copied artifact from another spec revision is invalid.
 
-## Required Gate
+## Compatibility page-spec gate
 
-Run before rendering:
+For explicit legacy page-spec tasks, run before rendering. New dynamic pages use the Blueprint gate and page:validate in the selected workflow:
 
 ```bash
 node scripts/build-pixso-token-manifest.mjs --check
@@ -115,25 +115,17 @@ node scripts/validate-dual-output.mjs \
   --html /absolute/path/to/output.html
 ```
 
-## Pixso Fidelity Target
+## Current Pixso route
 
-The page contract maps the selected Pixso target to the existing component
-contract fields:
+Normal delivery follows references/pixso-fidelity-import-pipeline.md:
+browser readiness → capture/DOM visual IR → compile → Unified Agent plugin →
+live readback → visual diff. Use the same dynamically rendered page and its
+component/Token manifests. Record logicalName instance counts and fallback causes.
 
-- **Fast visual import:** `reuseStrategy: "import-and-repair"` and
-  `strictComponentParity: false`. `code_to_design` may import the full
-  browser-checked composition without NewComponents being active. Treat
-  imported styles as literals until a targeted Variable read-back proves a
-  binding. `data-component` remains a Web contract marker and is not proof of a
-  Pixso Component instance. Run icon crop and visual QA, then optionally apply
-  only exact linked replacements.
-- **Strict structured reuse:** `reuseStrategy: "registered-components"`,
-  `strictComponentParity: true`, and `libraryPage: "NewComponents"`. The strict
-  planner and linked-instance audit are hard gates before Pixso completion.
-
-Fast visual import is the default when the user asks for a quick editable
-visual Frame. Strict structured reuse is selected when native shared instances,
-complete Variable binding, or reusable library structure is required.
+code_to_design is an explicit compatibility/diagnostic route only; it is not
+the normal fast-preview renderer. See references/pixso-mcp.md. Strict reuse
+requires verified mappings and linked-instance evidence. Provisional components
+cannot pass a strict release gate.
 
 ## Registered Reuse Preflight
 
@@ -160,25 +152,10 @@ where helpful, but never let the stale draft override the approved design.
 
 ## Pixso Renderer
 
-`code_to_design` is a geometry/bootstrap step, not a compliant final renderer.
-It imports computed values and can create hardcoded colors, fixed text widths,
-and ordinary Frames where linked instances are required.
-
-In strict registered reuse, import only the Pattern skeleton and page-only
-content as the bootstrap surface. Apply the generated reuse plan to replace
-every marked registered region with its linked instance before local refinement.
-Do not manually repaint or reconstruct those component regions. In fast visual
-import, import the full browser-checked composition once and treat unresolved
-regions as page-owned rather than drawing lookalike Components.
-
-In `html-first`, import the exact browser-checked draft. In `visual-first`,
-import the capture snapshot of the same dynamically rendered page after its readiness signal.
-Do not create a separate composition from memory in either mode.
-
-After every import, always perform the visual and icon checks. For strict
-structured reuse, also perform the complete binding and linked-component gate.
-For fast visual import, bind only the requested/available Tokens and record
-remaining literal values as limitations; do not claim complete parity.
+Execute the current plugin operation plan after browser readiness. Stop on
+blocked capture or unresolved strict mappings; retain the HTML output and report
+the exact gate. Collect live readback, screenshots, icon checks and visual diff.
+Strict reuse additionally requires Variable and linked-component audits.
 
 Strict binding sequence:
 
@@ -243,11 +220,9 @@ Verify and report the HTML draft as the first visible checkpoint before any
 Pixso call. If the gate is blocked, keep the verified HTML artifact and stop
 strict Pixso writes.
 
-For fast visual import, use `import-and-repair` with strict parity disabled.
-The HTML checkpoint, inline-SVG preparation, one-time `code_to_design` import,
-layout check, screenshot, and icon crop audit remain required, but NewComponents
-and the strict reuse planner are not prerequisites. Any optional linked-instance
-replacement is reported separately from the visual Frame result.
+For preview delivery, use the capture/compiler/plugin route and report
+unverified bindings and fallbacks explicitly. Compatibility imports do not
+inherit strict completion status.
 
 ## Completion Evidence
 

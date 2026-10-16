@@ -1,28 +1,7 @@
-# Registered HTML and Pixso Reuse
+# 注册组件复用
 
-Use this strategy when an HTML page and Pixso must use the same approved Tokens, components, variants, states, icons, and Patterns. It is the strict reuse path within a selected workflow, not another workflow.
+HTML 使用当前契约、真实工厂、项目 components/index.js 和标准样式。Blueprint 决定任务和结构；来源、选择收据与实际运行证据共同证明复用。要求见 html-component-reuse-gate.md。
 
-## Contract
+Pixso 正常导入使用同一已渲染页面及 DOM Visual IR，经 Unified Agent 创建兼容 Instance。缺失或几何不兼容的可选映射保留浏览器测量的原生组合并记录原因；它不算实例，不等于严格组件一致性通过。无安全实现的契约错误仍阻断。
 
-Declare `targetFramework: "html"` in the page specification and use the registered HTML renderer. Every component uses its exact logical name, supported props and slots, and current Pixso logical mapping. Do not store Pixso GUIDs in the page spec.
-
-## Strict path
-
-1. Validate `page-spec.json`, route receipts, and the Layout Contract.
-2. Resolve a component selection plan from the current registry and page bindings.
-3. Render and browser-check the HTML page before any Pixso call.
-4. In Pixso, resolve the exact source component, confirm its page and slots, then create a linked instance.
-5. Bind Variables and Styles only on page-owned Pattern/content nodes.
-6. Read back component identity and Token bindings; record the live audit and screenshot comparison.
-
-Use `code_to_design` only when it materially speeds up Pattern geometry or page-specific content. Do not use it as a component renderer or re-import for incremental fixes.
-
-## Planner results
-
-- `verified`: instantiate in Pixso and render through the production HTML factory.
-- `mapped-pending-verification`: verify a temporary linked instance before reuse.
-- `mapped-needs-rebuild`: repair the shared component; do not patch the page.
-- `missing-target`: record the missing shared component for library work.
-- `compiled-runtime-fallback` or blocked content: allow only an explicitly requested HTML preview; do not claim strict component reuse.
-
-Strict completion requires source calls, linked Pixso instances, readback, and Token evidence. Fast visual import may record partial reuse, but must list unbound regions and remaining literal styles.
+实例颜色属于所选 Variant，不能用 HTML 颜色覆盖修补。变量、样式、mainComponent、Variant 和插槽必须实时回读。正常导入、组件库修复和诊断边界见 pixso-execution-invariants.md。

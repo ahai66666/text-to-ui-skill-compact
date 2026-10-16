@@ -2,7 +2,13 @@
   "schemaVersion": 1,
   "kind": "text-to-ui-resource-index",
   "policy": "Machine index; query projections only. Edit resource fragments and rebuild, never edit compatibility aggregates.",
-  "digest": "b5d3c9d19ad337c1e1e488df05ca773987b81455256c9f6a6c6a5858757dc34a",
+  "digest": "a79053f328d6dcb6bc84c6b44a719e21c28932751f2e333d5386396c28762ff2",
+  "aliases": {
+    "patterns.global-title-layer": "patterns.left-brand-anchor",
+    "patterns.approved-shell-patterns": "patterns.reusable-pattern-primary-navigation-shell",
+    "patterns.pane-behavior": "patterns.primary-navigation",
+    "composition.style-and-behavior-plans": "composition.plans"
+  },
   "sources": [
     {
       "path": "assets/design-system/mapping-registry.json",
@@ -218,7 +224,7 @@
     },
     {
       "path": "packages/tokens/src/token-runtime-map.json",
-      "sha256": "5f084420874b4f8147e1f8a6176e93343750a6f5db93d3a9e1e70a5eb14c84ff"
+      "sha256": "af423b313eedd7b3ef1f5b2faa6cc50c21e61cd844b7216b212c689651f91cb6"
     },
     {
       "path": "packages/tokens/src/tokens.colors.css",
@@ -262,7 +268,7 @@
     },
     {
       "path": "references/components/component-readiness-policy.json",
-      "sha256": "ef8b27bdf8dfb1c718830da454236e1a9894904a6c5ef2c4119d92742c980e47"
+      "sha256": "0537ed9e8cce0556b5208fe3abcbd7a1662f0c689549289a4cdc2588ee77533d"
     },
     {
       "path": "references/components/component-selection-rules.json",
@@ -270,11 +276,11 @@
     },
     {
       "path": "references/components/local-component-delivery.md",
-      "sha256": "d6634122f3f7fa7bdf24dd42c2590bd45a792cffed3d3ee2278b0fe52dbe0076"
+      "sha256": "78c05eac5d1d8668f0f76de08cfdf29a6942ce838b65ef731a59126252c902fe"
     },
     {
       "path": "references/components/page-composition.md",
-      "sha256": "f7370603361d201da67e27843f5b0da97ce2284380fb3f3a1bb235d183a95633"
+      "sha256": "8145bf1a9064927c8ce63738c978d891adf20cbe632cc7f5c6952c16c66971f3"
     },
     {
       "path": "references/components/source-resolution.md",
@@ -282,11 +288,11 @@
     },
     {
       "path": "references/components/titlebar-segments.md",
-      "sha256": "2c19061b781307de78fb71b71e5a34bbf55ff07a056c518d521b0780754509b2"
+      "sha256": "cd30a3dbe7a679e168f5470f06f773a4ec3e638b3f3db894c10aea7f8bc98749"
     },
     {
       "path": "references/harmonyos-layout-patterns.md",
-      "sha256": "1f9aa5db712efd953f93c896c32cf5ced7aeabd3b92b51f3f348b0f79b447070"
+      "sha256": "a4d5d238f3e2bfeb4e7f6e23303f702d26a70b42e5208dafa06e829ac46f770f"
     },
     {
       "path": "references/index/capability-aliases.source.json",
@@ -302,7 +308,7 @@
     },
     {
       "path": "references/layout-system.md",
-      "sha256": "1b63fe82134fcdc2e36a4b72edc41aa2d08908f700f84d705d6e2452089c6a9e"
+      "sha256": "40fcb121286fe790d08bdd7271e00edf726a0f69110111bddc0b40f9ca364ed6"
     },
     {
       "path": "references/page-blueprint-design.md",
@@ -326,7 +332,7 @@
     },
     {
       "path": "references/pixso-mcp.md",
-      "sha256": "8c74af173188a08fdd2934c81bb6dd0d9311e062173d92988cbb2fb7dd596d8e"
+      "sha256": "32b30b9cd7e6c67707e7e0504fd09d866444c74615dd4ea3f4d9f53ce17654c7"
     },
     {
       "path": "references/pixso-native-scene.md",
@@ -338,7 +344,7 @@
     },
     {
       "path": "references/resource-workflow.md",
-      "sha256": "86c2fbc75fda97e385b53215a0ff757e9e679fb285d298ab6b4f84b1b259b004"
+      "sha256": "6be00e495fce845f82b96ca880b51223696c29ac6c1f7e471f076b0cbead1d62"
     },
     {
       "path": "references/resources/blueprint/design-before-assembly.md",
@@ -361,12 +367,40 @@
       "sha256": "51fd7700569cbc52fc6eb4db5b24d4c106c999aac319c5c5dfd872291592834c"
     },
     {
+      "path": "references/resources/component-visual/buttons.md",
+      "sha256": "7f2271e10fd1bed3f6e780c5d2cad8fb84d35daac43da7ed6b37b1578e8990d5"
+    },
+    {
+      "path": "references/resources/component-visual/cards.md",
+      "sha256": "c8b563f98d695a79d77bd7e6ba2c794b265a93f7d5204601d08c388debe5b70c"
+    },
+    {
+      "path": "references/resources/component-visual/data.md",
+      "sha256": "638e86a03544b1fd41e85b848d25b3e57802767d6f88afb779d1dce68ab69a0d"
+    },
+    {
+      "path": "references/resources/component-visual/feedback-and-overlays.md",
+      "sha256": "efb2e965c157ae549e830001df7dd1c724f169853680d513789d7d5d1ac356e5"
+    },
+    {
+      "path": "references/resources/component-visual/inputs.md",
+      "sha256": "4ef4c687952866fb7d0618e88513ecc1bbded95f1027a53576420ede8abc23b4"
+    },
+    {
+      "path": "references/resources/component-visual/navigation-and-lists.md",
+      "sha256": "eaa6b9886a5a0efe010a618eed20410e039393c95129951fbc398c7696eb91bc"
+    },
+    {
+      "path": "references/resources/component-visual/tooltip.md",
+      "sha256": "1f973dadee9be8f6f82e747f5e007a48188c3be5d775a8b26c3d5537c5ae0a20"
+    },
+    {
       "path": "references/resources/composition/content-recipes-decide-before-binding.md",
       "sha256": "f5f0a42d7f717a5d862785f4109307b78f55ff66cce2bb67b2d5162ff0d9d342"
     },
     {
       "path": "references/resources/composition/executable-html-business-composites.md",
-      "sha256": "104c5dee34f6a3d593ece1491d60ce0c29e7c399b1055dba297631a50d8a5705"
+      "sha256": "b1ff5c0370077fc79be720a941d629e4fb980e8adf209899bcc59e92b2be1dfb"
     },
     {
       "path": "references/resources/composition/overview.md",
@@ -378,15 +412,11 @@
     },
     {
       "path": "references/resources/composition/plans.md",
-      "sha256": "b97a58eaa9b71a44364d319dd8f350b47945ccc695fd605774242e2f17dd9b18"
+      "sha256": "f5575338c00a67bf5920135ab0141ff0b03a023c164e7e8749eee5cb48e72a64"
     },
     {
       "path": "references/resources/composition/stroke-ownership.md",
       "sha256": "a65e185a40b380a8dbc89cb55c838348348a38771e414a959941a19fdd9f9bce"
-    },
-    {
-      "path": "references/resources/composition/style-and-behavior-plans.md",
-      "sha256": "5ca61f1b3b36e00cacf1051177df68dac351d2d2938013fc0cea29bfc3037a6f"
     },
     {
       "path": "references/resources/core/delivery.md",
@@ -410,7 +440,7 @@
     },
     {
       "path": "references/resources/delivery/project-output.md",
-      "sha256": "129517549490e52400f6605e7f7780e9994ee2c09ccdd4bbf28d36343e9408bd"
+      "sha256": "2bf1313c25c4301238b585c99c293ed2a007770051ed7e41182c1a8d4c6afe0e"
     },
     {
       "path": "references/resources/delivery/reading.md",
@@ -418,7 +448,7 @@
     },
     {
       "path": "references/resources/delivery/styles.md",
-      "sha256": "d9d47511e46701579a3ef039745b39f0d223b08d281a55a10b8b87feabc38af2"
+      "sha256": "72df1b20f3f4213c2cea14c8341bbc9e14b3736f3e5e08830c578bc800b57d81"
     },
     {
       "path": "references/resources/design/design-at-the-real-content-width.md",
@@ -445,8 +475,36 @@
       "sha256": "d0cb864e105e189ea2e81baf09eac629709e3dfc2e54f49f2907c64b446a3833"
     },
     {
+      "path": "references/resources/foundations/colors.md",
+      "sha256": "1f74207b125fea100b11282ea5959ef389c20027953fad55a98d86813e02f910"
+    },
+    {
+      "path": "references/resources/foundations/radius.md",
+      "sha256": "8d5e530df4f6239bbe3643d9438ee3aa99ae971e71010956e4c992f09d7866e2"
+    },
+    {
+      "path": "references/resources/foundations/shadows.md",
+      "sha256": "4c583d054b7eb67a8f025c290931a0376182d5ce82ebaebfeb8230516fdf3f5a"
+    },
+    {
+      "path": "references/resources/foundations/size.md",
+      "sha256": "022d33998c26fb8873e1a893024c30b843a23a69ac24483ef95de3a2a20edf85"
+    },
+    {
+      "path": "references/resources/foundations/spacing.md",
+      "sha256": "363c84ece944bda8cfcc2693ac083da5d951ae84c072984465bb55906cb8d827"
+    },
+    {
+      "path": "references/resources/foundations/typography.md",
+      "sha256": "1f5b97ec5d36f831af3947879f2843af281a1a00f37de1460e00c050e30422bf"
+    },
+    {
       "path": "references/resources/interaction/common-shortcuts.md",
-      "sha256": "0101486fdd764df412233a5cc9a379bb9e43bb549697c289be25a13d90e82f01"
+      "sha256": "a30119b84645e6321d883b3971169429e95f1593010a7b9c19f432cc64588167"
+    },
+    {
+      "path": "references/resources/interaction/date-picker.md",
+      "sha256": "4cd08412bf23a3462d2eaa237a79f46d42efdaa50839946f37a68d3799322b4f"
     },
     {
       "path": "references/resources/interaction/forms-and-validation.md",
@@ -501,6 +559,10 @@
       "sha256": "fb15aef974bd3b607da9ce8fd7aaecc9ae4e6cd13a7ac3aabd54e65fb9eabd84"
     },
     {
+      "path": "references/resources/interaction/time-picker.md",
+      "sha256": "a0df30f297491a4e0f4b472868a14d5756d9bb0b14ed9271625da7b7aa77372c"
+    },
+    {
       "path": "references/resources/interaction/undo-and-destructive-actions.md",
       "sha256": "e2e68306a240bd15ac3d096af374ce53041a6ae09843b93c0ceb966d23731668"
     },
@@ -510,7 +572,7 @@
     },
     {
       "path": "references/resources/layout/application-shell.md",
-      "sha256": "e6758d2324bb1041f338fbc58700f9f72f418a13d9b0f426203106a3198614bd"
+      "sha256": "ee677b6094140cc712e6e1abae647af4aef589dd35bf91347fbf062508e00e38"
     },
     {
       "path": "references/resources/layout/decisions-to-confirm.md",
@@ -530,7 +592,7 @@
     },
     {
       "path": "references/resources/layout/page-spacing.md",
-      "sha256": "06a37f47d67f4ad3201656f67b65a84d2ff5c121ff3551e01acf4f0b9ec54a1b"
+      "sha256": "e739db5418596b6184ca44f97e4615effad39091ad8f09f50337bc54c6ea768b"
     },
     {
       "path": "references/resources/layout/pixso-mapping.md",
@@ -545,20 +607,12 @@
       "sha256": "94dcf33f5ee855b2ace43df513f256858cdc46606fed825532503356f50ced58"
     },
     {
-      "path": "references/resources/patterns/approved-shell-patterns.md",
-      "sha256": "9fde0c93f37ca16e41650af7251ef8e29f63208e69d7ac43ab30bb25b0ab755b"
-    },
-    {
       "path": "references/resources/patterns/context-area.md",
       "sha256": "dd427b2d01d2f55c72e086d982e8d184d8594c7871c06eb4c1189a11c95a0e01"
     },
     {
       "path": "references/resources/patterns/final-pane-leading-slot.md",
-      "sha256": "b8c90b51eb999828930d01ee3b4d8ee81bab0681f58ed23c4b087dcceec2f5e7"
-    },
-    {
-      "path": "references/resources/patterns/global-title-layer.md",
-      "sha256": "09f5c108e9a9aa9b8a3ceedd2d43e78b3607e379d7d3d62f355118eb4336f03d"
+      "sha256": "9cf9bbc1b2189d621b75b819ea488dba87dd0799748f98d8276ce12c3e635b9b"
     },
     {
       "path": "references/resources/patterns/inspector.md",
@@ -566,7 +620,7 @@
     },
     {
       "path": "references/resources/patterns/left-brand-anchor.md",
-      "sha256": "e76bc73c51100892f30a12e38336072a3373ff63880b586fa74617fc67b10598"
+      "sha256": "6cb46316b51da7da5dc5924341ea405397583723a1e92827533604c4118b1393"
     },
     {
       "path": "references/resources/patterns/main-content.md",
@@ -575,10 +629,6 @@
     {
       "path": "references/resources/patterns/overview.md",
       "sha256": "56743e04cbbd643ca6b4ed1a9cbb31b39521b0f92a8388166a11ad52f6e8f341"
-    },
-    {
-      "path": "references/resources/patterns/pane-behavior.md",
-      "sha256": "3e1dbaacb4434e07b5412b28b532c29664a8457489766f14e5bfb3a612e705fa"
     },
     {
       "path": "references/resources/patterns/pattern-a-two-pane-navigation-content.md",
@@ -598,7 +648,7 @@
     },
     {
       "path": "references/resources/patterns/primary-navigation.md",
-      "sha256": "8eaab4cc83f36e4eca0691fce9ba92ea3a1c276ec24f9e7fbcef7fedea283e15"
+      "sha256": "a01c933a514fb5ff776b4bca01d24c49e60fcd1eead8e2d5b1aaf1f6abe31329"
     },
     {
       "path": "references/resources/patterns/primary-shell-global-primary-slot.md",
@@ -606,7 +656,7 @@
     },
     {
       "path": "references/resources/patterns/reusable-pattern-primary-navigation-shell.md",
-      "sha256": "f340794b6791e8564f0d34ef5677a8512457e3c3b903aba28e5ac766222a2602"
+      "sha256": "6fd94aec394417a9fd9fa78cb5cbd127ca1fffa75b56779e46b0c28b81a2cfd4"
     },
     {
       "path": "references/resources/patterns/reusable-pattern-secondary-page-hierarchy.md",
@@ -622,7 +672,7 @@
     },
     {
       "path": "references/resources/patterns/secondary-pane.md",
-      "sha256": "583baea08ec4f8e1d4054f01b02d4cd924248e456dcfb4a6f1d48317a46c3660"
+      "sha256": "962857ae646ed124d79dc091be60d580ce522409a08bdee1a946c10fa1a5fcbc"
     },
     {
       "path": "references/resources/patterns/shared-window-anatomy.md",
@@ -674,7 +724,7 @@
     },
     {
       "path": "references/resources/pixso-mcp/creation-sequence.md",
-      "sha256": "5cdc818b5da3bb4f91dd247e2984357e7d7ceff7430e77e3d20f25c6b44d5668"
+      "sha256": "0103cee55aa03ed2ede1dae9cd57ec96241b854b6025a9eafb5feee5336a6382"
     },
     {
       "path": "references/resources/pixso-mcp/deliverable-reference.md",
@@ -698,7 +748,7 @@
     },
     {
       "path": "references/resources/pixso-mcp/registered-reuse-performance-and-icon-gates.md",
-      "sha256": "0dd851a8256167fc1830d8c8cd5f06de3a4086472c1e90414c1cacf4e49534ac"
+      "sha256": "b16392e8449004bd550ab68902ef68933e3074198d50394dbf1b86cc2ab12ddd"
     },
     {
       "path": "references/resources/pixso-mcp/target-page-and-path-preflight-failure-derived.md",
@@ -706,7 +756,7 @@
     },
     {
       "path": "references/resources/pixso-mcp/token-gate.md",
-      "sha256": "2b6b2003b9a7ca7e7951e2623cf6545b4ba2f13926de1c569eb1b3cf18e56a6d"
+      "sha256": "9d560129eb0cc4d062bb22347f085ed83f3e8fe072d559ec0f0027a97e46c325"
     },
     {
       "path": "references/resources/pixso-pipeline/acceptance-gates.md",
@@ -834,11 +884,11 @@
     },
     {
       "path": "references/resources/source.json",
-      "sha256": "e3dc0a0ef589121a1600ee46d299bf86518ddea86d2db9b8c2cf4a7a3124fb3f"
+      "sha256": "1fd2788d75be3eb4ec4a7895c5f83fbe4aab7b143873b7eefc478a7dea6f717d"
     },
     {
       "path": "references/resources/source.schema.json",
-      "sha256": "95a194a5e2741ce256d7928e5aea10c4190ace7508b29372e7778939f70ccbc5"
+      "sha256": "757c4973c64cddcc44b7d4277ac9f4e763e52297d259fd4612f3ea77b68d31c4"
     },
     {
       "path": "references/resources/supplement/form-composition.md",
@@ -878,11 +928,11 @@
     },
     {
       "path": "references/resources/titlebar/overview.md",
-      "sha256": "2d324fe2d0112903a5cbb53ccefcc3e02bfb695b110c86b58b868f17a39477f1"
+      "sha256": "d7b2f2381ce4d5571c83497f43adf5ccc2a3c3e24bfb5ca28fa4b7b36e662c57"
     },
     {
       "path": "references/resources/titlebar/scenarios.md",
-      "sha256": "d3eb1ad6896ddd3c21cc0467c417245d3a80c54f53030ea5e9b19cadcd231e25"
+      "sha256": "218c5efb12fd4167e66b6bd3a3ad251f5d0735e2064c462bed2401e6542f38ae"
     },
     {
       "path": "references/resources/titlebar/title-typography.md",
@@ -918,11 +968,11 @@
     },
     {
       "path": "scripts/resource-index-lib.mjs",
-      "sha256": "2c644f57241ad3e517343c5ebd03b362e53c159b1827f5d488ad512f4c7c7341"
+      "sha256": "f6f304f96facbd0bb72ec91e852f412b43fed2eac70f4aef6598d2ff0b4ebd22"
     },
     {
       "path": "scripts/stage-context-lib.mjs",
-      "sha256": "422edfb3d01c36cc928c33ab51eef0c2c60dbb0aee671ee5d799828d3481e3e7"
+      "sha256": "6543df7cc758117f12136dc6e428a6771ebe80fa194d892d6c0a6e6493415549"
     }
   ],
   "resources": [
@@ -938,6 +988,7 @@
         "ordinal": 0,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 296,
       "sha256": "e4e73fb4038bd1758a1392364b4c450d3a61913d6b428e80679b0444c544bf15",
       "kind": "document"
@@ -954,6 +1005,7 @@
         "ordinal": 1,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 223,
       "sha256": "c3b576fcb91ececae2ef72acf9aceb90a2b21374e87508453a389ae63904887a",
       "kind": "document"
@@ -972,6 +1024,7 @@
         "ordinal": 2,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 985,
       "sha256": "aa2ca87775186a57a85befdff91bfd0ce30de9c6ec180ec74250541cd40ddb81",
       "kind": "document"
@@ -990,6 +1043,7 @@
         "ordinal": 3,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 2047,
       "sha256": "8730c50fad741d7362eb37c14d3cf7f3ff65248f52f9d5bb97990d69534433f5",
       "kind": "document"
@@ -1008,6 +1062,7 @@
         "ordinal": 4,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 1708,
       "sha256": "a95ffc0dc6c1be872764d7b0df986dac8b3dd0d0974c51def71e1649a37134f7",
       "kind": "document"
@@ -1026,6 +1081,7 @@
         "ordinal": 5,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 523,
       "sha256": "f8bdede69e84d1ff193290c56e0875763ee7f94f8f03c957bf44364cc86e3198",
       "kind": "document"
@@ -1042,6 +1098,7 @@
         "ordinal": 6,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 1039,
       "sha256": "f3e25a60ea2dd5bb5011f28cfa2ac9de0cb6a56335f218e695b3a943f4b20583",
       "kind": "document"
@@ -1058,6 +1115,7 @@
         "ordinal": 7,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 3187,
       "sha256": "18f5ef4f9f779790f333d49d9ef84b32d0a9a54f2183e7e12a2517b14cc0e8fd",
       "kind": "document"
@@ -1074,6 +1132,7 @@
         "ordinal": 8,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 3316,
       "sha256": "47d334bb165ce699e8a0588ea85c88126969bb432ed4ea958510e79bc0ffaf56",
       "kind": "document"
@@ -1090,6 +1149,7 @@
         "ordinal": 9,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 606,
       "sha256": "47c43da39f70b43050df6ab1e082747a434742b2d4230c9b1c16898911561848",
       "kind": "document"
@@ -1106,6 +1166,7 @@
         "ordinal": 0,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 286,
       "sha256": "bd0dfe9745376cee22f20b30bbb0b147cbb410123a81092a8af1a13d6289af38",
       "kind": "document"
@@ -1122,6 +1183,7 @@
         "ordinal": 1,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 751,
       "sha256": "94dcf33f5ee855b2ace43df513f256858cdc46606fed825532503356f50ced58",
       "kind": "document"
@@ -1138,8 +1200,9 @@
         "ordinal": 2,
         "linkBase": "references"
       },
-      "bytes": 7411,
-      "sha256": "e6758d2324bb1041f338fbc58700f9f72f418a13d9b0f426203106a3198614bd",
+      "readPolicy": "explicit-query",
+      "bytes": 7428,
+      "sha256": "ee677b6094140cc712e6e1abae647af4aef589dd35bf91347fbf062508e00e38",
       "kind": "document"
     },
     {
@@ -1154,8 +1217,9 @@
         "ordinal": 3,
         "linkBase": "references"
       },
-      "bytes": 8650,
-      "sha256": "06a37f47d67f4ad3201656f67b65a84d2ff5c121ff3551e01acf4f0b9ec54a1b",
+      "readPolicy": "explicit-query",
+      "bytes": 8648,
+      "sha256": "e739db5418596b6184ca44f97e4615effad39091ad8f09f50337bc54c6ea768b",
       "kind": "document"
     },
     {
@@ -1172,6 +1236,7 @@
         "ordinal": 4,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 508,
       "sha256": "f2c6810d2a1d8cd908bfc58cb3a0b5ef291df1a5a3bf86846308c03e53f1a6b2",
       "kind": "document"
@@ -1188,6 +1253,7 @@
         "ordinal": 5,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 511,
       "sha256": "6bf6c2b0951be0d093780d4d65da6f1fdf37f913a573fe29e3a57e8423256aa1",
       "kind": "document"
@@ -1204,6 +1270,7 @@
         "ordinal": 6,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 503,
       "sha256": "b510ec9b358f955853c68c39846db0179cd94329f4dded5e128beea8dfb439d4",
       "kind": "document"
@@ -1220,6 +1287,7 @@
         "ordinal": 7,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 1718,
       "sha256": "46990409a2284ec1761d20035b244ede4823a7d714c609a103b84abd531bd06e",
       "kind": "document"
@@ -1236,6 +1304,7 @@
         "ordinal": 8,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 272,
       "sha256": "445d5d240d7c468f2c585c995e2490f07c8bcb2337cdc29bc237cdac1493af25",
       "kind": "document"
@@ -1252,6 +1321,7 @@
         "ordinal": 0,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 660,
       "sha256": "56743e04cbbd643ca6b4ed1a9cbb31b39521b0f92a8388166a11ad52f6e8f341",
       "kind": "document"
@@ -1270,24 +1340,9 @@
         "ordinal": 1,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 1250,
       "sha256": "59400e77c989230a39fe3646e8598c22687d20f4dcde25bcce79d06595d87ecb",
-      "kind": "document"
-    },
-    {
-      "id": "patterns.global-title-layer",
-      "path": "references/resources/patterns/global-title-layer.md",
-      "purpose": "2. Global Title Layer",
-      "stage": [],
-      "appliesTo": {},
-      "requires": [],
-      "source": {
-        "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 2,
-        "linkBase": "references"
-      },
-      "bytes": 26,
-      "sha256": "09f5c108e9a9aa9b8a3ceedd2d43e78b3607e379d7d3d62f355118eb4336f03d",
       "kind": "document"
     },
     {
@@ -1305,11 +1360,12 @@
       "requires": [],
       "source": {
         "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 3,
+        "ordinal": 2,
         "linkBase": "references"
       },
-      "bytes": 277,
-      "sha256": "e76bc73c51100892f30a12e38336072a3373ff63880b586fa74617fc67b10598",
+      "readPolicy": "stage",
+      "bytes": 303,
+      "sha256": "6cb46316b51da7da5dc5924341ea405397583723a1e92827533604c4118b1393",
       "kind": "document"
     },
     {
@@ -1327,9 +1383,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 4,
+        "ordinal": 3,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 1397,
       "sha256": "0c6ba4f3b70e9279f3bdee20fefc9ebf25bd8ff634faf35e92a3fb80d6d79b41",
       "kind": "document"
@@ -1349,9 +1406,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 5,
+        "ordinal": 4,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 312,
       "sha256": "dd427b2d01d2f55c72e086d982e8d184d8594c7871c06eb4c1189a11c95a0e01",
       "kind": "document"
@@ -1371,9 +1429,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 6,
+        "ordinal": 5,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 748,
       "sha256": "69f9a908567edf8ad92a70b8413d7869056c8e692136f4f5e530f17316536592",
       "kind": "document"
@@ -1393,27 +1452,12 @@
       "requires": [],
       "source": {
         "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 7,
+        "ordinal": 6,
         "linkBase": "references"
       },
-      "bytes": 2027,
-      "sha256": "b8c90b51eb999828930d01ee3b4d8ee81bab0681f58ed23c4b087dcceec2f5e7",
-      "kind": "document"
-    },
-    {
-      "id": "patterns.approved-shell-patterns",
-      "path": "references/resources/patterns/approved-shell-patterns.md",
-      "purpose": "3. Approved Shell Patterns",
-      "stage": [],
-      "appliesTo": {},
-      "requires": [],
-      "source": {
-        "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 8,
-        "linkBase": "references"
-      },
-      "bytes": 31,
-      "sha256": "9fde0c93f37ca16e41650af7251ef8e29f63208e69d7ac43ab30bb25b0ab755b",
+      "readPolicy": "stage",
+      "bytes": 2044,
+      "sha256": "9cf9bbc1b2189d621b75b819ea488dba87dd0799748f98d8276ce12c3e635b9b",
       "kind": "document"
     },
     {
@@ -1425,11 +1469,12 @@
       "requires": [],
       "source": {
         "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 9,
+        "ordinal": 7,
         "linkBase": "references"
       },
-      "bytes": 5218,
-      "sha256": "f340794b6791e8564f0d34ef5677a8512457e3c3b903aba28e5ac766222a2602",
+      "readPolicy": "explicit-query",
+      "bytes": 5249,
+      "sha256": "6fd94aec394417a9fd9fa78cb5cbd127ca1fffa75b56779e46b0c28b81a2cfd4",
       "kind": "document"
     },
     {
@@ -1447,9 +1492,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 10,
+        "ordinal": 8,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 810,
       "sha256": "4d51cc44ef20055cca37e5bb06b25396712f2ec773bc990b839bdbd304d7cb97",
       "kind": "document"
@@ -1469,9 +1515,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 11,
+        "ordinal": 9,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 3502,
       "sha256": "c0f0b890cd1da4ebc3dfb369bcdb0370d8c16463a2fa70067f6599391bffa46d",
       "kind": "document"
@@ -1491,9 +1538,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 12,
+        "ordinal": 10,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 4107,
       "sha256": "a7713b949ab6da8ae59011522edbbd85efcbc24beff16eb9ddf1918d427ca152",
       "kind": "document"
@@ -1513,9 +1561,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 13,
+        "ordinal": 11,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 1216,
       "sha256": "387db891b95ea633995d10534ca6d085b5b1d42a9aff0718b057b48d34c61638",
       "kind": "document"
@@ -1535,27 +1584,12 @@
       "requires": [],
       "source": {
         "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 14,
+        "ordinal": 12,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 402,
       "sha256": "b87ef7f17cbbaa2b1007b170523ae3c8d22649869ef1c18f06c4344d02079d82",
-      "kind": "document"
-    },
-    {
-      "id": "patterns.pane-behavior",
-      "path": "references/resources/patterns/pane-behavior.md",
-      "purpose": "4. Pane Behavior",
-      "stage": [],
-      "appliesTo": {},
-      "requires": [],
-      "source": {
-        "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 15,
-        "linkBase": "references"
-      },
-      "bytes": 21,
-      "sha256": "3e1dbaacb4434e07b5412b28b532c29664a8457489766f14e5bfb3a612e705fa",
       "kind": "document"
     },
     {
@@ -1569,11 +1603,12 @@
       "requires": [],
       "source": {
         "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 16,
+        "ordinal": 13,
         "linkBase": "references"
       },
-      "bytes": 506,
-      "sha256": "8eaab4cc83f36e4eca0691fce9ba92ea3a1c276ec24f9e7fbcef7fedea283e15",
+      "readPolicy": "stage",
+      "bytes": 527,
+      "sha256": "a01c933a514fb5ff776b4bca01d24c49e60fcd1eead8e2d5b1aaf1f6abe31329",
       "kind": "document"
     },
     {
@@ -1591,11 +1626,12 @@
       "requires": [],
       "source": {
         "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 17,
+        "ordinal": 14,
         "linkBase": "references"
       },
-      "bytes": 564,
-      "sha256": "583baea08ec4f8e1d4054f01b02d4cd924248e456dcfb4a6f1d48317a46c3660",
+      "readPolicy": "stage",
+      "bytes": 592,
+      "sha256": "962857ae646ed124d79dc091be60d580ce522409a08bdee1a946c10fa1a5fcbc",
       "kind": "document"
     },
     {
@@ -1609,9 +1645,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 18,
+        "ordinal": 15,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 799,
       "sha256": "81e922005965a2ef4fa9a8fe0b35ffe8558a517c42af88860aaf01687d2278f6",
       "kind": "document"
@@ -1631,9 +1668,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 19,
+        "ordinal": 16,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 132,
       "sha256": "ab7da72e1d9e9aaa55df50639d41bb71f5cd673acb60d4c2a0d94c184c622584",
       "kind": "document"
@@ -1649,9 +1687,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 20,
+        "ordinal": 17,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 1165,
       "sha256": "4f709a324f3c7b67e2167caed4f5fb54df8e9166be42319ca43c3f8f86c633b6",
       "kind": "document"
@@ -1667,9 +1706,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 21,
+        "ordinal": 18,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 352,
       "sha256": "f7aaad5a7c6f0fca1b0364c0379af7f59cfb70246f414176a1ce59efc0bb8576",
       "kind": "document"
@@ -1685,9 +1725,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 22,
+        "ordinal": 19,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 322,
       "sha256": "fab65389807eeb7581d32a82c1c8c7fcc42907e29cded8063bec1b7eb8383ccf",
       "kind": "document"
@@ -1701,9 +1742,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/harmonyos-layout-patterns.md",
-        "ordinal": 23,
+        "ordinal": 20,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 366,
       "sha256": "c1b4f8296828bad8e7600ca8a60d6bfa5e45faa9ff9fb777460b5d7f07b3a73f",
       "kind": "document"
@@ -1720,6 +1762,7 @@
         "ordinal": 0,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 221,
       "sha256": "8b67a7b57a0e9b5974d6df2f005deaa829901cea7197fe16f0089150bb7f63e4",
       "kind": "document"
@@ -1736,6 +1779,7 @@
         "ordinal": 1,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 1058,
       "sha256": "39fb917a993c4a957008c0d5804ed3ee59fc93e7feffe5772cf2a86a1a13d3f2",
       "kind": "document"
@@ -1752,6 +1796,7 @@
         "ordinal": 2,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 1001,
       "sha256": "d8e2ad775193b581e2617f3a2f7c89aabb11210e9524cadcfce5f41c6ee7057f",
       "kind": "document"
@@ -1774,6 +1819,7 @@
         "ordinal": 3,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 743,
       "sha256": "517a413a6913351b788790d1044817efaaa6cc8c38698d3c18e9852f79d66ba7",
       "kind": "document"
@@ -1796,6 +1842,7 @@
         "ordinal": 4,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 941,
       "sha256": "fec07785e9ccae09b6015f2ff1dff04726ed4a1d1a8cb3801e0b30a383b3ae9f",
       "kind": "document"
@@ -1809,18 +1856,18 @@
       ],
       "appliesTo": {
         "interactions": [
-          "date",
-          "time"
+          "keyboard"
         ]
       },
       "requires": [],
       "source": {
         "aggregate": "references/interaction-spec.md",
-        "ordinal": 5,
+        "ordinal": 7,
         "linkBase": "references"
       },
-      "bytes": 2358,
-      "sha256": "0101486fdd764df412233a5cc9a379bb9e43bb549697c289be25a13d90e82f01",
+      "readPolicy": "stage",
+      "bytes": 748,
+      "sha256": "a30119b84645e6321d883b3971169429e95f1593010a7b9c19f432cc64588167",
       "kind": "document"
     },
     {
@@ -1838,9 +1885,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/interaction-spec.md",
-        "ordinal": 6,
+        "ordinal": 8,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 5544,
       "sha256": "bae4e29b471353fd78970aec1d298c4aa84adc42cd8c11eabc9a4f77f77e0eb6",
       "kind": "document"
@@ -1860,9 +1908,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/interaction-spec.md",
-        "ordinal": 7,
+        "ordinal": 9,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 1027,
       "sha256": "56c9b7edb0e0c50e134567c135a85ab2e001565a8e3dd2a7f973dd9120fd35c8",
       "kind": "document"
@@ -1882,9 +1931,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/interaction-spec.md",
-        "ordinal": 8,
+        "ordinal": 10,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 1907,
       "sha256": "e658301098e0cd2b8da93b9988c8096f8c72bd6803be98d73316c04d24c47acd",
       "kind": "document"
@@ -1904,9 +1954,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/interaction-spec.md",
-        "ordinal": 9,
+        "ordinal": 11,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 2200,
       "sha256": "9a7862aa522545917138323977dc09d537bffce8ec9635fe0040bf11a3ac4a77",
       "kind": "document"
@@ -1926,9 +1977,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/interaction-spec.md",
-        "ordinal": 10,
+        "ordinal": 12,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 1253,
       "sha256": "fb15aef974bd3b607da9ce8fd7aaecc9ae4e6cd13a7ac3aabd54e65fb9eabd84",
       "kind": "document"
@@ -1948,9 +2000,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/interaction-spec.md",
-        "ordinal": 11,
+        "ordinal": 13,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 487,
       "sha256": "e2e68306a240bd15ac3d096af374ce53041a6ae09843b93c0ceb966d23731668",
       "kind": "document"
@@ -1970,9 +2023,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/interaction-spec.md",
-        "ordinal": 12,
+        "ordinal": 14,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 706,
       "sha256": "957bf0966d4a70dcb5a3727891f9277574f0738514c9463997fb2552726104b5",
       "kind": "document"
@@ -1986,9 +2040,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/interaction-spec.md",
-        "ordinal": 13,
+        "ordinal": 15,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 706,
       "sha256": "99db17d083773f4cb7f9792ed76bfad96c81e9bb9258c9bed1e2c8c667fa3536",
       "kind": "document"
@@ -2008,9 +2063,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/interaction-spec.md",
-        "ordinal": 14,
+        "ordinal": 16,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 458,
       "sha256": "1b11d2b717baa8146b873381f590e18ad8e911516a25fc0e22fde3f1cf144b16",
       "kind": "document"
@@ -2030,9 +2086,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/interaction-spec.md",
-        "ordinal": 15,
+        "ordinal": 17,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 475,
       "sha256": "87b6d259d7ec4fc54c4ab1382cf35a4585011dd0de7eb7283ff761926f7e5955",
       "kind": "document"
@@ -2051,6 +2108,7 @@
         "ordinal": 0,
         "linkBase": "references/components"
       },
+      "readPolicy": "stage",
       "bytes": 2070,
       "sha256": "93766a787d0619121f5d6225e54837d2479a14cae6d51102cd2fa7f30c45d41b",
       "kind": "document"
@@ -2069,24 +2127,9 @@
         "ordinal": 1,
         "linkBase": "references/components"
       },
+      "readPolicy": "stage",
       "bytes": 1029,
       "sha256": "f5f0a42d7f717a5d862785f4109307b78f55ff66cce2bb67b2d5162ff0d9d342",
-      "kind": "document"
-    },
-    {
-      "id": "composition.style-and-behavior-plans",
-      "path": "references/resources/composition/style-and-behavior-plans.md",
-      "purpose": "Style and behavior plans",
-      "stage": [],
-      "appliesTo": {},
-      "requires": [],
-      "source": {
-        "aggregate": "references/components/page-composition.md",
-        "ordinal": 2,
-        "linkBase": "references/components"
-      },
-      "bytes": 29,
-      "sha256": "5ca61f1b3b36e00cacf1051177df68dac351d2d2938013fc0cea29bfc3037a6f",
       "kind": "document"
     },
     {
@@ -2104,11 +2147,12 @@
       "requires": [],
       "source": {
         "aggregate": "references/components/page-composition.md",
-        "ordinal": 3,
+        "ordinal": 2,
         "linkBase": "references/components"
       },
-      "bytes": 3647,
-      "sha256": "104c5dee34f6a3d593ece1491d60ce0c29e7c399b1055dba297631a50d8a5705",
+      "readPolicy": "stage",
+      "bytes": 4322,
+      "sha256": "b1ff5c0370077fc79be720a941d629e4fb980e8adf209899bcc59e92b2be1dfb",
       "kind": "document"
     },
     {
@@ -2124,11 +2168,12 @@
       ],
       "source": {
         "aggregate": "references/components/page-composition.md",
-        "ordinal": 4,
+        "ordinal": 3,
         "linkBase": "references/components"
       },
-      "bytes": 2275,
-      "sha256": "b97a58eaa9b71a44364d319dd8f350b47945ccc695fd605774242e2f17dd9b18",
+      "readPolicy": "stage",
+      "bytes": 2598,
+      "sha256": "f5575338c00a67bf5920135ab0141ff0b03a023c164e7e8749eee5cb48e72a64",
       "kind": "document"
     },
     {
@@ -2144,9 +2189,10 @@
       ],
       "source": {
         "aggregate": "references/components/page-composition.md",
-        "ordinal": 5,
+        "ordinal": 4,
         "linkBase": "references/components"
       },
+      "readPolicy": "stage",
       "bytes": 1851,
       "sha256": "434f226cf4dec948075d0834cb93d5276d4a780506f2f5cc7c9750fc463d85fa",
       "kind": "document"
@@ -2162,9 +2208,10 @@
       "requires": [],
       "source": {
         "aggregate": "references/components/page-composition.md",
-        "ordinal": 6,
+        "ordinal": 5,
         "linkBase": "references/components"
       },
+      "readPolicy": "stage",
       "bytes": 2938,
       "sha256": "a65e185a40b380a8dbc89cb55c838348348a38771e414a959941a19fdd9f9bce",
       "kind": "document"
@@ -2181,6 +2228,7 @@
         "ordinal": 0,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 335,
       "sha256": "a7c7118929af077934baa555f137ec5c59560deca157b0b7073dfc10ec04ab08",
       "kind": "document"
@@ -2199,6 +2247,7 @@
         "ordinal": 1,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 1096,
       "sha256": "51fd7700569cbc52fc6eb4db5b24d4c106c999aac319c5c5dfd872291592834c",
       "kind": "document"
@@ -2217,6 +2266,7 @@
         "ordinal": 2,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 1247,
       "sha256": "e74b2277d6a11bfd0217a8e23fabfacad0a2dee408afb8d407e8faf1a24d03b0",
       "kind": "document"
@@ -2239,6 +2289,7 @@
         "ordinal": 3,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 1063,
       "sha256": "f179d94f1258d0197b75bf14635a895e3272087046ceae05d7d59472f438d48e",
       "kind": "document"
@@ -2255,6 +2306,7 @@
         "ordinal": 4,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 811,
       "sha256": "af53adeab4659c56e379ca0e36a53f6bdd0c53da5f98ce8a673c6d18cf0f7c30",
       "kind": "document"
@@ -2271,6 +2323,7 @@
         "ordinal": 0,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 267,
       "sha256": "f06673b40d05dcb635d436f80598f57c0d6e559b3ba43f66223aa5b5b876bceb",
       "kind": "document"
@@ -2289,6 +2342,7 @@
         "ordinal": 1,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 653,
       "sha256": "bcff80a80b2d1b48c5dba715cbb4a54bbffa3f63a9d0b72bf1c7de9930857d4e",
       "kind": "document"
@@ -2307,6 +2361,7 @@
         "ordinal": 2,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 923,
       "sha256": "ef6298c89575869cba19954c5464014f368962e1c87599ca420d7a458b6c84d0",
       "kind": "document"
@@ -2325,6 +2380,7 @@
         "ordinal": 3,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 783,
       "sha256": "d0cb864e105e189ea2e81baf09eac629709e3dfc2e54f49f2907c64b446a3833",
       "kind": "document"
@@ -2343,6 +2399,7 @@
         "ordinal": 4,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 592,
       "sha256": "f890c44d5c08545c4716a8e4a7e161b99a41c2b7a9ff35c5524acdb228328943",
       "kind": "document"
@@ -2361,6 +2418,7 @@
         "ordinal": 5,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 918,
       "sha256": "93f1861b34a94e26a72c0bbdfc48940bb708f31ae291ab7f3514739042237882",
       "kind": "document"
@@ -2377,6 +2435,7 @@
         "ordinal": 0,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 501,
       "sha256": "302d6872026c3c13e482ed74c0ce991d3a69e1cd79fda98a994bf4227bca7301",
       "kind": "document"
@@ -2399,6 +2458,7 @@
         "ordinal": 1,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 782,
       "sha256": "c852568d2ca9984d855fe2ad73e6c50a2455e58e484c511157f947a251d04303",
       "kind": "document"
@@ -2427,6 +2487,7 @@
         "ordinal": 2,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 4365,
       "sha256": "a87fc88587c603899ea908d9181cd853562e4021eff465b7a1d5349aeb779ec4",
       "kind": "document"
@@ -2445,8 +2506,7 @@
           "context-menu",
           "dropdown-menu",
           "popover",
-          "tooltip",
-          "command"
+          "tooltip"
         ]
       },
       "requires": [],
@@ -2455,6 +2515,10 @@
         "ordinal": 3,
         "linkBase": "references"
       },
+      "extensionReferences": [
+        "command"
+      ],
+      "readPolicy": "stage",
       "bytes": 2745,
       "sha256": "a3c991321be271525020ed810aa4bcf1155ddbbb425f0609973191c07ef83fb4",
       "kind": "document"
@@ -2476,7 +2540,11 @@
           "combobox",
           "native-select",
           "select",
-          "slider"
+          "slider",
+          "field",
+          "form-field",
+          "label",
+          "number-selector"
         ]
       },
       "requires": [],
@@ -2485,6 +2553,7 @@
         "ordinal": 4,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 3497,
       "sha256": "d1c0b952624ceddd02f33ff5d8b741e7871dce69812aa4ef5e818dca76f6d7a0",
       "kind": "document"
@@ -2502,9 +2571,7 @@
           "date-picker",
           "time-picker",
           "progress",
-          "skeleton",
-          "table",
-          "data-table"
+          "table"
         ]
       },
       "requires": [],
@@ -2513,6 +2580,11 @@
         "ordinal": 5,
         "linkBase": "references"
       },
+      "extensionReferences": [
+        "skeleton",
+        "data-table"
+      ],
+      "readPolicy": "stage",
       "bytes": 1737,
       "sha256": "2b1f797fe6db5469f7690996f9cd09a9c6b71d1e26240cbdd61ba5c668b47be2",
       "kind": "document"
@@ -2529,10 +2601,7 @@
           "attachment",
           "avatar",
           "badge",
-          "list-item",
-          "resizable",
-          "scroll-area",
-          "separator",
+          "list-card",
           "titlebar"
         ]
       },
@@ -2542,6 +2611,12 @@
         "ordinal": 6,
         "linkBase": "references"
       },
+      "extensionReferences": [
+        "resizable",
+        "scroll-area",
+        "separator"
+      ],
+      "readPolicy": "stage",
       "bytes": 821,
       "sha256": "af2fa4e89253cca291f1568734a6f963c2f33923ba2482b9291923d21653c410",
       "kind": "document"
@@ -2558,8 +2633,9 @@
         "ordinal": 0,
         "linkBase": "references/components"
       },
-      "bytes": 2058,
-      "sha256": "2d324fe2d0112903a5cbb53ccefcc3e02bfb695b110c86b58b868f17a39477f1",
+      "readPolicy": "explicit-query",
+      "bytes": 2086,
+      "sha256": "d7b2f2381ce4d5571c83497f43adf5ccc2a3c3e24bfb5ca28fa4b7b36e662c57",
       "kind": "document"
     },
     {
@@ -2574,14 +2650,19 @@
           "titlebar"
         ]
       },
-      "requires": [],
+      "requires": [
+        "titlebar.overview",
+        "titlebar.title-typography",
+        "titlebar.trailing-inset"
+      ],
       "source": {
         "aggregate": "references/components/titlebar-segments.md",
         "ordinal": 1,
         "linkBase": "references/components"
       },
-      "bytes": 1387,
-      "sha256": "d3eb1ad6896ddd3c21cc0467c417245d3a80c54f53030ea5e9b19cadcd231e25",
+      "readPolicy": "stage",
+      "bytes": 1383,
+      "sha256": "218c5efb12fd4167e66b6bd3a3ad251f5d0735e2064c462bed2401e6542f38ae",
       "kind": "document"
     },
     {
@@ -2596,6 +2677,7 @@
         "ordinal": 2,
         "linkBase": "references/components"
       },
+      "readPolicy": "explicit-query",
       "bytes": 437,
       "sha256": "dcc7276e986c8c54ab761b54a80563af783087ab12cc88f00fd84401bece210a",
       "kind": "document"
@@ -2612,6 +2694,7 @@
         "ordinal": 3,
         "linkBase": "references/components"
       },
+      "readPolicy": "explicit-query",
       "bytes": 369,
       "sha256": "83aa2307bc23c0c489eadd62e797ab16b95eb42ac3f2871e93fc6f7823716400",
       "kind": "document"
@@ -2628,12 +2711,17 @@
           "titlebar"
         ]
       },
-      "requires": [],
+      "requires": [
+        "titlebar.overview",
+        "titlebar.title-typography",
+        "titlebar.trailing-inset"
+      ],
       "source": {
         "aggregate": "references/components/titlebar-segments.md",
         "ordinal": 4,
         "linkBase": "references/components"
       },
+      "readPolicy": "stage",
       "bytes": 3867,
       "sha256": "10207d436833c97d829fee01f8a86097afd0d9eafbc3607a591410a490991993",
       "kind": "document"
@@ -2650,12 +2738,17 @@
           "titlebar"
         ]
       },
-      "requires": [],
+      "requires": [
+        "titlebar.overview",
+        "titlebar.title-typography",
+        "titlebar.trailing-inset"
+      ],
       "source": {
         "aggregate": "references/components/titlebar-segments.md",
         "ordinal": 5,
         "linkBase": "references/components"
       },
+      "readPolicy": "stage",
       "bytes": 2854,
       "sha256": "ed93a1dc74baf3387f85cb53986faf8b87072e6811dc2cadbce82fdf6858a999",
       "kind": "document"
@@ -2672,6 +2765,7 @@
         "ordinal": 0,
         "linkBase": "references/components"
       },
+      "readPolicy": "explicit-query",
       "bytes": 245,
       "sha256": "c95b33d3505aab56a76565b3763edf51db133f53fa5d364656a14fb84e216b3c",
       "kind": "document"
@@ -2688,6 +2782,7 @@
         "ordinal": 1,
         "linkBase": "references/components"
       },
+      "readPolicy": "explicit-query",
       "bytes": 489,
       "sha256": "19adfa0ec3ea6e28bbb693cb34d82caccf700339e73ba861b6d3db0b1450f876",
       "kind": "document"
@@ -2704,8 +2799,9 @@
         "ordinal": 2,
         "linkBase": "references/components"
       },
-      "bytes": 1437,
-      "sha256": "129517549490e52400f6605e7f7780e9994ee2c09ccdd4bbf28d36343e9408bd",
+      "readPolicy": "explicit-query",
+      "bytes": 1671,
+      "sha256": "2bf1313c25c4301238b585c99c293ed2a007770051ed7e41182c1a8d4c6afe0e",
       "kind": "document"
     },
     {
@@ -2720,6 +2816,7 @@
         "ordinal": 3,
         "linkBase": "references/components"
       },
+      "readPolicy": "explicit-query",
       "bytes": 871,
       "sha256": "d5c9ae8f8444e9cacf1e804e872ffdd95521d61717110ac79304b675564b84fd",
       "kind": "document"
@@ -2738,8 +2835,9 @@
         "ordinal": 4,
         "linkBase": "references/components"
       },
-      "bytes": 1578,
-      "sha256": "d9d47511e46701579a3ef039745b39f0d223b08d281a55a10b8b87feabc38af2",
+      "readPolicy": "stage",
+      "bytes": 1804,
+      "sha256": "72df1b20f3f4213c2cea14c8341bbc9e14b3736f3e5e08830c578bc800b57d81",
       "kind": "document"
     },
     {
@@ -2754,6 +2852,7 @@
         "ordinal": 5,
         "linkBase": "references/components"
       },
+      "readPolicy": "explicit-query",
       "bytes": 516,
       "sha256": "09ebc38b011fab8341062b2bd8bdb1085a80817040636d5e5337cfae0840fd78",
       "kind": "document"
@@ -2770,6 +2869,7 @@
         "ordinal": 6,
         "linkBase": "references/components"
       },
+      "readPolicy": "explicit-query",
       "bytes": 647,
       "sha256": "743ea017d66ddbd69400b6f570a907cb5144aa567ce6fdb30095e30b445875cf",
       "kind": "document"
@@ -2786,6 +2886,7 @@
         "ordinal": 0,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 387,
       "sha256": "4801ade09f8378776454cdc5ffd7f6ef76d91688ad5d34e1753aecfc04d10a90",
       "kind": "document"
@@ -2808,6 +2909,7 @@
         "ordinal": 1,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 4819,
       "sha256": "6980beb934aab1983898b5b8ef6660bbe7b0cb58be40bbd3f3a97c2a3ba7be8d",
       "kind": "document"
@@ -2830,6 +2932,7 @@
         "ordinal": 2,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 1650,
       "sha256": "f900f042f9033deeeec31ab30e405fe4e59ac1c17b0543791e5dc41e9f14add8",
       "kind": "document"
@@ -2852,6 +2955,7 @@
         "ordinal": 3,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 4775,
       "sha256": "8f6236939d9bd6f91726d6528d73dc53b77eb43558a8276690992ce4a0901c20",
       "kind": "document"
@@ -2874,6 +2978,7 @@
         "ordinal": 4,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 1160,
       "sha256": "0a37f4d3aa87c2a903f4c1c7d34dfc973b5cf4178ab661ed9a5e84bc2ef0c53f",
       "kind": "document"
@@ -2896,6 +3001,7 @@
         "ordinal": 5,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 2093,
       "sha256": "1b7e1e07c79232a60b6a822ec580f619bb1a2366daad20b5832729cb24a1be42",
       "kind": "document"
@@ -2918,6 +3024,7 @@
         "ordinal": 6,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 1992,
       "sha256": "6aa03082e1e4062ca329234854bd9d86a4f14add256eb454d495b1253ce51170",
       "kind": "document"
@@ -2940,6 +3047,7 @@
         "ordinal": 7,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 2534,
       "sha256": "13590f52fb79d601fa42b3df8396c5c857c8b5fd00406075812ea97519c324e7",
       "kind": "document"
@@ -2962,6 +3070,7 @@
         "ordinal": 8,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 1623,
       "sha256": "ae3b60a77da73f1fc3fa699696a640f374cf87a8bb7176912e6d50488a190f75",
       "kind": "document"
@@ -2978,6 +3087,7 @@
         "ordinal": 0,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 453,
       "sha256": "e938293b2fc2ab0d925d78e894708b2df82e7c5a9a0b45f064bbf45b288c6ccc",
       "kind": "document"
@@ -2994,6 +3104,7 @@
         "ordinal": 1,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 754,
       "sha256": "432ddc17f57b6f84599a0f21de1974a58f7291d08785bfe39a045489cc51a19f",
       "kind": "document"
@@ -3010,6 +3121,7 @@
         "ordinal": 2,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 2013,
       "sha256": "a9b47b087f9c158a708daa4091c595c431a7cdec2b51c470ad80ce4e5c99aec7",
       "kind": "document"
@@ -3026,8 +3138,9 @@
         "ordinal": 3,
         "linkBase": "references"
       },
-      "bytes": 4260,
-      "sha256": "5cdc818b5da3bb4f91dd247e2984357e7d7ceff7430e77e3d20f25c6b44d5668",
+      "readPolicy": "explicit-query",
+      "bytes": 962,
+      "sha256": "0103cee55aa03ed2ede1dae9cd57ec96241b854b6025a9eafb5feee5336a6382",
       "kind": "document"
     },
     {
@@ -3042,8 +3155,9 @@
         "ordinal": 4,
         "linkBase": "references"
       },
-      "bytes": 3205,
-      "sha256": "0dd851a8256167fc1830d8c8cd5f06de3a4086472c1e90414c1cacf4e49534ac",
+      "readPolicy": "explicit-query",
+      "bytes": 633,
+      "sha256": "b16392e8449004bd550ab68902ef68933e3074198d50394dbf1b86cc2ab12ddd",
       "kind": "document"
     },
     {
@@ -3058,6 +3172,7 @@
         "ordinal": 5,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 2044,
       "sha256": "426409e09fc344fe674bb319756477b548f528a7d78167ffdb10818225329666",
       "kind": "document"
@@ -3074,8 +3189,9 @@
         "ordinal": 6,
         "linkBase": "references"
       },
-      "bytes": 3082,
-      "sha256": "2b6b2003b9a7ca7e7951e2623cf6545b4ba2f13926de1c569eb1b3cf18e56a6d",
+      "readPolicy": "explicit-query",
+      "bytes": 3136,
+      "sha256": "9d560129eb0cc4d062bb22347f085ed83f3e8fe072d559ec0f0027a97e46c325",
       "kind": "document"
     },
     {
@@ -3090,6 +3206,7 @@
         "ordinal": 7,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 2396,
       "sha256": "ff1b823e381e7b0095139a45516d587ef11cb27aa335cb26ff3e2ca754079a21",
       "kind": "document"
@@ -3106,6 +3223,7 @@
         "ordinal": 8,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 706,
       "sha256": "142e29e0743793fe98e2842f771ffd9fcd7f71d98ea9ced47e91713b5009636d",
       "kind": "document"
@@ -3128,6 +3246,7 @@
         "ordinal": 9,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 1353,
       "sha256": "332f25be8eab1a8854c5abbac6ef09d5ed9e69284af794e6500fc4af6efade12",
       "kind": "document"
@@ -3144,6 +3263,7 @@
         "ordinal": 10,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 189,
       "sha256": "4717c910aa984a20d6cb1ca08beffd20e6a54f7ea1c6e71edfdd08dd80518e19",
       "kind": "document"
@@ -3160,6 +3280,7 @@
         "ordinal": 0,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 1170,
       "sha256": "7f928718fb0dea04d121faa6706984258527649d99fc5a7a69b0fe414894ab99",
       "kind": "document"
@@ -3182,6 +3303,7 @@
         "ordinal": 1,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 1518,
       "sha256": "61fa183c67134b8aa513f83b3ac47837e68dc8081eb0b4a9ca44097c5f51d8aa",
       "kind": "document"
@@ -3198,6 +3320,7 @@
         "ordinal": 2,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 592,
       "sha256": "031bd5d40fc9a74ac68fa2697b6b50615ed9b21267048f71d49b3a5356cd670f",
       "kind": "document"
@@ -3214,6 +3337,7 @@
         "ordinal": 3,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 3005,
       "sha256": "d654910301e246321e1775b8e0961e3c9ee1461fe46bb103f603045806f81ce7",
       "kind": "document"
@@ -3230,6 +3354,7 @@
         "ordinal": 4,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 759,
       "sha256": "64412a20785af31bb80b47fe57dc290ee268a68984d6c4a8397e442233b6126b",
       "kind": "document"
@@ -3246,6 +3371,7 @@
         "ordinal": 5,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 615,
       "sha256": "7fbd37ee555a3e8bed53976a3eb23259dd5c5f324da819a66032bff718977275",
       "kind": "document"
@@ -3262,6 +3388,7 @@
         "ordinal": 6,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 613,
       "sha256": "e6193653d9ea76941efbaa4f2da6cf116ba516689de07a8fe8a3b8bc0247ba1d",
       "kind": "document"
@@ -3278,6 +3405,7 @@
         "ordinal": 7,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 879,
       "sha256": "35e27832c6cda539b96015f58fb9f363da406f0039ec8c7b2ffb01862ba72612",
       "kind": "document"
@@ -3294,6 +3422,7 @@
         "ordinal": 8,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 2679,
       "sha256": "d0a2e2f3aa6ccd0e4043e20f80a62f081f6f563e015dd65c94b0c0fdd95472bd",
       "kind": "document"
@@ -3310,6 +3439,7 @@
         "ordinal": 9,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 3982,
       "sha256": "ce1c9d1faa0eca2d144cc51793530cd5c8e6c848b9e578cb4f320b286b52f222",
       "kind": "document"
@@ -3326,6 +3456,7 @@
         "ordinal": 10,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 2647,
       "sha256": "cf7da034f8232a893208cf4de2c3c17d084b917c73e7cde636ea89ade37e418f",
       "kind": "document"
@@ -3342,6 +3473,7 @@
         "ordinal": 11,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 1492,
       "sha256": "8a29b1979f8fae3d1b1be133daed681a82d0a6c066e74e390660439b5108ed34",
       "kind": "document"
@@ -3358,6 +3490,7 @@
         "ordinal": 0,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 112,
       "sha256": "3ab05a1ee4ec6d3690530a143fb5618b258bcf4ba9f56ae0b64a206955b1a247",
       "kind": "document"
@@ -3381,6 +3514,7 @@
         "ordinal": 1,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 1527,
       "sha256": "5555e808ac97175d5aec62a1ed219ad41baaf89ee048688ffd8d52c74abb4d4c",
       "kind": "document"
@@ -3404,6 +3538,7 @@
         "ordinal": 2,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 1634,
       "sha256": "cad15341b0155f7eda636f500d90b8b75af1cc0bdd6be61a20287e8a007c0d4d",
       "kind": "document"
@@ -3426,6 +3561,7 @@
         "ordinal": 3,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 2751,
       "sha256": "4d8d01f31847edff581db89056efd1a221a0df96092563ff52ad0e79837e9c86",
       "kind": "document"
@@ -3448,6 +3584,7 @@
         "ordinal": 4,
         "linkBase": "references"
       },
+      "readPolicy": "stage",
       "bytes": 2911,
       "sha256": "a4c90acee38c5f9cfb2227a8b5630d1bc2cd6e1939491fe06514536ed1762aa0",
       "kind": "document"
@@ -3464,6 +3601,7 @@
         "ordinal": 5,
         "linkBase": "references"
       },
+      "readPolicy": "explicit-query",
       "bytes": 1248,
       "sha256": "3242b68865bc1ebbdb2c678886a858ea78248da417a125e4bfdf5721452378bc",
       "kind": "document"
@@ -3483,6 +3621,7 @@
       ],
       "appliesTo": {},
       "requires": [],
+      "readPolicy": "stage",
       "bytes": 977,
       "sha256": "27fd274f7f8ed89a14ca90a48bb5c4887127674cee6dfc6eaa5bde57a0a8d218",
       "kind": "document"
@@ -3498,6 +3637,7 @@
       "requires": [
         "core.delivery"
       ],
+      "readPolicy": "stage",
       "bytes": 1322,
       "sha256": "df11e0ea0417ac8be1fbf072ad6f2183be6c6f1a3075e30df55446ef40c5264d",
       "kind": "document"
@@ -3511,6 +3651,7 @@
       "requires": [
         "core.delivery"
       ],
+      "readPolicy": "explicit-query",
       "bytes": 924,
       "sha256": "a9471780aadd20496a1880547c44562a1226088418e58cd3b4ec31b264b10e75",
       "kind": "document"
@@ -3526,6 +3667,7 @@
       "requires": [
         "core.delivery"
       ],
+      "readPolicy": "stage",
       "bytes": 6655,
       "sha256": "f4b8bd7dc649dbb432feaea94a044a0d5b9569e7baf1fcbc3985aae53c161453",
       "kind": "document"
@@ -3541,8 +3683,215 @@
       "requires": [
         "core.delivery"
       ],
+      "readPolicy": "stage",
       "bytes": 3117,
       "sha256": "b130fc40d4f547c9a0ef32c695e09fdb66fa40d7341061cae4743a7308456a5b",
+      "kind": "document"
+    },
+    {
+      "id": "interaction.date-picker",
+      "path": "references/resources/interaction/date-picker.md",
+      "purpose": "date-picker keyboard and commit behavior",
+      "stage": [
+        "bindings"
+      ],
+      "appliesTo": {
+        "interactions": [
+          "date"
+        ]
+      },
+      "requires": [
+        "interaction.keyboard-and-focus"
+      ],
+      "readPolicy": "stage",
+      "source": {
+        "aggregate": "references/interaction-spec.md",
+        "ordinal": 5,
+        "linkBase": "references"
+      },
+      "bytes": 823,
+      "sha256": "4cd08412bf23a3462d2eaa237a79f46d42efdaa50839946f37a68d3799322b4f",
+      "kind": "document"
+    },
+    {
+      "id": "interaction.time-picker",
+      "path": "references/resources/interaction/time-picker.md",
+      "purpose": "time-picker keyboard and commit behavior",
+      "stage": [
+        "bindings"
+      ],
+      "appliesTo": {
+        "interactions": [
+          "time"
+        ]
+      },
+      "requires": [
+        "interaction.keyboard-and-focus"
+      ],
+      "readPolicy": "stage",
+      "source": {
+        "aggregate": "references/interaction-spec.md",
+        "ordinal": 6,
+        "linkBase": "references"
+      },
+      "bytes": 787,
+      "sha256": "a0df30f297491a4e0f4b472868a14d5756d9bb0b14ed9271625da7b7aa77372c",
+      "kind": "document"
+    },
+    {
+      "id": "foundations.colors",
+      "path": "references/resources/foundations/colors.md",
+      "purpose": "Colors：共享规范维护深度参考",
+      "stage": [],
+      "appliesTo": {},
+      "requires": [],
+      "readPolicy": "explicit-query",
+      "bytes": 8257,
+      "sha256": "1f74207b125fea100b11282ea5959ef389c20027953fad55a98d86813e02f910",
+      "kind": "document"
+    },
+    {
+      "id": "foundations.typography",
+      "path": "references/resources/foundations/typography.md",
+      "purpose": "Typography：共享规范维护深度参考",
+      "stage": [],
+      "appliesTo": {},
+      "requires": [],
+      "readPolicy": "explicit-query",
+      "bytes": 7242,
+      "sha256": "1f5b97ec5d36f831af3947879f2843af281a1a00f37de1460e00c050e30422bf",
+      "kind": "document"
+    },
+    {
+      "id": "foundations.spacing",
+      "path": "references/resources/foundations/spacing.md",
+      "purpose": "Spacing：共享规范维护深度参考",
+      "stage": [],
+      "appliesTo": {},
+      "requires": [],
+      "readPolicy": "explicit-query",
+      "bytes": 17227,
+      "sha256": "363c84ece944bda8cfcc2693ac083da5d951ae84c072984465bb55906cb8d827",
+      "kind": "document"
+    },
+    {
+      "id": "foundations.radius",
+      "path": "references/resources/foundations/radius.md",
+      "purpose": "Radius：共享规范维护深度参考",
+      "stage": [],
+      "appliesTo": {},
+      "requires": [],
+      "readPolicy": "explicit-query",
+      "bytes": 3669,
+      "sha256": "8d5e530df4f6239bbe3643d9438ee3aa99ae971e71010956e4c992f09d7866e2",
+      "kind": "document"
+    },
+    {
+      "id": "foundations.size",
+      "path": "references/resources/foundations/size.md",
+      "purpose": "Size and Dimensions：共享规范维护深度参考",
+      "stage": [],
+      "appliesTo": {},
+      "requires": [],
+      "readPolicy": "explicit-query",
+      "bytes": 7870,
+      "sha256": "022d33998c26fb8873e1a893024c30b843a23a69ac24483ef95de3a2a20edf85",
+      "kind": "document"
+    },
+    {
+      "id": "foundations.shadows",
+      "path": "references/resources/foundations/shadows.md",
+      "purpose": "Shadows：共享规范维护深度参考",
+      "stage": [],
+      "appliesTo": {},
+      "requires": [],
+      "readPolicy": "explicit-query",
+      "bytes": 4269,
+      "sha256": "4c583d054b7eb67a8f025c290931a0376182d5ce82ebaebfeb8230516fdf3f5a",
+      "kind": "document"
+    },
+    {
+      "id": "component-visual.buttons",
+      "path": "references/resources/component-visual/buttons.md",
+      "purpose": "Buttons：共享规范维护深度参考",
+      "stage": [],
+      "appliesTo": {},
+      "requires": [],
+      "readPolicy": "explicit-query",
+      "bytes": 5639,
+      "sha256": "7f2271e10fd1bed3f6e780c5d2cad8fb84d35daac43da7ed6b37b1578e8990d5",
+      "kind": "document"
+    },
+    {
+      "id": "component-visual.inputs",
+      "path": "references/resources/component-visual/inputs.md",
+      "purpose": "Inputs：共享规范维护深度参考",
+      "stage": [],
+      "appliesTo": {},
+      "requires": [],
+      "readPolicy": "explicit-query",
+      "bytes": 7595,
+      "sha256": "4ef4c687952866fb7d0618e88513ecc1bbded95f1027a53576420ede8abc23b4",
+      "kind": "document"
+    },
+    {
+      "id": "component-visual.cards",
+      "path": "references/resources/component-visual/cards.md",
+      "purpose": "Cards：共享规范维护深度参考",
+      "stage": [],
+      "appliesTo": {},
+      "requires": [],
+      "readPolicy": "explicit-query",
+      "bytes": 1204,
+      "sha256": "c8b563f98d695a79d77bd7e6ba2c794b265a93f7d5204601d08c388debe5b70c",
+      "kind": "document"
+    },
+    {
+      "id": "component-visual.navigation-and-lists",
+      "path": "references/resources/component-visual/navigation-and-lists.md",
+      "purpose": "Tabs, Navigation, and Lists：共享规范维护深度参考",
+      "stage": [],
+      "appliesTo": {},
+      "requires": [],
+      "readPolicy": "explicit-query",
+      "bytes": 8182,
+      "sha256": "eaa6b9886a5a0efe010a618eed20410e039393c95129951fbc398c7696eb91bc",
+      "kind": "document"
+    },
+    {
+      "id": "component-visual.data",
+      "path": "references/resources/component-visual/data.md",
+      "purpose": "Data Display：共享规范维护深度参考",
+      "stage": [],
+      "appliesTo": {},
+      "requires": [],
+      "readPolicy": "explicit-query",
+      "bytes": 2951,
+      "sha256": "638e86a03544b1fd41e85b848d25b3e57802767d6f88afb779d1dce68ab69a0d",
+      "kind": "document"
+    },
+    {
+      "id": "component-visual.feedback-and-overlays",
+      "path": "references/resources/component-visual/feedback-and-overlays.md",
+      "purpose": "Modals / Toasts：共享规范维护深度参考",
+      "stage": [],
+      "appliesTo": {},
+      "requires": [],
+      "readPolicy": "explicit-query",
+      "bytes": 5763,
+      "sha256": "efb2e965c157ae549e830001df7dd1c724f169853680d513789d7d5d1ac356e5",
+      "kind": "document"
+    },
+    {
+      "id": "component-visual.tooltip",
+      "path": "references/resources/component-visual/tooltip.md",
+      "purpose": "Tooltip：共享规范维护深度参考",
+      "stage": [],
+      "appliesTo": {},
+      "requires": [],
+      "readPolicy": "explicit-query",
+      "bytes": 1082,
+      "sha256": "1f973dadee9be8f6f82e747f5e007a48188c3be5d775a8b26c3d5537c5ae0a20",
       "kind": "document"
     },
     {

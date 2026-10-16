@@ -2,6 +2,7 @@
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
+import { inspectHtmlArtifact } from "./html-artifact-graph.mjs";
 
 const args = process.argv.slice(2);
 const valueFor = (flag) => {
@@ -24,18 +25,12 @@ const manifest = JSON.parse(fs.readFileSync(absoluteManifest, "utf8"));
 const html = fs.readFileSync(absoluteArtifact, "utf8");
 const sha256 = (contents) => crypto.createHash("sha256").update(contents).digest("hex");
 const artifactDirectory = path.dirname(absoluteArtifact);
-const linkedStylesheets = [
-  ...html.matchAll(/<link\b[^>]*\brel=["']stylesheet["'][^>]*\bhref=["']([^"']+)["'][^>]*>/gi),
-  ...html.matchAll(/<link\b[^>]*\bhref=["']([^"']+)["'][^>]*\brel=["']stylesheet["'][^>]*>/gi)
-].map((match) => match[1]).filter((href, index, all) => all.indexOf(href) === index);
-const localHref = (href) => !/^(?:https?:|data:|blob:|\/\/)/i.test(href);
-const stylesheetRecords = linkedStylesheets.filter(localHref).map((href) => {
-  const pathname = href.split(/[?#]/, 1)[0];
-  const absolute = path.resolve(artifactDirectory, pathname);
-  if (!fs.existsSync(absolute)) throw new Error(`Linked stylesheet not found: ${href} -> ${absolute}`);
+const graph = inspectHtmlArtifact(absoluteArtifact);
+const stylesheetRecords = graph.stylesheets.map(absolute => {
   const contents = fs.readFileSync(absolute);
-  if (contents.length === 0) throw new Error(`Linked stylesheet is empty: ${href}`);
-  return { href, path: path.relative(path.dirname(absoluteManifest), absolute), sha256: sha256(contents), bytes: contents.length };
+  if (!contents.length) throw new Error("Empty stylesheet: " + absolute);
+  return { href: path.relative(artifactDirectory, absolute).split(path.sep).join("/"),
+    path: path.relative(path.dirname(absoluteManifest), absolute), sha256: sha256(contents), bytes: contents.length };
 });
 for (const required of requiredStylesheets) {
   const absolute = path.resolve(required);
@@ -44,12 +39,13 @@ for (const required of requiredStylesheets) {
     throw new Error(`Required stylesheet is not linked by the delivery artifact: ${absolute}`);
   }
 }
-if (manifest.targetFramework === "html" && stylesheetRecords.length === 0) throw new Error("HTML delivery artifact must link at least one local stylesheet");
+if (manifest.targetFramework === "html" && stylesheetRecords.length === 0) throw new Error("HTML delivery artifact must load a local stylesheet through its HTML/module graph");
 
 manifest.deliveryArtifact = {
   path: path.relative(path.dirname(absoluteManifest), absoluteArtifact) || path.basename(absoluteArtifact),
   sha256: sha256(fs.readFileSync(absoluteArtifact)),
   stylesheets: stylesheetRecords,
+  dependencyGraph: { digest: graph.digest, files: graph.files.map(({file,...row}) => ({path:path.relative(path.dirname(absoluteManifest),file),...row})) },
   stampedAt: new Date().toISOString()
 };
 fs.writeFileSync(absoluteManifest, `${JSON.stringify(manifest, null, 2)}\n`);

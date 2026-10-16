@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { renderHtmlComponent } from "../../packages/components-html/src/index.js";
+import { renderHtmlComponent } from "../packages/components-html/src/index.js";
 
 const list = renderHtmlComponent("listCard", {
   items: [

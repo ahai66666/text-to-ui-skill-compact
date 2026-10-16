@@ -30,3 +30,5 @@ PROJECT_DIR/
 
 components/<id>/index.js 是真实工厂调用适配器，组件 DOM 和内部样式仍来自 Skill 的 HTML 实现。当前组件工厂在公共 index.js 中集中登记，所以公共运行时仍包含共享注册代码。选中组件的入口与契约按需交付；上下文减少不等于运行时已按字节完全拆分。
 
+
+若检索后没有合适业务组件，另建 page-components/<id>/index.js 与 styles.css；这些是模型拥有的业务模块，与脚本管理的 components/ 分开。已有组件只引用原实现和样式，不重新生成。

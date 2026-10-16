@@ -5,8 +5,8 @@ import { fileURLToPath } from "node:url";
 import { readPatternRegistry, resolvePatternContract } from "./pattern-contract-lib.mjs";
 import { resolveTitlebarScene } from "./titlebar-scene.mjs";
 
-const repositoryRoot = path.resolve(fileURLToPath(new URL("../..", import.meta.url)));
-const registry = readPatternRegistry(path.join(repositoryRoot, "skill-support/assets/design-system/pattern-contracts.json"));
+const repositoryRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
+const registry = readPatternRegistry(path.join(repositoryRoot, "assets/design-system/pattern-contracts.json"));
 
 const titlebar = (size) => ({
   id: "page-titlebar",

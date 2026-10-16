@@ -30,7 +30,7 @@ Measure every inset from the pane's inner edge after its divider. The divider is
 | Shell region | Left | Right | Top | Bottom | Owner |
 |---|---:|---:|---:|---:|---|
 | Primary Navigation content | 16px | 16px | 16px | 16px | Navigation scroll wrapper |
-| Secondary List Search / Card state envelope | 16px | 16px | 16px | 16px | Secondary Pane scroll wrapper |
+| Secondary List Search / Card state envelope | 16px | 16px | 8px | 0px | Secondary Pane scroll wrapper |
 | Secondary List aligned content | 24px | 24px | — | — | Title/meta/states and row-content axis |
 | Main Content in a two-pane shell | 24px | 24px | 16px | 0px | Main page-content scroll wrapper |
 | Main Detail in a three-pane shell | 24px | 24px | 16px | 0px | Main Detail scroll wrapper |

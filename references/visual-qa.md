@@ -25,8 +25,8 @@ Use this checklist before calling a UI design or HTML output complete.
 
 ## Common Fixes
 
-- Text overlaps: reduce font size, increase line-height, set max-width, or change copy.
-- Button label clips: increase width/height or reduce font size.
+- Text overlaps: fix content composition or a supported canonical typography role; preserve registered component internals.
+- Button label clips: use supported content/width behavior and approved size; repair shared source for an internal defect.
 - Alternate desktop window feels cramped: preserve task hierarchy, adapt pane widths, and collapse only approved secondary regions.
 - Pixso font fallback breaks sizing: switch to a stable font available in the environment or adjust text boxes manually.
 - HTML diverges from Pixso: match macro layout first, then typography, then decorative details.

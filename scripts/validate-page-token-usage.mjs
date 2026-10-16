@@ -10,7 +10,7 @@ const layoutPath = valueFor("--layout-contract");
 const sourceArgs = args.flatMap((arg, index) => arg === "--source" ? [args[index + 1]] : []).filter(Boolean);
 if (sourceArgs.length === 0) { console.error("Usage: validate-page-token-usage.mjs --source <file-or-dir> [--source <file-or-dir>] --project-root <dir> [--layout-contract <file>]"); process.exit(2); }
 const layout = layoutPath ? JSON.parse(fs.readFileSync(path.resolve(layoutPath), "utf8")) : {};
-const report = validatePageTokenUsage({ sourcePaths: sourceArgs, projectRoot, layoutContract: layout });
+const report = validatePageTokenUsage({ sourcePaths: sourceArgs, projectRoot, layoutContract: layout, tokenRoots: args.flatMap((arg,index) => arg === '--token-root' ? [args[index+1]] : []).filter(Boolean) });
 if (report.failures.length) {
   console.error("Page Token usage validation failed");
   report.failures.forEach((failure) => console.error(`- ${failure}`));

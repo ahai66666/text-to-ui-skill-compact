@@ -1,16 +1,20 @@
+## Style and behavior plans
+
 ### Executable HTML business composites
+
+First query the shared registry and existing project business components. Reuse a matching component through supported parameters/slots and its original CSS. Do not regenerate an existing component. Only when no suitable component exists, record registryQueries, reviewedCandidates and missingCapability in a page-composite recipe, then create an independent business module and stylesheet.
 
 The model may write normal business markup, data and event logic inside a
 declared page-composite host. Use `page-bindings.json.pageModules`:
 
 ```json
-{"pageModules":[{"compositionId":"message-list","source":"./src/message-list.js"}]}
+{"pageModules":[{"compositionId":"message-list","source":"./page-components/message-list/index.js","stylesheet":"./page-components/message-list/styles.css"}]}
 ```
 
 The source path is relative to the binding file. The group must be covered by a
 page-composite recipe. Export `mount(host, { renderComponent })`; return a
 cleanup function for listeners/subscriptions. The generated entry mounts it
-after rendering the Pattern. main.js imports styles/index.css once; neither the generated entry nor business modules import CSS. Write business-container CSS in styles/page-composition.css, using canonical Tokens and no @import. Scripts assemble canonical component and Pattern styles through the uniform entry.
+after rendering the Pattern. main.js imports styles/index.css once; neither the generated entry nor business modules import CSS. Put the new business component's own CSS in its declared stylesheet; styles/page-composition.css only arranges page-level groups. Use canonical Tokens and no @import in either authored stylesheet. Each page-composite recipe requires a matching pageModules module and stylesheet. Scripts assemble canonical component and Pattern styles through the uniform entry.
 
 Use the supplied `renderComponent` for every button, field, attachment,
 and other functional controls. Custom business rows may arrange semantic HTML

@@ -85,6 +85,18 @@
                 "type": "string"
               }
             }
+          },
+          "readPolicy": {
+            "enum": [
+              "stage",
+              "explicit-query"
+            ]
+          },
+          "extensionReferences": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       }
@@ -114,6 +126,12 @@
             }
           }
         }
+      }
+    },
+    "aliases": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
       }
     }
   }

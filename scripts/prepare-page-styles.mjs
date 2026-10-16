@@ -27,6 +27,21 @@ const specifier = (from, to) => {
 export const baseStyles = "html, body, #app { margin: 0; padding: 0; width: 100%; height: 100%; }\nbody { overflow: hidden; }\n";
 export const oldInlineReset = "<style>html,body,#app{margin:0;padding:0;width:100%;height:100%}body{overflow:hidden}</style>";
 
+export function collectBusinessComponentStyles({projectRoot,bindingsPath,pageCssPath}) {
+  const cssFile = safe(projectRoot,pageCssPath || "styles/page-composition.css");
+  const bindings = bindingsPath ? read(bindingsPath) : {};
+  return (bindings.pageModules || []).map(item => {
+    if (!item.stylesheet || typeof item.stylesheet !== "string") throw new Error("Business component requires an independent stylesheet: " + item.compositionId);
+    const file = safe(projectRoot, path.resolve(path.dirname(path.resolve(bindingsPath)), item.stylesheet));
+    const moduleFile = safe(projectRoot, path.resolve(path.dirname(path.resolve(bindingsPath)), item.source));
+    if (!fs.existsSync(moduleFile)) throw new Error("Business component module missing: " + item.source);
+    if (!file.endsWith(".css") || file === cssFile || !fs.existsSync(file)) throw new Error("Business component CSS must be an existing separate .css file: " + item.stylesheet);
+    const bytes = fs.readFileSync(file);
+    if (/@import\b/i.test(bytes.toString("utf8").replace(/\/\*[\s\S]*?\*\//g, ""))) throw new Error("Business component CSS cannot import other stylesheets: " + item.stylesheet);
+    return {compositionId:item.compositionId, path:posix(path.relative(projectRoot,file)), sha256:hash(bytes), ownership:"model-business-component"};
+  });
+}
+
 export function planPageStyles({ projectRoot, pageCssPath, entryPath = null, skillRoot = ownRoot }) {
   projectRoot = path.resolve(projectRoot);
   const cssFile = safe(projectRoot, pageCssPath || "styles/page-composition.css");
@@ -57,12 +72,18 @@ export function planPageStyles({ projectRoot, pageCssPath, entryPath = null, ski
   const html = originalHtml.replace(oldInlineReset, "");
   if (/<style\b|\bstyle\s*=|<link\b(?=[^>]*\brel\s*=\s*["']stylesheet["'])/i.test(html)) throw new Error("index.html must load styles through main.js and styles/index.css; move custom CSS into styles/page-composition.css");
 
+  const businessComponentStyles = collectBusinessComponentStyles({
+    projectRoot,
+    bindingsPath: componentManifest.inputs.bindings ? path.resolve(projectRoot, componentManifest.inputs.bindings.path) : null,
+    pageCssPath: cssFile
+  });
   const imports = [
     "components/_runtime/packages/tokens/src/index.css",
     "styles/base.css",
     "components/_runtime/packages/components-html/src/styles.css",
     "components/_runtime/packages/components-html/src/pattern-shell.css",
     "components/_runtime/packages/pattern-runtime/src/styles.css",
+    ...new Set(businessComponentStyles.map(item => item.path)),
     posix(path.relative(projectRoot, cssFile))
   ];
   const dependencyHashes = {};
@@ -87,6 +108,7 @@ export function planPageStyles({ projectRoot, pageCssPath, entryPath = null, ski
     componentBundle: { path: "components/component-manifest.json", sha256: hash(componentManifestBytes) },
     loadOrder: imports,
     dependencies: dependencyHashes,
+    businessComponentStyles,
     files: Object.fromEntries([...files].map(([file, contents]) => [file, { sha256: hash(contents), ownership: "script-managed" }]))
   };
   return { projectRoot, files, manifest, canAdopt: new Set(["main.js", "index.html"]) };

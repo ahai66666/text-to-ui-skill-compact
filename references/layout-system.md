@@ -74,7 +74,7 @@ Segment the Global Title Layer on the same vertical boundaries as the Workspace 
 - When a three-pane shell collapses to two panes, replace the pane-global-action content with the final pane title. Do not merely hide the Secondary Pane while leaving the old slot semantics unchanged.
 - Keep the title layer and pane boundaries vertically aligned in both Pixso Auto Layout and HTML Grid. Do not position the slot with arbitrary absolute offsets.
 - Render ordinary product-operation buttons in the Titlebar as Ghost Button or Ghost Icon Button variants. Their resting background is transparent; Hover, Pressed, and Focus may add the approved state layer. Do not use Secondary or filled backgrounds for their resting state. Window controls remain governed by the Titlebar system-control rules rather than this product-operation rule.
-- Declare the native Titlebar scene explicitly with `layout="standalone|two-column|three-column"` and `paneRole="global|primary-navigation|secondary-pane|final-pane"`. A two-column shell is composed of a branded Primary Navigation segment and a final segment containing the large title plus the three window controls; neither segment has a bottom divider. A three-column shell is composed of the branded Primary Navigation segment, a divider-free Secondary Pane segment, and a final segment containing the `main-detail-actions` 0..n operation slot plus the three window controls; only this final segment has the Tokenized bottom divider. Standalone/global Titlebar also has no bottom divider. The shell still owns continuous vertical pane dividers.
+- Declare the native Titlebar scene explicitly with `layout="standalone|two-column|three-column"` and `segmentRole="global|primary-navigation|secondary-list|main-content|main-detail"`. A two-column shell is composed of a branded Primary Navigation segment and a final segment containing the large title plus the three window controls; neither segment has a bottom divider. A three-column shell is composed of the branded Primary Navigation segment, a divider-free Secondary Pane segment, and a final segment containing the `main-detail-actions` 0..n operation slot plus the three window controls; only this final segment has the Tokenized bottom divider. Standalone/global Titlebar also has no bottom divider. The shell still owns continuous vertical pane dividers.
 
 ## 3. Page Spacing
 
@@ -108,7 +108,7 @@ Measure every inset from the pane's inner edge after its divider. The divider is
 | Shell region | Left | Right | Top | Bottom | Owner |
 |---|---:|---:|---:|---:|---|
 | Primary Navigation content | 16px | 16px | 16px | 16px | Navigation scroll wrapper |
-| Secondary List Search / Card state envelope | 16px | 16px | 16px | 16px | Secondary Pane scroll wrapper |
+| Secondary List Search / Card state envelope | 16px | 16px | 8px | 0px | Secondary Pane scroll wrapper |
 | Secondary List aligned content | 24px | 24px | — | — | Title/meta/states and row-content axis |
 | Main Content in a two-pane shell | 24px | 24px | 16px | 0px | Main page-content scroll wrapper |
 | Main Detail in a three-pane shell | 24px | 24px | 16px | 0px | Main Detail scroll wrapper |

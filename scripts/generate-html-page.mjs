@@ -485,8 +485,7 @@ if (navigationMode) for (const nodes of Object.values(navigationShell.slots)) co
 const pageContentRecipes = contentRecipesPath
   ? readPageContentRecipes(contentRecipesPath, { blueprint: pageBlueprint, bindings, compositionIds })
   : null;
-if (pageCssPath) {
-  const cssFile = path.resolve(pageCssPath);
+for (const cssFile of [pageCssPath && path.resolve(pageCssPath), ...(styleBundle.businessComponentStyles || []).map(item => path.resolve(componentsRoot, item.path))].filter(Boolean)) {
   if (!fs.existsSync(cssFile)) throw new Error(`Page CSS file not found: ${cssFile}`);
   // The validator is a CLI by design; keep this generation-time equivalent
   // small and explicit so an invalid page never reaches a preview artifact.
@@ -612,6 +611,9 @@ const pageModules = (input.pageModules ?? []).map((item) => {
 if (behaviorPlan.interactions.some((interaction) => interaction.kind === "open-secondary-page")
   && !pageModules.some(({ file }) => /\b(?:createSecondaryPageRuntime|renderSecondaryPageHtml)\b/.test(fs.readFileSync(file, "utf8")))) {
   throw new Error("HTML pages declaring open-secondary-page must implement the destination with @text-to-ui/pattern-runtime Secondary Page Runtime in a page module");
+}
+for (const recipe of (pageContentRecipes?.recipes || []).filter(item => item.kind === "page-composite")) {
+  if (!pageModules.some(item => item.compositionId === recipe.compositionId)) throw new Error("Missing independent business component module: " + recipe.compositionId);
 }
 if (new Set(pageModules.map((item) => item.compositionId)).size !== pageModules.length) throw new Error('Only one page module may own each composition host');
 if (new Set(customUsage.map((entry) => entry.id)).size !== customUsage.length) throw new Error("Custom page-owned composition ids must be unique across bindings and content recipes");
@@ -905,6 +907,7 @@ const groupedUsage = new Map();
     sourceRoots: [...new Set([
       path.relative(path.resolve(context.repository.root), absoluteOutputPath),
       ...pageModules.map((item) => path.relative(path.resolve(context.repository.root), item.file)),
+      ...(styleBundle.businessComponentStyles || []).map(item => path.relative(path.resolve(context.repository.root), path.resolve(componentsRoot,item.path))),
       ...(pageCssPath ? [path.relative(path.resolve(context.repository.root), path.resolve(pageCssPath))] : []),
       ...(input.sourceRoots ?? [])
     ])],

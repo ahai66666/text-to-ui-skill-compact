@@ -7,7 +7,7 @@ import { readPatternRegistry } from "./pattern-contract-lib.mjs";
 
 const temp = fs.mkdtempSync(path.join(os.tmpdir(), "tui-layout-contract-"));
 const contractPath = path.join(temp, "layout-contract.json");
-const validator = path.resolve("skill-support/scripts/validate-pc-framework-layout.mjs");
+const validator = path.resolve("scripts/validate-pc-framework-layout.mjs");
 const contract = {
   schemaVersion: 1,
   platform: "harmonyos-pc",

@@ -1,5 +1,7 @@
 # Pixso Component Usage
 
+Scope: shared component-library instance construction and explicit strict component acceptance. Optional mapping gaps during ordinary HTML import follow pixso-execution-invariants.md and may preserve measured native composition with repair items; that does not pass strict parity.
+
 Use this reference whenever a visual-first task creates a page from the “鸿蒙客户端设计规范” Pixso library.
 
 ## Runtime Contract

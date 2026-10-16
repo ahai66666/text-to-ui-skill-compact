@@ -6,15 +6,15 @@ import { fileURLToPath } from "node:url";
 import { collectSceneStats, compileOperationPlan, loadComponentMap, loadTokenResources, readJson } from "./pixso-native-scene-lib.mjs";
 import { buildCoremailScene, validateCoremailSecondaryListScene } from "./coremail-semantic-adapter.mjs";
 
-const repo = path.resolve(fileURLToPath(new URL("../..", import.meta.url)));
+const repo = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const fixtureRoot = path.join(repo, "fixtures/mail-workbench-native-scene");
 const pageSpec = readJson(path.join(fixtureRoot, "page-spec.json"));
 const layoutContract = readJson(path.join(fixtureRoot, "layout-contract.json"));
 const pageDataPath = path.join(fixtureRoot, "page-data.json");
 const pageData = readJson(pageDataPath);
 const visualSnapshot = readJson(path.join(fixtureRoot, "html-visual-snapshot.json"));
-const iconAliases = readJson(path.join(repo, "skill-support/assets/icons/icon-aliases.json")).aliases;
-const componentMap = loadComponentMap(path.join(repo, "skill-support/assets/design-system/pixso-native-component-map.json"));
+const iconAliases = readJson(path.join(repo, "assets/icons/icon-aliases.json")).aliases;
+const componentMap = loadComponentMap(path.join(repo, "assets/design-system/pixso-native-component-map.json"));
 const tokens = loadTokenResources();
 const scene = buildCoremailScene({ pageSpec, layoutContract, pageData, componentMap, visualSnapshot, tokens, assetBaseDir: path.dirname(pageDataPath) });
 const stats = collectSceneStats(scene);

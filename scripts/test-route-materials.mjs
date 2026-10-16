@@ -7,7 +7,7 @@ import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
-const repo = path.resolve(fileURLToPath(new URL('../..', import.meta.url)));
+const repo = path.resolve(fileURLToPath(new URL('..', import.meta.url)));
 const scripts = path.join(repo, 'skill-support/scripts');
 const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'text-to-ui-route-materials-'));
 const receipt = path.join(temp, 'new-page-read-receipt.json');

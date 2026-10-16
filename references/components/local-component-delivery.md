@@ -40,6 +40,8 @@ PROJECT_DIR/
 
 components/<id>/index.js 是真实工厂调用适配器，组件 DOM 和内部样式仍来自 Skill 的 HTML 实现。当前组件工厂在公共 index.js 中集中登记，所以公共运行时仍包含共享注册代码。选中组件的入口与契约按需交付；上下文减少不等于运行时已按字节完全拆分。
 
+
+若检索后没有合适业务组件，另建 page-components/<id>/index.js 与 styles.css；这些是模型拥有的业务模块，与脚本管理的 components/ 分开。已有组件只引用原实现和样式，不重新生成。
 ## 两阶段命令
 
 一键生成器会自动完成下面的组件准备。需要先交给另一个模型继续写页面时，也可以显式执行：
@@ -58,9 +60,9 @@ node "<RULES_ROOT>/scripts/prepare-page-components.mjs" \
 
 一键生成器在组件准备后自动执行 scripts/prepare-page-styles.mjs。main.js 只导入 styles/index.css，然后调用挂载模块；generated-page.js 和 generated-entry.js 不导入 CSS。index.html 不包含内联样式或额外样式链接。
 
-加载顺序固定为：canonical Tokens → styles/base.css → 标准 HTML 组件样式 → Pattern shell → Pattern Runtime → styles/page-composition.css。标准组件样式内部已有自己的依赖引用，保持其原始关系，由构建工具处理。不要为了目录对称把共享 CSS 拆成 49 份。
+加载顺序固定为：canonical Tokens → styles/base.css → 标准 HTML 组件样式 → Pattern shell → Pattern Runtime → pageModules 声明的业务组件 CSS → styles/page-composition.css。标准组件样式内部已有自己的依赖引用，保持其原始关系，由构建工具处理。不要为了目录对称把共享 CSS 拆成 49 份。
 
-模型只需读取相关 Token 和组件参数，编写 styles/page-composition.css 中业务容器的布局。不在其中写 @import、复制组件内部规则或覆盖 Pattern 几何。新增组件后重新走组件准备与样式装配；不要手工改管理文件。
+已有组件的实现和 CSS 直接复用，脚本只复制与引用。缺失能力时创建 page-components/<id>/index.js 与 styles.css，通过 pageModules.source/stylesheet 声明。新业务组件内部的标准控件仍调用原组件。styles/page-composition.css 只负责页面组合。不在其中写 @import、复制组件内部规则或覆盖 Pattern 几何。新增组件后重新走组件准备与样式装配；不要手工改管理文件。
 
 在组件与宿主已准备好后，可单独装配或检查：
 

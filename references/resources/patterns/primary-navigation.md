@@ -1,3 +1,5 @@
+## 4. Pane Behavior
+
 ### Primary Navigation
 
 - Default for full applications unless the workflow clearly does not need persistent navigation.

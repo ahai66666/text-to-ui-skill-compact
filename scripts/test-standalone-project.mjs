@@ -6,7 +6,7 @@ import path from "node:path";
 import { spawnSync } from "node:child_process";
 
 const temp = fs.mkdtempSync(path.join(os.tmpdir(), "tui-standalone-"));
-const script = path.resolve("skill-support/scripts/scaffold-standalone-project.mjs");
+const script = path.resolve("scripts/scaffold-standalone-project.mjs");
 const result = spawnSync(process.execPath, [script, "--project", temp, "--repo", process.cwd()], { encoding: "utf8" });
 assert.equal(result.status, 0, result.stderr);
 const root = JSON.parse(fs.readFileSync(path.join(temp, "package.json"), "utf8"));

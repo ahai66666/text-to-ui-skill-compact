@@ -9,7 +9,7 @@ const root = path.join(temp, "repo");
 fs.mkdirSync(path.join(root, "packages/component-contracts/src"), { recursive: true });
 fs.mkdirSync(path.join(root, "apps/example/src"), { recursive: true });
 fs.writeFileSync(path.join(root, "packages/component-contracts/src/components.json"), JSON.stringify([{ logicalName: "Button/Primary/Default", implementations: { html: "packages/components-html/src/index.js#button" }, readiness: { sourceReady: true, contractReady: true, visualParity: false, behaviorParity: false, accessibilityParity: false, tokenParity: true } }]));
-const validator = path.resolve("skill-support/scripts/validate-web-component-reuse.mjs");
+const validator = path.resolve("scripts/validate-web-component-reuse.mjs");
 const manifestPath = path.join(root, "component-usage.json");
 const manifest = { schemaVersion: 1, targetFramework: "html", registry: "packages/component-contracts/src/components.json", sourceRoots: ["apps/example/src"], registered: [{ logicalName: "Button/Primary/Default", usage: "primary action" }], contractBased: [], custom: [], previousOutputReuse: false };
 fs.writeFileSync(manifestPath, JSON.stringify(manifest));

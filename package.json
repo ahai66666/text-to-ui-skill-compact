@@ -1,13 +1,13 @@
 {
   "name": "text-to-ui-compact",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "private": true,
   "description": "HTML-only Text-to-UI Skill with bundled component source, support tools, and design assets.",
   "license": "UNLICENSED",
   "scripts": {
     "colors:audit": "node scripts/audit-core-colors.mjs",
-    "tokens:dual-output:build": "node scripts/build-pixso-token-manifest.mjs --write && node scripts/build-token-runtime-map.mjs && node scripts/build-dual-output-token-map.mjs --write",
-    "tokens:dual-output:check": "node scripts/build-pixso-token-manifest.mjs --check && node scripts/build-token-runtime-map.mjs --check && node scripts/build-dual-output-token-map.mjs --check",
+    "tokens:dual-output:build": "node scripts/build-pixso-token-manifest.mjs --write && node scripts/build-token-runtime-map.mjs && node scripts/build-dual-output-token-map.mjs --write && node scripts/sync-runtime-token-projections.mjs --write",
+    "tokens:dual-output:check": "node scripts/build-pixso-token-manifest.mjs --check && node scripts/build-token-runtime-map.mjs --check && node scripts/build-dual-output-token-map.mjs --check && node scripts/sync-runtime-token-projections.mjs --check",
     "mappings:validate": "node scripts/validate-mapping-registry.mjs",
     "mappings:check": "node scripts/sync-mapping-registry.mjs --check && node scripts/validate-mapping-registry.mjs --check-projections",
     "mappings:sync": "node scripts/sync-mapping-registry.mjs --write",
@@ -82,7 +82,14 @@
     "resources:build": "node scripts/build-resource-index.mjs --repo .",
     "resources:check": "node scripts/build-resource-index.mjs --repo . --check",
     "resources:query": "node scripts/query-resources.mjs",
-    "resources:test": "node scripts/test-resource-routing.mjs"
+    "resources:test": "node scripts/test-resource-routing.mjs",
+    "page:validate": "node scripts/validate-page-project.mjs",
+    "skill:pack": "node scripts/build-compact-distribution.mjs",
+    "skill:check": "node scripts/skill-delivery.mjs --check",
+    "skill:sync": "node scripts/skill-delivery.mjs --write",
+    "tokens:runtime:build": "node scripts/sync-runtime-token-projections.mjs --write",
+    "tokens:runtime:check": "node scripts/sync-runtime-token-projections.mjs --check",
+    "page:modularity:test": "node scripts/test-html-artifact-graph.mjs && node scripts/test-business-component-styles.mjs"
   },
   "dependencies": {
     "lucide": "1.24.0"

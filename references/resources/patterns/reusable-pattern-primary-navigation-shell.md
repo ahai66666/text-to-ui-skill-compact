@@ -1,3 +1,5 @@
+## 3. Approved Shell Patterns
+
 ### Reusable Pattern: Primary Navigation Shell
 
 `Primary Navigation Shell Pattern · 主导航壳模式` is a Pattern-layer composition, not a base component and not part of the component count. It combines the Global Title Layer's left Brand Anchor with the Primary Navigation below it.

@@ -8,7 +8,7 @@ const temp = fs.mkdtempSync(path.join(os.tmpdir(), "tui-token-audit-"));
 const source = path.join(temp, "page.css");
 const layout = path.join(temp, "layout-contract.json");
 fs.writeFileSync(layout, JSON.stringify({ cssStructuralParameters: [{ property: "--mail-list-width", value: "348px", reason: "confirmed resizable secondary pane baseline" }] }));
-const validator = path.resolve("skill-support/scripts/validate-page-token-usage.mjs");
+const validator = path.resolve("scripts/validate-page-token-usage.mjs");
 const run = () => spawnSync(process.execPath, [validator, "--project-root", process.cwd(), "--source", source, "--layout-contract", layout], { encoding: "utf8" });
 fs.writeFileSync(source, `@import "@text-to-ui/tokens"; :root { --mail-list-width: 348px; } .card { width: var(--mail-list-width); color: var(--color-text); padding: var(--space-3); border-radius: var(--radius-card); }`);
 assert.equal(run().status, 0, run().stderr);

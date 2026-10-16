@@ -1,12 +1,7 @@
-# Compact Skill update workflow
+# 精简版维护
 
-Use the compact directory as the maintenance source for routing, instructions, local component delivery and generators. For shared visual components, reconcile canonical contracts/implementations before refreshing the bundled snapshot.
+仅在 compact 维护源修改规则与实现。使用包通过 TEXT_TO_UI_COMPACT_SOURCE_ROOT 定位维护源，不写完整版。
 
-1. Identify affected callers, routes, contracts, output modules and named references.
-2. Preserve dynamic HTML delivery: index.html host, local components/, separate page and mount modules, canonical Pattern/Token styles.
-3. Update sources and route references together. Rebuild the split-contract aggregate if a component contract changed.
-4. Rebuild navigation and catalog indexes; check their freshness and changed-script syntax. Verify executable behavior with meaningful scenarios when execution is permitted; report any gap.
-5. Refresh .delivery-manifest.json. Synchronize only a configured compact destination or an existing installed text-to-ui-compact.
-6. Report source changes, checks performed and unresolved browser/Pixso evidence.
+按 routes/skill-maintenance.md 操作。主题文件是文档维护源，兼容手册由脚本生成。涉及契约先构建 registry，再按 resources:build → catalog:build → index:build 更新并检查。交付和归档见 distribution.md。
 
-Do not modify the full Skill as a side effect of compact maintenance. Live preview, Pixso plugin execution and screenshot comparison remain distinct checks.
+独立 components/、统一 styles/ 和动态挂载保持不变。页面验收用 page:validate；开发回归、浏览器、Pixso、视觉证据分别记录。只有用户批准的页面可进入 approved-pages。

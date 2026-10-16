@@ -3,7 +3,7 @@
   "generatedFrom": [
     {
       "path": "packages/tokens/src/token-runtime-map.json",
-      "sha256": "5f084420874b4f8147e1f8a6176e93343750a6f5db93d3a9e1e70a5eb14c84ff"
+      "sha256": "af423b313eedd7b3ef1f5b2faa6cc50c21e61cd844b7216b212c689651f91cb6"
     }
   ],
   "policy": {
@@ -3123,6 +3123,27 @@
         "pixsoVariable": "size/80",
         "value": "80px",
         "sourceToken": "tokens.size.json:size.17"
+      },
+      {
+        "role": null,
+        "cssVariable": "--icon-outline-stroke-width-16",
+        "pixsoVariable": "icon/stroke/16",
+        "value": "1",
+        "sourceToken": "tokens.icon.json:lucide.project-stroke-width-by-display-size.16"
+      },
+      {
+        "role": null,
+        "cssVariable": "--icon-outline-stroke-width-20",
+        "pixsoVariable": "icon/stroke/20",
+        "value": "1.25",
+        "sourceToken": "tokens.icon.json:lucide.project-stroke-width-by-display-size.20"
+      },
+      {
+        "role": null,
+        "cssVariable": "--icon-outline-stroke-width-24",
+        "pixsoVariable": "icon/stroke/24",
+        "value": "1.5",
+        "sourceToken": "tokens.icon.json:lucide.project-stroke-width-by-display-size.24"
       },
       {
         "role": null,

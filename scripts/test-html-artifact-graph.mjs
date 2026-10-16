@@ -1,0 +1,31 @@
+import assert from "node:assert/strict";
+import fs from "node:fs";
+import os from "node:os";
+import path from "node:path";
+import { spawnSync } from "node:child_process";
+import { fileURLToPath } from "node:url";
+import { inspectHtmlArtifact } from "./html-artifact-graph.mjs";
+const root=fs.mkdtempSync(path.join(os.tmpdir(),"tui-artifact-graph-"));
+const put=(file,text)=>{const dest=path.join(root,file);fs.mkdirSync(path.dirname(dest),{recursive:true});fs.writeFileSync(dest,text);};
+try {
+  put("index.html", '<main id="app"></main><script type="module" src="./main.js"></script>');
+  put("main.js", 'import "./styles/index.css";\nimport {\n value\n} from "./components/item.js";\nconsole.log(value);');
+  put("components/item.js", "export const value=1;");
+  put("styles/index.css", '@import "./tokens.css";\nbody{background-image:url("../assets/bg.svg");}');
+  put("styles/tokens.css", ":root{--space-5:16px;}");
+  put("assets/bg.svg", '<svg xmlns="http://www.w3.org/2000/svg"></svg>');
+  const graph=inspectHtmlArtifact(path.join(root,"index.html"));
+  assert.equal(graph.files.length,6);assert.equal(graph.stylesheets.length,2);
+  put("manifest.json",JSON.stringify({targetFramework:"html"}));
+  const stamped=spawnSync(process.execPath,[fileURLToPath(new URL("./stamp-html-artifact.mjs",import.meta.url)),"--manifest",path.join(root,"manifest.json"),"--artifact",path.join(root,"index.html"),"--required-stylesheet",path.join(root,"styles/tokens.css")],{encoding:"utf8"});
+  assert.equal(stamped.status,0,stamped.stderr);
+  put("styles/tokens.css",":root{--space-5:20px;}");
+  assert.notEqual(inspectHtmlArtifact(path.join(root,"index.html")).digest,graph.digest);
+  put("components/item.js",'import "../missing.js";');
+  assert.throws(()=>inspectHtmlArtifact(path.join(root,"index.html")),/missing/);
+  put("components/item.js",'import "../../outside.js";');
+  assert.throws(()=>inspectHtmlArtifact(path.join(root,"index.html")),/escapes/);
+  put("components/item.js",'import "some-unbundled-package";');
+  assert.throws(()=>inspectHtmlArtifact(path.join(root,"index.html")),/Unbundled/);
+  console.log("Module CSS, multiline imports, transitive hashes and artifact boundaries passed.");
+} finally { fs.rmSync(root,{recursive:true,force:true}); }

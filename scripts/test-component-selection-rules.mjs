@@ -5,7 +5,7 @@ import { spawnSync } from "node:child_process";
 
 const root = process.cwd();
 const query = (...args) => {
-  const result = spawnSync(process.execPath, [path.join(root, "skill-support/scripts/query-components.mjs"), "--repo", root, "--framework", "html", ...args], { encoding: "utf8" });
+  const result = spawnSync(process.execPath, [path.join(root, "scripts/query-components.mjs"), "--repo", root, "--framework", "html", ...args], { encoding: "utf8" });
   assert.equal(result.status, 0, result.stderr);
   return JSON.parse(result.stdout).results[0];
 };

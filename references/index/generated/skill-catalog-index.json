@@ -15,7 +15,7 @@
     "validator": "pnpm index:check"
   },
   "deliveryTargets": [
-    "skill/ (local generated mirror; Git-ignored)",
+    "explicit compact distribution output",
     "$CODEX_HOME/skills/text-to-ui-compact",
     "$TEXT_TO_UI_PLUGIN_DELIVERY_ROOT"
   ],
@@ -36,7 +36,7 @@
         },
         {
           "path": "skill-support/references/routes/skill-maintenance.md",
-          "sha256": "b116f817f58403a0c80bcd67e18b90ef5b502a636a97f5aa55e9f426442ce275",
+          "sha256": "88c9744106b382778facfcce9be7e21aa368d221ba801053f637a3d0ef08869e",
           "availability": "local"
         },
         {
@@ -56,7 +56,7 @@
         },
         {
           "path": "skill-support/scripts/test-task-route-resolution.mjs",
-          "sha256": "ce324d2a598fecf90d30fd24554357f8e885994039173d3cd2ccad83092e812f",
+          "sha256": "8fd4141d4975a115b68238a1d851ba302c1a73416fa882d629987815166dd129",
           "availability": "local"
         },
         {
@@ -117,7 +117,7 @@
         },
         {
           "path": "skill-support/scripts/test-pattern-runtime.mjs",
-          "sha256": "937a2e1b70c990aa839f59d4a5601352a0c882b8b437313114a07cddef299bd3",
+          "sha256": "af3941cfcf4526b26d6e946c54438537690a2f7cd315c7b32ffcc49cff5721f2",
           "availability": "local"
         },
         {
@@ -158,7 +158,7 @@
         },
         {
           "path": "skill-support/references/components/component-readiness-policy.json",
-          "sha256": "ef8b27bdf8dfb1c718830da454236e1a9894904a6c5ef2c4119d92742c980e47",
+          "sha256": "0537ed9e8cce0556b5208fe3abcbd7a1662f0c689549289a4cdc2588ee77533d",
           "availability": "local"
         },
         {
@@ -434,7 +434,7 @@
       "files": [
         {
           "path": "packages/tokens/src/token-runtime-map.json",
-          "sha256": "5f084420874b4f8147e1f8a6176e93343750a6f5db93d3a9e1e70a5eb14c84ff",
+          "sha256": "af423b313eedd7b3ef1f5b2faa6cc50c21e61cd844b7216b212c689651f91cb6",
           "availability": "local"
         },
         {
@@ -474,7 +474,7 @@
         },
         {
           "path": "skill-support/scripts/validate-page-token-usage.mjs",
-          "sha256": "639b09f9603c04b6acdec8c03213fc0d95ccae8ba874b70037a8187e13bc44b9",
+          "sha256": "15d72b128fc4f043c0793b73b1764cf34168ec3d6186b285b513c756bd89b418",
           "availability": "local"
         },
         {
@@ -520,7 +520,7 @@
         },
         {
           "path": "skill-support/scripts/generate-html-page.mjs",
-          "sha256": "b3b16c439098e00553560feef7e94d068e7df9a8e0e7b7d437c9772eae668877",
+          "sha256": "758340e9d2b2db16552b998acbc6ee1ae1593a413eedfc20706f805035140c50",
           "availability": "local"
         },
         {
@@ -556,7 +556,7 @@
         },
         {
           "path": "skill-support/scripts/stamp-html-artifact.mjs",
-          "sha256": "747e3a004b765483f6930c89fb436320672a2ad9b24365bb7092bdbc0ac9c346",
+          "sha256": "f25ee0d687adc647dbefa3e819237c7a49a8948e9bb9f8371cadde404e047b33",
           "availability": "local"
         },
         {
@@ -577,17 +577,17 @@
       "files": [
         {
           "path": "package.json",
-          "sha256": "0a82faed70a998b84d990b573cbe7ae70623a2fa7783bf9777de3ff274e6cbef",
+          "sha256": "33427780c235ec961167eefc48db88a2a0d537b02ceaa410a185fe6674a24fde",
           "availability": "local"
         },
         {
           "path": "SKILL.md",
-          "sha256": "9184ddf48906eb567b4c28c659ed9c875eaaaeea344d85d0e77ab3a552fb9089",
+          "sha256": "bf2a5b04a5faa96f02de739e6cb900f3f9f70013b3a0b780ce5d372c48bc3f46",
           "availability": "local"
         },
         {
           "path": "skill-support/package.json",
-          "sha256": "0a82faed70a998b84d990b573cbe7ae70623a2fa7783bf9777de3ff274e6cbef",
+          "sha256": "33427780c235ec961167eefc48db88a2a0d537b02ceaa410a185fe6674a24fde",
           "availability": "local"
         },
         {
@@ -597,7 +597,7 @@
         },
         {
           "path": "skill-support/references/governance/major-version-update-checklist.md",
-          "sha256": "5fc944b549c4ea60c0e0f0847de8c04471f89316065a53ac0547b8aab83140a9",
+          "sha256": "7ce1e00dd7cb55fe3249eebf926cdd46b00abfa9334ab913e623f3f299eee5b7",
           "availability": "local"
         },
         {
@@ -654,12 +654,27 @@
         },
         {
           "path": "skill-support/scripts/prepare-page-styles.mjs",
-          "sha256": "0d4164811fb89c75a5684afd3d876d0b84ad86f9c00b1bf3f6c0b8aa5a03101f",
+          "sha256": "da63c8c6bbdf1f397cc20ad55ac9cc71bce7a193449870f7729ebf3a7a66afdb",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/scripts/html-artifact-graph.mjs",
+          "sha256": "d562446d719d2d83eec75a9b8c09041450aabd87a689c53b886adf23ef8f805d",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/scripts/validate-page-project.mjs",
+          "sha256": "f069ab2bea40ac3977b13ed28e8fc6dc2ec174c9ee70106b28aced84b46ccaaf",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/scripts/compact-paths.mjs",
+          "sha256": "71692cd960eab4bed991d880671f8a282d57e128970ccfb331ea46c36a2236f8",
           "availability": "local"
         },
         {
           "path": "skill-support/scripts/scaffold-standalone-project.mjs",
-          "sha256": "4222d1b6a5a976b44a8cb835541fc72cbbb724b30dcbcec38bc408d8a43b8c3b",
+          "sha256": "51d2f1b7ecbd90d29cb3c1fe940b3cad40eaf19189d1bb69c286671531f62a11",
           "availability": "local"
         },
         {
@@ -669,12 +684,12 @@
         },
         {
           "path": "skill-support/references/components/local-component-delivery.md",
-          "sha256": "d6634122f3f7fa7bdf24dd42c2590bd45a792cffed3d3ee2278b0fe52dbe0076",
+          "sha256": "78c05eac5d1d8668f0f76de08cfdf29a6942ce838b65ef731a59126252c902fe",
           "availability": "local"
         },
         {
           "path": "skill-support/references/routes/new-page.md",
-          "sha256": "c54ab6d4f7ffdd7e2477d6532df444e0149df1163b337ab62eab7a3da96e6cc6",
+          "sha256": "ce691311f37906f527ad65606d174691a8118dece0799d526f1db98085651cc0",
           "availability": "local"
         },
         {
@@ -690,27 +705,27 @@
       "files": [
         {
           "path": "skill-support/references/resource-workflow.md",
-          "sha256": "86c2fbc75fda97e385b53215a0ff757e9e679fb285d298ab6b4f84b1b259b004",
+          "sha256": "6be00e495fce845f82b96ca880b51223696c29ac6c1f7e471f076b0cbead1d62",
           "availability": "local"
         },
         {
           "path": "skill-support/references/resources/source.json",
-          "sha256": "e3dc0a0ef589121a1600ee46d299bf86518ddea86d2db9b8c2cf4a7a3124fb3f",
+          "sha256": "1fd2788d75be3eb4ec4a7895c5f83fbe4aab7b143873b7eefc478a7dea6f717d",
           "availability": "local"
         },
         {
           "path": "skill-support/references/resources/source.schema.json",
-          "sha256": "95a194a5e2741ce256d7928e5aea10c4190ace7508b29372e7778939f70ccbc5",
+          "sha256": "757c4973c64cddcc44b7d4277ac9f4e763e52297d259fd4612f3ea77b68d31c4",
           "availability": "local"
         },
         {
           "path": "skill-support/references/index/generated/resource-index.json",
-          "sha256": "dc70e5e1c2f4290a7b107624532bc7367c5c83b94a22158338f6dadee51fe806",
+          "sha256": "3158c36b78a7e8c196e1aeeed81a38547ffb8233b19551546fefb825e854b93c",
           "availability": "local"
         },
         {
           "path": "skill-support/scripts/resource-index-lib.mjs",
-          "sha256": "2c644f57241ad3e517343c5ebd03b362e53c159b1827f5d488ad512f4c7c7341",
+          "sha256": "f6f304f96facbd0bb72ec91e852f412b43fed2eac70f4aef6598d2ff0b4ebd22",
           "availability": "local"
         },
         {
@@ -720,7 +735,7 @@
         },
         {
           "path": "skill-support/scripts/stage-context-lib.mjs",
-          "sha256": "422edfb3d01c36cc928c33ab51eef0c2c60dbb0aee671ee5d799828d3481e3e7",
+          "sha256": "6543df7cc758117f12136dc6e428a6771ebe80fa194d892d6c0a6e6493415549",
           "availability": "local"
         },
         {
@@ -795,12 +810,12 @@
         },
         {
           "path": "skill-support/references/resources/layout/application-shell.md",
-          "sha256": "e6758d2324bb1041f338fbc58700f9f72f418a13d9b0f426203106a3198614bd",
+          "sha256": "ee677b6094140cc712e6e1abae647af4aef589dd35bf91347fbf062508e00e38",
           "availability": "local"
         },
         {
           "path": "skill-support/references/resources/layout/page-spacing.md",
-          "sha256": "06a37f47d67f4ad3201656f67b65a84d2ff5c121ff3551e01acf4f0b9ec54a1b",
+          "sha256": "e739db5418596b6184ca44f97e4615effad39091ad8f09f50337bc54c6ea768b",
           "availability": "local"
         },
         {
@@ -839,13 +854,8 @@
           "availability": "local"
         },
         {
-          "path": "skill-support/references/resources/patterns/global-title-layer.md",
-          "sha256": "09f5c108e9a9aa9b8a3ceedd2d43e78b3607e379d7d3d62f355118eb4336f03d",
-          "availability": "local"
-        },
-        {
           "path": "skill-support/references/resources/patterns/left-brand-anchor.md",
-          "sha256": "e76bc73c51100892f30a12e38336072a3373ff63880b586fa74617fc67b10598",
+          "sha256": "6cb46316b51da7da5dc5924341ea405397583723a1e92827533604c4118b1393",
           "availability": "local"
         },
         {
@@ -865,17 +875,12 @@
         },
         {
           "path": "skill-support/references/resources/patterns/final-pane-leading-slot.md",
-          "sha256": "b8c90b51eb999828930d01ee3b4d8ee81bab0681f58ed23c4b087dcceec2f5e7",
-          "availability": "local"
-        },
-        {
-          "path": "skill-support/references/resources/patterns/approved-shell-patterns.md",
-          "sha256": "9fde0c93f37ca16e41650af7251ef8e29f63208e69d7ac43ab30bb25b0ab755b",
+          "sha256": "9cf9bbc1b2189d621b75b819ea488dba87dd0799748f98d8276ce12c3e635b9b",
           "availability": "local"
         },
         {
           "path": "skill-support/references/resources/patterns/reusable-pattern-primary-navigation-shell.md",
-          "sha256": "f340794b6791e8564f0d34ef5677a8512457e3c3b903aba28e5ac766222a2602",
+          "sha256": "6fd94aec394417a9fd9fa78cb5cbd127ca1fffa75b56779e46b0c28b81a2cfd4",
           "availability": "local"
         },
         {
@@ -904,18 +909,13 @@
           "availability": "local"
         },
         {
-          "path": "skill-support/references/resources/patterns/pane-behavior.md",
-          "sha256": "3e1dbaacb4434e07b5412b28b532c29664a8457489766f14e5bfb3a612e705fa",
-          "availability": "local"
-        },
-        {
           "path": "skill-support/references/resources/patterns/primary-navigation.md",
-          "sha256": "8eaab4cc83f36e4eca0691fce9ba92ea3a1c276ec24f9e7fbcef7fedea283e15",
+          "sha256": "a01c933a514fb5ff776b4bca01d24c49e60fcd1eead8e2d5b1aaf1f6abe31329",
           "availability": "local"
         },
         {
           "path": "skill-support/references/resources/patterns/secondary-pane.md",
-          "sha256": "583baea08ec4f8e1d4054f01b02d4cd924248e456dcfb4a6f1d48317a46c3660",
+          "sha256": "962857ae646ed124d79dc091be60d580ce522409a08bdee1a946c10fa1a5fcbc",
           "availability": "local"
         },
         {
@@ -975,7 +975,7 @@
         },
         {
           "path": "skill-support/references/resources/interaction/common-shortcuts.md",
-          "sha256": "0101486fdd764df412233a5cc9a379bb9e43bb549697c289be25a13d90e82f01",
+          "sha256": "a30119b84645e6321d883b3971169429e95f1593010a7b9c19f432cc64588167",
           "availability": "local"
         },
         {
@@ -1039,18 +1039,13 @@
           "availability": "local"
         },
         {
-          "path": "skill-support/references/resources/composition/style-and-behavior-plans.md",
-          "sha256": "5ca61f1b3b36e00cacf1051177df68dac351d2d2938013fc0cea29bfc3037a6f",
-          "availability": "local"
-        },
-        {
           "path": "skill-support/references/resources/composition/executable-html-business-composites.md",
-          "sha256": "104c5dee34f6a3d593ece1491d60ce0c29e7c399b1055dba297631a50d8a5705",
+          "sha256": "b1ff5c0370077fc79be720a941d629e4fb980e8adf209899bcc59e92b2be1dfb",
           "availability": "local"
         },
         {
           "path": "skill-support/references/resources/composition/plans.md",
-          "sha256": "b97a58eaa9b71a44364d319dd8f350b47945ccc695fd605774242e2f17dd9b18",
+          "sha256": "f5575338c00a67bf5920135ab0141ff0b03a023c164e7e8749eee5cb48e72a64",
           "availability": "local"
         },
         {
@@ -1155,12 +1150,12 @@
         },
         {
           "path": "skill-support/references/resources/titlebar/overview.md",
-          "sha256": "2d324fe2d0112903a5cbb53ccefcc3e02bfb695b110c86b58b868f17a39477f1",
+          "sha256": "d7b2f2381ce4d5571c83497f43adf5ccc2a3c3e24bfb5ca28fa4b7b36e662c57",
           "availability": "local"
         },
         {
           "path": "skill-support/references/resources/titlebar/scenarios.md",
-          "sha256": "d3eb1ad6896ddd3c21cc0467c417245d3a80c54f53030ea5e9b19cadcd231e25",
+          "sha256": "218c5efb12fd4167e66b6bd3a3ad251f5d0735e2064c462bed2401e6542f38ae",
           "availability": "local"
         },
         {
@@ -1195,7 +1190,7 @@
         },
         {
           "path": "skill-support/references/resources/delivery/project-output.md",
-          "sha256": "129517549490e52400f6605e7f7780e9994ee2c09ccdd4bbf28d36343e9408bd",
+          "sha256": "2bf1313c25c4301238b585c99c293ed2a007770051ed7e41182c1a8d4c6afe0e",
           "availability": "local"
         },
         {
@@ -1205,7 +1200,7 @@
         },
         {
           "path": "skill-support/references/resources/delivery/styles.md",
-          "sha256": "d9d47511e46701579a3ef039745b39f0d223b08d281a55a10b8b87feabc38af2",
+          "sha256": "72df1b20f3f4213c2cea14c8341bbc9e14b3736f3e5e08830c578bc800b57d81",
           "availability": "local"
         },
         {
@@ -1280,12 +1275,12 @@
         },
         {
           "path": "skill-support/references/resources/pixso-mcp/creation-sequence.md",
-          "sha256": "5cdc818b5da3bb4f91dd247e2984357e7d7ceff7430e77e3d20f25c6b44d5668",
+          "sha256": "0103cee55aa03ed2ede1dae9cd57ec96241b854b6025a9eafb5feee5336a6382",
           "availability": "local"
         },
         {
           "path": "skill-support/references/resources/pixso-mcp/registered-reuse-performance-and-icon-gates.md",
-          "sha256": "0dd851a8256167fc1830d8c8cd5f06de3a4086472c1e90414c1cacf4e49534ac",
+          "sha256": "b16392e8449004bd550ab68902ef68933e3074198d50394dbf1b86cc2ab12ddd",
           "availability": "local"
         },
         {
@@ -1295,7 +1290,7 @@
         },
         {
           "path": "skill-support/references/resources/pixso-mcp/token-gate.md",
-          "sha256": "2b6b2003b9a7ca7e7951e2623cf6545b4ba2f13926de1c569eb1b3cf18e56a6d",
+          "sha256": "9d560129eb0cc4d062bb22347f085ed83f3e8fe072d559ec0f0027a97e46c325",
           "availability": "local"
         },
         {
@@ -1411,6 +1406,81 @@
         {
           "path": "skill-support/references/resources/core/delivery.md",
           "sha256": "27fd274f7f8ed89a14ca90a48bb5c4887127674cee6dfc6eaa5bde57a0a8d218",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/interaction/date-picker.md",
+          "sha256": "4cd08412bf23a3462d2eaa237a79f46d42efdaa50839946f37a68d3799322b4f",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/interaction/time-picker.md",
+          "sha256": "a0df30f297491a4e0f4b472868a14d5756d9bb0b14ed9271625da7b7aa77372c",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/foundations/colors.md",
+          "sha256": "1f74207b125fea100b11282ea5959ef389c20027953fad55a98d86813e02f910",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/foundations/typography.md",
+          "sha256": "1f5b97ec5d36f831af3947879f2843af281a1a00f37de1460e00c050e30422bf",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/foundations/spacing.md",
+          "sha256": "363c84ece944bda8cfcc2693ac083da5d951ae84c072984465bb55906cb8d827",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/foundations/radius.md",
+          "sha256": "8d5e530df4f6239bbe3643d9438ee3aa99ae971e71010956e4c992f09d7866e2",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/foundations/size.md",
+          "sha256": "022d33998c26fb8873e1a893024c30b843a23a69ac24483ef95de3a2a20edf85",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/foundations/shadows.md",
+          "sha256": "4c583d054b7eb67a8f025c290931a0376182d5ce82ebaebfeb8230516fdf3f5a",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/component-visual/buttons.md",
+          "sha256": "7f2271e10fd1bed3f6e780c5d2cad8fb84d35daac43da7ed6b37b1578e8990d5",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/component-visual/inputs.md",
+          "sha256": "4ef4c687952866fb7d0618e88513ecc1bbded95f1027a53576420ede8abc23b4",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/component-visual/cards.md",
+          "sha256": "c8b563f98d695a79d77bd7e6ba2c794b265a93f7d5204601d08c388debe5b70c",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/component-visual/navigation-and-lists.md",
+          "sha256": "eaa6b9886a5a0efe010a618eed20410e039393c95129951fbc398c7696eb91bc",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/component-visual/data.md",
+          "sha256": "638e86a03544b1fd41e85b848d25b3e57802767d6f88afb779d1dce68ab69a0d",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/component-visual/feedback-and-overlays.md",
+          "sha256": "efb2e965c157ae549e830001df7dd1c724f169853680d513789d7d5d1ac356e5",
+          "availability": "local"
+        },
+        {
+          "path": "skill-support/references/resources/component-visual/tooltip.md",
+          "sha256": "1f973dadee9be8f6f82e747f5e007a48188c3be5d775a8b26c3d5537c5ae0a20",
           "availability": "local"
         }
       ]

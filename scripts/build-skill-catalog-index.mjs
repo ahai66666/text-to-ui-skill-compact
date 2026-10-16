@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import fs from 'node:fs';
+import { belongsInRuntime } from './distribution-policy.mjs';
 import path from 'node:path';
 import {
   generatedIndexDir, locateMonorepo, parseArgs, resolveSkillRoot, sha256File, stableJson
@@ -27,6 +28,9 @@ groups.find((group) => group[0] === 'component-contracts-and-adapters')[2].push(
 groups.push(['dynamic-local-components', 'Selected component modules, unified stylesheet delivery, compact model brief and dynamic HTML workflow.', [
   'skill-support/scripts/prepare-page-components.mjs',
   'skill-support/scripts/prepare-page-styles.mjs',
+  'skill-support/scripts/html-artifact-graph.mjs',
+  'skill-support/scripts/validate-page-project.mjs',
+  'skill-support/scripts/compact-paths.mjs',
   'skill-support/scripts/scaffold-standalone-project.mjs',
   'skill-support/scripts/component-selection.mjs',
   'skill-support/references/components/local-component-delivery.md',
@@ -45,6 +49,7 @@ groups.push(['focused-stage-resources', 'Thematic source fragments, compatibilit
   'skill-support/scripts/test-resource-routing.mjs',
   ...JSON.parse(fs.readFileSync(path.join(skillRoot, 'references/resources/source.json'), 'utf8')).resources.filter((r) => r.path.startsWith('references/resources/')).map((r) => 'skill-support/' + r.path)
 ]]);
+const runtimeDistribution = fs.existsSync(path.join(skillRoot,'.compact-distribution.json')) && JSON.parse(fs.readFileSync(path.join(skillRoot,'.compact-distribution.json'))).profile === 'runtime';
 const catalogFile = (relative) => {
   const candidates = relative.startsWith('skill-support/')
     ? [path.join(skillRoot, relative.slice('skill-support/'.length))]
@@ -52,6 +57,8 @@ const catalogFile = (relative) => {
   const absolute = candidates.find((file) => fs.existsSync(file));
   if (absolute) return { path: relative, sha256: sha256File(absolute), availability: 'local' };
   if (relative.startsWith('apps/') || relative.startsWith('tools/')) return { path: relative, sha256: null, availability: 'external-full-repository' };
+  const local=relative.replace(/^skill-support\//,'');
+  if(runtimeDistribution && !belongsInRuntime(local)) return {path:relative,sha256:null,availability:'maintenance-source'};
   throw new Error('Catalog source is missing: ' + relative);
 };
 
@@ -66,7 +73,7 @@ const catalog = {
     validator: 'pnpm index:check'
   },
   deliveryTargets: [
-    'skill/ (local generated mirror; Git-ignored)',
+    'explicit compact distribution output',
     '$CODEX_HOME/skills/text-to-ui-compact',
     '$TEXT_TO_UI_PLUGIN_DELIVERY_ROOT'
   ],

@@ -12,7 +12,7 @@ const unusedAdapter = path.join(temp, "unused-adapter.js");
 fs.writeFileSync(valid, "export const mount = (host, { renderComponent }) => { host.innerHTML = '<p>业务内容</p>' + renderComponent('button', { label: '刷新' }); };\n");
 fs.writeFileSync(invalid, "export const mount = () => '<button>绕过组件</button>';\n");
 fs.writeFileSync(unusedAdapter, "export function mount(host, { renderComponent }) { host.innerHTML = '<p>没有调用适配器</p>'; }\n");
-const script = path.resolve("skill-support/scripts/validate-page-composite-boundaries.mjs");
+const script = path.resolve("scripts/validate-page-composite-boundaries.mjs");
 assert.equal(spawnSync(process.execPath, [script, "--source", valid]).status, 0);
 assert.notEqual(spawnSync(process.execPath, [script, "--source", invalid]).status, 0);
 assert.notEqual(spawnSync(process.execPath, [script, "--source", unusedAdapter]).status, 0);

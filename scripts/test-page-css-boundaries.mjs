@@ -26,7 +26,7 @@ fs.writeFileSync(validFocus, ".mail-card:focus-visible { outline: 2px solid var(
 fs.writeFileSync(validBusinessShell, ".fixture-demo-shell { border: 1px solid var(--color-border); }\n");
 fs.writeFileSync(invalidResizerStroke, ".content-resizer::before { border-inline-start: 2px solid var(--color-border); }\n");
 fs.writeFileSync(validResizerStroke, ".content-resizer::before { border-inline-start: var(--layout-navigation-divider-width) solid var(--color-border); }\n");
-const script = path.resolve("skill-support/scripts/validate-page-css-boundaries.mjs");
+const script = path.resolve("scripts/validate-page-css-boundaries.mjs");
 assert.equal(spawnSync(process.execPath, [script, "--source", valid]).status, 0);
 assert.notEqual(spawnSync(process.execPath, [script, "--source", invalid]).status, 0);
 assert.notEqual(spawnSync(process.execPath, [script, "--source", fixedCanvas]).status, 0);

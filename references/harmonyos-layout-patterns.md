@@ -76,7 +76,7 @@ The last Workspace pane owns a leading slot in the Global Title Layer, aligned t
 - Keep application-wide actions not owned by Main Detail and window controls at the far right. The leading slot is the required home for Main Detail pane-global actions, not a replacement for the application action/window area.
 
 Terminology: the HTML implementation is the web runtime adapter. Reserve “native component” for an HTML built-in element or a verified Pixso Component/Instance.
-The HTML `Titlebar` runtime adapter exposes this contract through two required structural properties: `layout="standalone|two-column|three-column"` and `paneRole="global|primary-navigation|secondary-pane|final-pane"`. Use `paneTitle` only for `two-column + final-pane`; use `mainDetailActions` only for `three-column + final-pane`. `mainDetailActions` accepts 0..n ordered action descriptors and may render only `icon` or `icon-text-ghost` Buttons, both using the `ghost` variant. Standalone/global Titlebar and every two-column segment have no bottom divider. In a three-column shell, only `final-pane` renders the Tokenized bottom divider; the branded Primary Navigation segment and Secondary Pane segment do not. The layout remains responsible for continuous vertical pane dividers.
+The HTML `Titlebar` runtime adapter exposes this contract through two required structural properties: `layout="standalone|two-column|three-column"` and `segmentRole="global|primary-navigation|secondary-list|main-content|main-detail"`. Use `paneTitle` only for `two-column + final-pane`; use `mainDetailActions` only for `three-column + final-pane`. `mainDetailActions` accepts 0..n ordered action descriptors and may render only `icon` or `icon-text-ghost` Buttons, both using the `ghost` variant. Standalone/global Titlebar and every two-column segment have no bottom divider. In a three-column shell, only `final-pane` renders the Tokenized bottom divider; the branded Primary Navigation segment and Secondary Pane segment do not. The layout remains responsible for continuous vertical pane dividers.
 
 ## 3. Approved Shell Patterns
 
@@ -213,7 +213,7 @@ Primary Nav | Secondary Pane | Main Canvas | Inspector
 - Usually fixed or bounded width.
 - Has its own title, search, filter, sort, and view controls when needed. Page-global creation does not belong here.
 - Uses a divider between itself and Main Detail.
-- Applies 16px left/right/top/bottom padding exactly once on its direct scrolling wrapper. Do not add `--padding-list` around a List already hosted inside this inset; rows fill the available inset width and keep only their component-owned internal padding.
+- In Pattern B, applies 16px left/right, 8px top, and 0px bottom padding exactly once on its direct scrolling wrapper. Do not add `--padding-list` around a List already hosted inside this inset; rows fill the available inset width and keep only their component-owned internal padding.
 
 ### Main Content
 

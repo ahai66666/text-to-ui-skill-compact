@@ -30,6 +30,13 @@ export function resourceSource(root) {
     ids.add(row.id);
     localFile(root, row.path);
   }
+  for (const [alias,target] of Object.entries(source.aliases || {})) {
+    if (ids.has(alias) || !ids.has(target) || alias === target) throw new Error("Invalid resource alias: " + alias);
+  }
+  const componentIds = new Set(fs.readdirSync(path.join(root,"packages/component-contracts/src/components")).filter(f=>f.endsWith(".json")).map(f=>f.slice(0,-5)));
+  for (const row of source.resources) for (const id of row.appliesTo.components || []) {
+    if (id !== "*" && !componentIds.has(id)) throw new Error("Noncanonical component selector: " + row.id + " -> " + id);
+  }
   const active = new Set(), done = new Set();
   const visit = (id) => {
     if (!ids.has(id)) throw new Error("Missing resource dependency: " + id);
@@ -77,7 +84,7 @@ export function makeResourceIndex(root, source = resourceSource(root)) {
   }
   const sources = [...inputs].sort().map((file) => ({ path: file, sha256: hash(fs.readFileSync(localFile(root, file))) }));
   return { schemaVersion: 1, kind: "text-to-ui-resource-index", policy: "Machine index; query projections only. Edit resource fragments and rebuild, never edit compatibility aggregates.",
-    digest: hash(json(sources)), sources, resources };
+    digest: hash(json(sources)), aliases: source.aliases || {}, sources, resources };
 }
 export function loadResourceIndex(root) {
   const index = read(localFile(root, indexFile));

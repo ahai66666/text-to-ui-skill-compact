@@ -94,19 +94,18 @@ const validationIndex = {
   modes: {
     'fast-preview': {
       purpose: 'Reach the first browser-visible interactive page after blocking checks only.',
-      commands: ['pnpm index:check', 'pnpm layout:contract:test', 'pnpm layout:binding:test', 'pnpm components:reuse:test'],
-      requiredEvidence: ['context-packet.json', 'layout-contract.json', 'page-spec.json', 'component-usage.json', 'build-or-open-success', 'target-viewport', 'primary-path-operable']
+      commands: ['pnpm resources:check', 'pnpm index:check', 'node <RULES_ROOT>/scripts/validate-page-project.mjs --project <PROJECT_DIR> --skill-root <RULES_ROOT> --mode fast-preview'],
+      requiredEvidence: ['context-packet.json', 'layout-contract.json', 'page-blueprint.json', 'page-content-recipes.json', 'page-bindings.json', 'styles/style-manifest.json', 'component-usage.json', 'build-or-open-success', 'target-viewport', 'primary-path-operable']
     },
     'release-validation': {
       purpose: 'Run complete repository and delivery validation after visible direction approval.',
-      commands: ['pnpm components:strict-html:test', 'pnpm gallery:build'],
+      commands: ['pnpm resources:check', 'pnpm index:check', 'node <RULES_ROOT>/scripts/validate-page-project.mjs --project <PROJECT_DIR> --skill-root <RULES_ROOT> --mode release-validation --runtime-evidence <RUNTIME_EVIDENCE>'],
       requiredEvidence: ['direction-approval', 'full-validation-report', 'final-browser-review']
     }
   },
   availablePackageScripts: (() => {
     const removed = new Set(['page:generate:test', 'components:titlebar:test', 'components:search:test']);
     const scripts = Object.fromEntries(Object.entries(packageJson.scripts).filter(([name]) => !name.startsWith('frameworks:') && !removed.has(name)));
-    if (scripts['mappings:validate']) scripts['mappings:validate'] = 'node skill-support/scripts/validate-mapping-registry.mjs';
     if (scripts.test) scripts.test = scripts.test.split(' && ').filter((command) => {
       const name = command.replace(/^pnpm /, '');
       return !name.startsWith('frameworks:') && !removed.has(name);

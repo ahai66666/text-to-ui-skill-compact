@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
 
-const script = path.resolve("skill-support/scripts/build-component-acceptance-report.mjs");
+const script = path.resolve("scripts/build-component-acceptance-report.mjs");
 const run = (...args) => spawnSync(process.execPath, [script, "--repo", process.cwd(), ...args], { encoding: "utf8" });
 const result = run();
 assert.equal(result.status, 0, result.stderr);

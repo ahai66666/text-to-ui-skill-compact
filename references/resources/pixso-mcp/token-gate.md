@@ -45,6 +45,6 @@ another collection. Run “清理测试变量” after verification.
 2. Create temporary color, number, and string variables in the existing approved collections. Do not create a fifth collection.
 3. Verify persistence with all three read paths: `read_variables`, `get_variable_sets`, and `get_variables`. A generated GUID from `write_variables` is not proof of persistence.
 4. Bind a temporary node to the probe color and number. Treat every unresolved-variable warning as a failed gate.
-5. Delete the temporary node and collection.
+5. Delete only the temporary node and probe variables. Preserve the existing approved collections.
 6. Only after the probe passes, sync the generated manifest in small batches and compare the Pixso read-back count to the manifest summary.
 

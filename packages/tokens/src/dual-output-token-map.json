@@ -16,7 +16,7 @@
     "hardcodedPageColors": false
   },
   "summary": {
-    "mappedPixsoVariables": 127,
+    "mappedPixsoVariables": 130,
     "primitiveColors": 56,
     "semanticColors": 99,
     "semanticTokenMappings": 290
@@ -911,6 +911,39 @@
       "type": "number",
       "resolvedValue": 80,
       "pixsoValue": 80,
+      "valueTransform": "identity"
+    },
+    {
+      "sourceToken": "tokens.icon.json:lucide.project-stroke-width-by-display-size.16",
+      "webCssVariable": "--icon-outline-stroke-width-16",
+      "webContractPath": null,
+      "pixsoVariable": "icon/stroke/16",
+      "collection": "Size & Layout",
+      "type": "number",
+      "resolvedValue": 1,
+      "pixsoValue": 1,
+      "valueTransform": "identity"
+    },
+    {
+      "sourceToken": "tokens.icon.json:lucide.project-stroke-width-by-display-size.20",
+      "webCssVariable": "--icon-outline-stroke-width-20",
+      "webContractPath": null,
+      "pixsoVariable": "icon/stroke/20",
+      "collection": "Size & Layout",
+      "type": "number",
+      "resolvedValue": 1.25,
+      "pixsoValue": 1.25,
+      "valueTransform": "identity"
+    },
+    {
+      "sourceToken": "tokens.icon.json:lucide.project-stroke-width-by-display-size.24",
+      "webCssVariable": "--icon-outline-stroke-width-24",
+      "webContractPath": null,
+      "pixsoVariable": "icon/stroke/24",
+      "collection": "Size & Layout",
+      "type": "number",
+      "resolvedValue": 1.5,
+      "pixsoValue": 1.5,
       "valueTransform": "identity"
     },
     {

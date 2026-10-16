@@ -4,12 +4,12 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 
 const read = (relativeUrl) => fs.readFileSync(new URL(relativeUrl, import.meta.url), "utf8");
-const css = read("../../packages/component-styles/src/index.css");
+const css = read("../packages/component-styles/src/index.css");
 const design = read("../assets/design-system/design.md");
 const composition = read("../references/components/page-composition.md");
 const specs = read("../references/component-specs-extended.md");
 const layout = read("../references/harmonyos-layout-patterns.md");
-const contracts = JSON.parse(read("../../packages/component-contracts/src/components.json"));
+const contracts = JSON.parse(read("../packages/component-contracts/src/components.json"));
 
 const rule = (selector) => {
   const start = css.indexOf(selector);

@@ -3,7 +3,7 @@
 Titlebar is a segment component, not a second Pattern shell. Pattern owns the
 ordered title segments, their widths, dividers and height. Do not give Titlebar
 a separate grid or hard-code a navigation width. Preserve the existing size
-and visual variants. Existing `paneRole` calls remain compatible.
+and visual variants. Use the current segmentRole parameter; paneRole is removed and rejected.
 
 The brand image is the canonical `logo` slot. Global and
 primary-navigation (first-level) segments always show it. Secondary-pane and

@@ -11,11 +11,16 @@
   "levels": {
     "approved": {
       "description": "All required readiness dimensions are verified.",
-      "allowedStages": ["fast-preview", "release"]
+      "allowedStages": [
+        "fast-preview",
+        "release"
+      ]
     },
     "provisional": {
       "description": "Source and contract are usable, but one or more parity dimensions remain unverified.",
-      "allowedStages": ["fast-preview"]
+      "allowedStages": [
+        "fast-preview"
+      ]
     },
     "blocked": {
       "description": "Source or contract is unavailable, or an explicit blocking issue exists.",
@@ -29,15 +34,16 @@
     "note": "Explicitly user-accepted visual, contrast, or interaction tradeoffs remain internal evidence and do not prevent Fast Preview component selection."
   },
   "generationGate": {
+    "scope": "fast-preview",
     "requiredChecks": [
       "pattern-contract-and-component-mapping",
       "html-runtime",
       "interaction-and-basic-semantics",
-      "skill-delivery-sync"
+      "source-and-token-boundaries"
     ],
-    "styleChecks": "on-request",
-    "tokenChecks": "assumed-canonical",
-    "note": "Readiness dimensions remain available for optional audit reporting; they do not block ordinary generation when the four generation checks pass."
+    "styleChecks": "visual comparison on request; source boundaries always checked",
+    "tokenChecks": "canonical CSS usage validated before generation",
+    "note": "Fast Preview permits provisional components. Release still requires the levels.allowedStages policy and evidence; generation does not promote maturity."
   },
   "overrides": []
 }

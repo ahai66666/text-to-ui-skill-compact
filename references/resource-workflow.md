@@ -117,3 +117,15 @@ pnpm resources:test
 ~~~
 
 最后刷新 .delivery-manifest.json。不得先生成导航再改变其依赖的 catalog。正式组件/Token/Pattern 数据维护继续使用原有脚本与政策，不从新文档复制第二套值。
+
+## 来源与兼容
+
+纯标题资源合并后，旧 ID 由 source.json aliases 解析。readPolicy 为 stage 的资料按条件下发；explicit-query 为明确查询资料，不等于历史垃圾。组件条件只接受正式 ID；能力别名由组件查询器解析，不混进资源选择条件。日期和时间分开读取，标题栏自动带基础与排版限制，组件补充表在 API 视图仅投影所选组件行，full 保留完整原文。
+
+生成后的统一检查：page:validate --project <PROJECT_DIR>。无实际 runtime-evidence 时只报告源码有效、浏览器待验；正式交付保留成熟度和运行证据要求。使用包与维护源详见 distribution.md。
+
+## 组件决策与生成边界
+
+固定顺序：按需读取 → 检索共享组件/项目已有组件 → 有则引用原实现及 CSS → 无则在配方说明缺失原因并创建独立业务组件与样式 → 页面动态引用 → 验收。bindings 包确定标准控件 API，composition.executable-html-business-composites 规定缺失业务能力的 module/stylesheet。不要让模型重新生成已有组件；不要把新业务组件实现塞入 index.html 或页面 CSS。
+
+迁移旧业务模块：为每个 pageModules 条目补充 stylesheet（路径相对 page-bindings.json），把其私有样式从页面 CSS 移到单独文件；重新执行生成器刷新清单。标准组件与其 CSS 不迁移、不重写。新增业务模块不会自动进入共享组件库；后续项目复用时显式引用，晋升共享组件须补契约及验证证据。

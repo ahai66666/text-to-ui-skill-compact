@@ -55,121 +55,25 @@ a request to re-check, not as proof. If three consecutive checks still show the
 same page, mark the Pixso stage blocked and report that no Pixso write occurred;
 do not keep polling or create a replacement Frame on the wrong page.
 
-## Creation Sequence
+## Pixso 资源读取与诊断顺序
 
-1. Read the active profile in `assets/design-system/mapping-registry.json`, then run
-   `node scripts/validate-mapping-registry.mjs` and
-   `node scripts/sync-mapping-registry.mjs --check`.
-2. Run `node scripts/build-pixso-token-manifest.mjs --check`,
-   `node scripts/build-token-runtime-map.mjs --check`, and
-   `node scripts/build-dual-output-token-map.mjs --check`. If any output is
-   stale, regenerate the chain in that order, then rerun all three checks. Read
-   the active mapping profile and the generated
-   `pixso-variables.json`, `token-runtime-map.json`,
-   `dual-output-token-map.json`, and `references/pixso-component-bindings.md`.
-3. Call `fetch_context` with `include_schema: false`; use `include_map: false` for a new creation task.
-4. Load the relevant Pixso guideline topic, usually `web-app` and `design-system` for HarmonyOS PC application work.
-5. Read variables, shared styles, components, and top-level Frames in grouped calls. Reuse approved resources before creating one-off layers.
-6. Create the first editable direction:
-   - In `html-first`, use the exact HTML draft already browser-checked at the
-     approved viewport as the Web checkpoint.
-   - In `visual-first`, generate the separate page/component modules from the validated page inputs, wait for dynamic rendering, and capture that same page.
-   - For fast visual import (`reuseStrategy: "import-and-repair"`), use
-     `code_to_design` once to import the complete browser-checked composition;
-     NewComponents discovery is optional and cannot block this call.
-   - For strict structured reuse, when the strict registered-reuse plan
-     contains registered regions, use `code_to_design` only for a
-     low-complexity Pattern skeleton and page-owned content. Insert the
-     registered regions as linked instances from NewComponents before local
-     refinement.
-   - When no registered regions are in scope, use `code_to_design` once to
-     import the composed screen layout.
-   - Use `apply_design` only for variable/style bindings, linked atomic
-     component replacement, and small local corrections. Do not use it as a
-     second independent whole-page layout engine.
-   - Assume every imported style is a literal until live read-back proves a
-     `$variable/path` or shared Style binding. Repair the complete Frame before
-     requesting visual approval.
-   - Before `code_to_design`, run `scripts/validate-pixso-import-package.mjs`
-     against the exact import ZIP with the recorded `fast` or `strict` mode.
-     A failed package check is a local artifact failure; do not spend a Pixso
-     call on it. In strict mode, the check must pass semantic markers and
-     variable-color source usage, but only live Pixso read-back proves the
-     component instances and `$variable` bindings.
-   - The call must receive exactly one final `htmlStr` or `htmlBufferBase64`.
-     A ZIP is required when CSS, fonts, SVGs, or images are external to the
-     entry HTML; never pass a URL, path, placeholder, or both input fields.
-6. Obtain the new top-level Frame ID with `get_top_level_frames` or the returned operation result.
-7. Run `check_layout` with `problemsOnly: true` on the affected Frame.
-8. Run `take_screenshot` on the affected Frame. Inspect content completeness,
-   page and pane dimensions, typography (font, size, weight, line-height and
-   wrapping), whitespace, sizing, color/opacity, border/radius/shadow,
-   responsive or minimum-window behavior, missing assets/icons, clipping, and
-   overlap. Report concrete node IDs or selectors for every finding.
-9. Fix every visible or reported issue, then repeat layout check and screenshot.
+正常整页导入执行 existing-html-to-pixso，不用本节另建画板。MCP 用于当前文档事实读取、组件库任务和显式诊断。
 
-10. Run a structural read-back in addition to `check_layout`. For the affected
-    Frame, compare every descendant's `absoluteBoundingBox` with the root
-    bounds and record the count and examples outside the root. Also inspect
-    the auto-layout direction of major shell containers. `check_layout: null`
-    is not visual proof: the HTML converter can produce a formally valid
-    horizontal stack in which the body starts at `x = root.width`, leaving
-    most of the page outside the frame. Repair that same container direction,
-    size, or child position before style or component work.
+1. 读取 mapping-registry 当前 profile，核对 Token/组件投影，不用缓存 GUID。
+2. 在目标文档读取 Variables、样式、组件和页面，明确库阶段和目标页。
+3. 组件库操作遵守 pixso-component-maintenance/usage；正常页面由同一捕获经 Unified Agent 执行。
+4. 仅独立诊断或明确授权应急可使用一次 code_to_design 作为临时证据；使用真实静态捕获包，不传 URL/路径占位。
+5. 回读准确目标的布局、变量、mainComponent、Variant 和插槽；截图不能替代绑定。
+6. 失败报告阶段，不在普通导入中手改画布掩盖编译错误，不重复生成整页。
 
-## Registered reuse, performance, and icon gates
+执行边界以 pixso-execution-invariants.md 为准。旧 ZIP/页面 Token 修复工具为显式兼容工具。
+## 组件、图标与执行边界
 
-Read `pixso-fidelity-routing.md`, `registered-reuse-mode.md`, and
-`pixso-performance.md` before a Pixso write. The selected route is part of the
-write contract: fast visual import may keep page-owned literals, while strict
-structured reuse must bring verified NewComponents instances and Pixso
-Variables into the target page together.
-For fast visual import, the HTML draft remains the source for the Web
-checkpoint and Pixso imports the complete composition once; do not block on a
-component-library audit. For strict structured reuse, when the planner finds
-registered regions, the HTML draft remains the source for the Web checkpoint,
-but Pixso imports only a low-complexity Pattern skeleton and page-owned
-content. The registered components are inserted as linked instances from the
-exact component-library page; code_to_design must not be used as a second
-renderer for those regions.
+正常导入使用浏览器几何与 Unified Agent；不把旧 code_to_design 双通道当作执行入口。实例按真实 logicalName、Variant、插槽和当前文档身份解析。
 
-The component-library page for strict structured reuse is NewComponents.
-Follow the Target page and path preflight above for both phases. During the
-library phase, compare the active page from fetch_context and each candidate
-component's containing page; after switching to the target product page,
-re-enumerate and compare again immediately before creating instances. The
-target page does not need to be NewComponents. A same-name Frame, stale GUID,
-detached node, icon_font, imported layer name, or component from another page is
-not component reuse. Fast visual import may keep a page-owned Frame instead of
-an instance and must report that distinction.
+图标保留原始 SVG、16/20/24px 显示、1/1.25/1.5px 描边和双轴居中，不用 icon_font 或近似路径替代。实例内图标颜色来自 Variant。检查裁切、实际 bounds 和变量绑定，不能只看槽位名称。
 
-After import, run an icon crop audit on every generated icon wrapper and
-linked icon slot. The wrapper must not clip content, the SVG root and
-internal vector must use the same 24 by 24 source geometry, and the visible
-16px, 20px, or approved 24px display size must be centered without cropping.
-For outline icons, the same audit must preserve the effective stroke mapping:
-24px = 1.5px, 20px = 1.25px, and 16px = 1px. Keep the 1.5px source stroke on
-the 24 by 24 artboard and scale the root and internal vectors together; do not
-correct stroke weight by independently scaling or redrawing a path.
-Do not pass the browser sprite artifact directly to `code_to_design`. Create
-the Pixso-specific import copy first:
-
-```bash
-node scripts/prepare-pixso-html.mjs --in /absolute/path/to/browser.html --out /absolute/path/to/browser.pixso.html --strict
-```
-
-The import copy contains inline exact-source SVG geometry and carries
-`data-icon-alias`, `data-icon-source`, `data-display-size-token`, and
-`data-pixso-overflow="visible"` on each icon wrapper. Do not leave sprite use
-elements or `icon_font` conversions as final Pixso icons. A crop finding blocks
-strict parity until the exact SVG or linked NewComponents instance is repaired.
-
-Use one grouped discovery pass, one code_to_design call, batched edits, and
-targeted read-backs. Record call count, slowest call, code_to_design duration,
-node count, retries, and whether the performance budget aborted the stage.
-After one bounded retry for a failed call, return the HTML draft and report
-the Pixso limitation instead of continuing serial full-frame retries.
-
+组件库维护修复共享来源；正常导入记录可选映射和资源修复项。诊断 MCP 消费同一 Operation Plan 与版本化运行时，不重新计算布局。
 ## Page Binding Bridge（页面 Token 快速通道）
 
 当目标是“先把 HTML 页面视觉稿导入，再低成本补齐页面 Token”时，使用
@@ -244,7 +148,7 @@ another collection. Run “清理测试变量” after verification.
 2. Create temporary color, number, and string variables in the existing approved collections. Do not create a fifth collection.
 3. Verify persistence with all three read paths: `read_variables`, `get_variable_sets`, and `get_variables`. A generated GUID from `write_variables` is not proof of persistence.
 4. Bind a temporary node to the probe color and number. Treat every unresolved-variable warning as a failed gate.
-5. Delete the temporary node and collection.
+5. Delete only the temporary node and probe variables. Preserve the existing approved collections.
 6. Only after the probe passes, sync the generated manifest in small batches and compare the Pixso read-back count to the manifest summary.
 
 ## Binding Audit

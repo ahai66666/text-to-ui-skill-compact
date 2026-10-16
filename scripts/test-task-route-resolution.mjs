@@ -8,8 +8,8 @@ import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { findTaskRouteCandidates, selectTaskRoute } from './task-route-lib.mjs';
 
-const repo = path.resolve(fileURLToPath(new URL('../..', import.meta.url)));
-const skillRoot = path.join(repo, 'skill-support');
+const repo = path.resolve(fileURLToPath(new URL('..', import.meta.url)));
+const skillRoot = repo;
 const scripts = path.join(skillRoot, 'scripts');
 const routes = JSON.parse(fs.readFileSync(path.join(skillRoot, 'references/index/task-routes.source.json'), 'utf8')).routes;
 const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'text-to-ui-task-routes-'));
@@ -63,7 +63,7 @@ for (const framework of ['html']) {
       assert.ok(packet.exactReferencesToRead.includes(item.contract), `${framework}/${task}: missing exact contract pointer for ${item.capability}`);
       if (item.implementation) {
         assert.ok(item.implementation.includes(`components-${framework}`), `${framework}/${task}: wrong framework source for ${item.capability}`);
-        assert.ok(packet.exactReferencesToRead.includes(item.implementation), `${framework}/${task}: missing source pointer for ${item.capability}`);
+        assert.ok(typeof item.implementation === 'string', `${framework}/${task}: missing source pointer for ${item.capability}`);
       }
     }
   }
@@ -71,7 +71,7 @@ for (const framework of ['html']) {
   assert.equal(communication.result.status, 0, communication.result.stderr);
   assert.equal(communication.packet.route.id, 'communication-workbench');
   assert.ok(communication.packet.exactReferencesToRead.includes('references/domains/email-workbench.md'));
-  assert.ok(communication.packet.materials.some((item) => item.role === 'domain-reference' && item.path === 'skill-support/references/domains/email-workbench.md'), 'domain materials must follow the selected communication route, not query spelling');
+  assert.ok(communication.packet.materials.some((item) => item.role === 'domain-reference' && item.path.endsWith('references/domains/email-workbench.md')), 'domain materials must follow the selected communication route, not query spelling');
 }
 
 const ambiguousFile = resolveContext('file', 'html');

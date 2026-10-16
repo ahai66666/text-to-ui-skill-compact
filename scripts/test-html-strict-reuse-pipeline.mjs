@@ -3,7 +3,7 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
-import { collectHtmlComponentEvidence, renderHtmlComponent } from "../../packages/components-html/src/index.js";
+import { collectHtmlComponentEvidence, renderHtmlComponent } from "../packages/components-html/src/index.js";
 
 const sidebar = renderHtmlComponent("sidebar", { items: [{ label: "收件箱", count: 23, selected: true }, { label: "草稿", count: 3 }] });
 assert.match(sidebar, /收件箱/);
@@ -41,7 +41,7 @@ const manifest = {
 };
 const manifestPath = path.join(temp, "component-usage.json");
 fs.writeFileSync(manifestPath, JSON.stringify(manifest));
-const validator = path.resolve("skill-support/scripts/validate-web-component-reuse.mjs");
+const validator = path.resolve("scripts/validate-web-component-reuse.mjs");
 const run = () => spawnSync(process.execPath, [validator, "--manifest", manifestPath, "--project-root", process.cwd()], { encoding: "utf8" });
 const validSource = `import "@text-to-ui/tokens";\nimport "@text-to-ui/components-html/styles.css";\nimport "@text-to-ui/components-html/pattern-shell.css";\nimport { renderHtmlComponent } from "@text-to-ui/components-html";\nexport const titlebar = renderHtmlComponent("titlebar", { label: "任务" });\n`;
 fs.writeFileSync(path.join(sourceDir, "main.js"), validSource);
@@ -62,7 +62,7 @@ assert.match(protectedOverride.stderr, /protected registered-component propertie
 fs.writeFileSync(path.join(sourceDir, "page.css"), `.page-toolbar .tui-button { width: 100%; margin-inline: auto; }\n`);
 assert.equal(run().status, 0, run().stderr);
 
-const runtimeValidator = path.resolve("skill-support/scripts/validate-runtime-component-reuse.mjs");
+const runtimeValidator = path.resolve("scripts/validate-runtime-component-reuse.mjs");
 const evidencePath = path.join(temp, "runtime.json");
 fs.writeFileSync(evidencePath, JSON.stringify({ schemaVersion: 1, url: "http://127.0.0.1/", pattern: "pattern-b-three-pane", structureDigest: "test-structure", stylesheets: [{ href: "fixture.css", loaded: true, ruleCount: 1 }], patternLayout: { display: "grid", regions: [
   { region: "primary-navigation", display: "block", bounds: { x: 0, y: 0, width: 240, height: 720 } },

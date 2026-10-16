@@ -5,7 +5,7 @@ Maintain this text-to-ui-compact directory: SKILL.md, references/, scripts/, ass
 1. Inspect callers and the relevant catalog groups. Regenerate the local catalog with pnpm catalog:build when sources change.
 2. Update the task route, model brief, component delivery, page generator and named references together when the default workflow changes.
 3. Keep all HTML outputs dynamically rendered with separate local component modules. Review index.html host rules, imports, Token/Pattern boundaries and Pixso readiness.
-4. Refresh pnpm catalog:build and pnpm index:build, then run pnpm index:check and pnpm catalog:check. Validate changed executable behavior when the environment permits and disclose unperformed validation.
+4. Refresh pnpm resources:build, pnpm catalog:build and pnpm index:build, then run pnpm index:check and pnpm catalog:check. Validate changed executable behavior when the environment permits and disclose unperformed validation.
 5. Refresh .delivery-manifest.json after the final source changes. Synchronize only an explicitly configured compact delivery or an existing installed text-to-ui-compact; do not overwrite the full Skill.
 6. Report changed artifacts, checks performed, missing external services, and unverified browser/Pixso behavior.
 
@@ -28,3 +28,5 @@ Logical catalog paths with skill-support/ resolve into this compact root. Entrie
   Coremail is an integration fixture only: never edit its HTML to hide a converter
   or plugin failure. State separately which repository tests passed and which
   installed-plugin/live-browser checks remain unverified.
+
+Runtime distributions delegate development commands to TEXT_TO_UI_COMPACT_SOURCE_ROOT. See references/distribution.md. Missing maintenance source does not authorize using another full Skill.

@@ -6,21 +6,26 @@ import net from "node:net";
 import path from "node:path";
 import { spawn } from "node:child_process";
 import { fileURLToPath } from "node:url";
+import { servicePaths } from "./compact-paths.mjs";
 
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
-const repository = path.resolve(scriptDirectory, "../..");
+const roots = servicePaths();
+const repository = roots.repository;
+const galleryRequested = process.argv.includes("--gallery");
 const host = "127.0.0.1";
 const hubPort = Number(process.env.TEXT_TO_UI_PREVIEW_PORT ?? 43173);
 const galleryPort = Number(process.env.TEXT_TO_UI_GALLERY_PORT ?? 43175);
 const bridgePort = Number(process.env.TEXT_TO_UI_PIXSO_BRIDGE_PORT ?? 43982);
 const minimumBridgeVersion = 7;
 const minimumBridgeProtocolVersion = 4;
-const bridgeStateDirectory = path.join(repository, "skill-support/.text-to-ui/pixso-bridge");
+const bridgeStateDirectory = roots.bridgeState;
 const outputsRoot = path.resolve(process.env.TEXT_TO_UI_OUTPUTS_ROOT ?? path.join(repository, "outputs"));
 const outputsPrefix = process.env.TEXT_TO_UI_OUTPUTS_PREFIX ?? "/outputs/";
 const repositoryPrefix = process.env.TEXT_TO_UI_REPOSITORY_PREFIX ?? "/repo/";
 const bridgeScript = path.join(scriptDirectory, "pixso-plugin-bridge.mjs");
-const viteEntry = path.join(repository, "apps/component-gallery/node_modules/vite/bin/vite.js");
+const galleryRoot = roots.gallery;
+const viteEntry = galleryRoot ? path.join(galleryRoot, "node_modules/vite/bin/vite.js") : null;
+const allReady = status => status.hub && status.bridge && (!galleryRequested || status.gallery);
 
 const sleep = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
 
@@ -159,7 +164,10 @@ function createHub() {
       response.writeHead(302, { location: "/gallery/" });
       return response.end();
     }
-    if (isGalleryPath(url.pathname)) return proxyToGallery(request, response);
+    if (isGalleryPath(url.pathname)) {
+      if (!galleryRoot) { response.writeHead(503, {"content-type":"text/plain; charset=utf-8"}); return response.end("Gallery is optional. Configure TEXT_TO_UI_GALLERY_ROOT and start --gallery."); }
+      return proxyToGallery(request, response);
+    }
     if (serveOutput(request, response, url.pathname)) return;
     if (serveRepository(request, response, url.pathname)) return;
     if (url.pathname === "/") {
@@ -190,7 +198,7 @@ async function main() {
       gallery: (await readJson(endpoints.gallery))?.service === "text-to-ui-component-gallery",
       bridge: bridgeReady(bridgeHealth),
     };
-    process.stdout.write(`${JSON.stringify({ ok: Object.values(status).every(Boolean), status, bridgeVersion: bridgeHealth?.bridgeVersion ?? bridgeHealth?.version ?? null, protocolVersion: bridgeHealth?.protocolVersion ?? null, urls: { hub: `http://${host}:${hubPort}/`, gallery: `http://${host}:${hubPort}/components/` } }, null, 2)}\n`);
+    process.stdout.write(`${JSON.stringify({ ok: allReady(status), status, bridgeVersion: bridgeHealth?.bridgeVersion ?? bridgeHealth?.version ?? null, protocolVersion: bridgeHealth?.protocolVersion ?? null, urls: { hub: `http://${host}:${hubPort}/`, gallery: `http://${host}:${hubPort}/components/` } }, null, 2)}\n`);
     return;
   }
   if (command === "start") {
@@ -200,15 +208,15 @@ async function main() {
       gallery: (await readJson(endpoints.gallery))?.service === "text-to-ui-component-gallery",
       bridge: bridgeReady(bridgeHealth),
     };
-    if (Object.values(initialStatus).every(Boolean)) {
+    if (allReady(initialStatus)) {
     process.stdout.write(`${JSON.stringify({ ok: true, reused: true, hub: `http://${host}:${hubPort}/`, gallery: `http://${host}:${hubPort}/gallery/`, bridge: `http://${host}:${bridgePort}` }, null, 2)}\n`);
       return;
     }
-    if (!initialStatus.gallery) {
+    if (galleryRequested && !initialStatus.gallery) {
       if (!(await portAvailable(galleryPort))) throw new Error(`Port ${galleryPort} is occupied by a service other than Text-to-UI Component Gallery`);
-      if (!fs.existsSync(viteEntry)) throw new Error(`Component Gallery Vite runtime not found: ${viteEntry}`);
+      if (!viteEntry || !fs.existsSync(viteEntry)) throw new Error(`Gallery is optional; configure TEXT_TO_UI_GALLERY_ROOT or TEXT_TO_UI_FULL_REPOSITORY before start --gallery. Missing: ${viteEntry}`);
       spawn(process.execPath, [viteEntry, "--host", host, "--port", String(galleryPort), "--strictPort"], {
-        cwd: path.join(repository, "apps/component-gallery"),
+        cwd: galleryRoot,
         env: { ...process.env, TEXT_TO_UI_GALLERY_BASE: "/gallery/" },
         detached: true,
         stdio: "ignore"
@@ -235,7 +243,7 @@ async function main() {
     process.stdout.write(`${JSON.stringify({ ok: true, hub: `http://${host}:${hubPort}/`, gallery: `http://${host}:${hubPort}/gallery/`, outputs: `http://${host}:${hubPort}${outputsPrefix}<artifact>/`, bridge: `http://${host}:${bridgePort}` }, null, 2)}\n`);
     return;
   }
-  if (command !== "serve") throw new Error("Usage: start-text-to-ui-services.mjs [start|status]");
+  if (command !== "serve") throw new Error("Usage: start-text-to-ui-services.mjs [start|status] [--gallery]");
 
   const existingHub = await readJson(endpoints.hub);
   if (existingHub?.service === "text-to-ui-preview-hub") return;

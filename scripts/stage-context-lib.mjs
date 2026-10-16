@@ -168,6 +168,9 @@ export function queryResources(root, options) {
     if (item.kind === "set-selected") interactions.add("selection");
     if (item.kind === "open-secondary-page") interactions.add("secondary-page");
   }
+  if (ids.includes("date-picker")) { interactions.add("date"); interactions.add("keyboard"); }
+  if (ids.includes("time-picker")) { interactions.add("time"); interactions.add("keyboard"); }
+  if (ids.some(id=>["field","form-field","input","textarea","combobox","native-select","select","checkbox","radio","switch","number-selector"].includes(id))) interactions.add("form");
   if (parsed.bindingData?.pageModules?.length) interactions.add("page-module");
   if (ids.some((id) => ["dialog","alert-dialog","popover","semi-modal"].includes(id))) {interactions.add("overlay");interactions.add("keyboard");}
   const validInteractions = new Set(["pointer","keyboard","date","time","selection","resize","overlay","form","feedback","undo","motion","record","validation","secondary-page","page-module"]);
@@ -182,7 +185,7 @@ export function queryResources(root, options) {
     if (row.id.startsWith("composition.") && (workflow === "micro-revision" || (ids.length && !parsed.bindingData && !normalizeList(options.resource).includes(row.id)))) return false;
     return true;
   };
-  const explicit = normalizeList(options.resource);
+  const explicit = normalizeList(options.resource).map(id=>index.aliases?.[id] || id);
   const roots = searchText ? [] : explicit.length ? explicit : index.resources.filter((r) => r.kind==="document" && r.stage.includes(stage) && matches(r)).map((r)=>r.id);
   roots.unshift("core.delivery");
   if (!explicit.length && packet?.request.mode !== "fast-preview" && stage==="validation") {
@@ -205,11 +208,24 @@ export function queryResources(root, options) {
   };
   roots.forEach((id)=>visit(id,explicit.includes(id)?"explicit resource":"stage "+stage));
   if (stage==="bindings" || (options.component && view!=="summary")) for(const id of ids)visit("component."+id,"selected component");
+  const projectContent = row => {
+    const text=fs.readFileSync(localFile(root,row.path),"utf8");
+    if (view==="full" || !ids.length || !row.id.startsWith("supplement.") || row.id==="supplement.universal-contract") return text;
+    const fold=s=>s.toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
+    const labels=components.flatMap(c=>[fold(c.id),fold(c.logicalName.split("/")[0])]);
+    return text.split("\n").filter(line=>{
+      if(!line.startsWith("|"))return true;
+      const label=line.split("|")[1]?.trim()||"";
+      if(/^(component|---)/i.test(label))return true;
+      const words=" "+fold(label)+" ";
+      return labels.some(v=>words.includes(" "+v+" "));
+    }).join("\n");
+  };
   const resources=[...selected.values()].map((r)=>{
     // Source hashes, dependency closure and selection reasons belong in read-plan.json.
     const modelMeta={id:r.id,path:r.path};
     return view==="summary" ? {...modelMeta,purpose:r.purpose,sourceBytes:r.bytes}
-      : r.kind==="component" ? modelMeta : {...modelMeta,content:fs.readFileSync(localFile(root,r.path),"utf8")};
+      : r.kind==="component" ? modelMeta : {...modelMeta,content:projectContent(r)};
   });
   const roles=normalizeList(options.roles || options.role);
   if(stage==="styling" && pattern) for(const role of collectTokenRoles(pattern.geometry))roles.push(role);
@@ -243,7 +259,7 @@ export function queryResources(root, options) {
     ...(Object.keys(handoff).length?{handoff}:{}),
     ...(stage==="discovery"||components.length?{components}:{}),
     ...(tokens.length?{tokens}:{}),...(options.mapping?{mappings}:{}),resources,
-    commands:stage==="validation"?{generate:"node <RULES_ROOT>/scripts/generate-compliant-page.mjs --project <PROJECT_DIR> --repo <RULES_ROOT> --skill-root <RULES_ROOT> --framework html --task <task> --route new-page --mode "+(packet?.request.mode || "fast-preview")+" --blueprint <PROJECT_DIR>/page-blueprint.json --content-recipes <PROJECT_DIR>/page-content-recipes.json --bindings <PROJECT_DIR>/page-bindings.json --page-css <PROJECT_DIR>/styles/page-composition.css",stylesCheck:"node <RULES_ROOT>/scripts/prepare-page-styles.mjs --project <PROJECT_DIR> --check"}:{nextQuery:"node <RULES_ROOT>/scripts/query-resources.mjs --stage "+(stageCards[stage].next?.split("（")[0] || stage)+" --context <context.json> --view api --out-dir <next-pack-dir>"},
+    commands:stage==="validation"?{validate:"node <RULES_ROOT>/scripts/validate-page-project.mjs --project <PROJECT_DIR> --skill-root <RULES_ROOT> --mode "+(packet?.request.mode || "fast-preview"),generate:"node <RULES_ROOT>/scripts/generate-compliant-page.mjs --project <PROJECT_DIR> --repo <RULES_ROOT> --skill-root <RULES_ROOT> --framework html --task <task> --route new-page --mode "+(packet?.request.mode || "fast-preview")+" --blueprint <PROJECT_DIR>/page-blueprint.json --content-recipes <PROJECT_DIR>/page-content-recipes.json --bindings <PROJECT_DIR>/page-bindings.json --page-css <PROJECT_DIR>/styles/page-composition.css",stylesCheck:"node <RULES_ROOT>/scripts/prepare-page-styles.mjs --project <PROJECT_DIR> --check"}:{nextQuery:"node <RULES_ROOT>/scripts/query-resources.mjs --stage "+(stageCards[stage].next?.split("（")[0] || stage)+" --context <context.json> --view api --out-dir <next-pack-dir>"},
     provenance:{resourceIndexDigest:index.digest,...(options.context?{contextSha256:hash(fs.readFileSync(path.resolve(options.context)))}:{})}
   };
   if(stage==="pixso") {

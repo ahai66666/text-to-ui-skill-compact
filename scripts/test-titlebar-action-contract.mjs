@@ -7,7 +7,7 @@
  */
 import assert from "node:assert/strict";
 import fs from "node:fs";
-import { renderHtmlComponent } from "../../packages/components-html/src/index.js";
+import { renderHtmlComponent } from "../packages/components-html/src/index.js";
 
 // Keep this contract test independent from the gallery's chosen specimen copy.
 // The gallery may intentionally show a smaller action set, while the contract
@@ -42,7 +42,7 @@ assert.match(html, /data-action-overflow="collapse-to-more"/);
 assert.match(html, /class="tui-titlebar__overflow-menu"/);
 assert.ok(html.indexOf('data-action="more"') > html.indexOf('data-action="forward"'), "More must remain after business actions");
 
-const contract = JSON.parse(fs.readFileSync(new URL("../../packages/component-contracts/src/components.json", import.meta.url), "utf8"));
+const contract = JSON.parse(fs.readFileSync(new URL("../packages/component-contracts/src/components.json", import.meta.url), "utf8"));
 const pixsoMap = JSON.parse(fs.readFileSync(new URL("../assets/design-system/pixso-native-component-map.json", import.meta.url), "utf8"));
 const titlebar = contract.components.find((component) => component.id === "titlebar");
 const slot = titlebar?.slotContracts?.["main-detail-actions"];

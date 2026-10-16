@@ -16,7 +16,7 @@
   not be split into two-column or three-column Pattern segments. Use M/L/XL for
   pane-aligned title segments.
 - `segmentRole` uses `primary-navigation`, `secondary-list`, `main-content`,
-  or `main-detail`. `paneRole` legacy aliases still work.
+  or `main-detail`. paneRole is removed and rejected.
 - Other Pattern segment sequences may use `createTitlebarSegments` with the
   resolved `pattern.titleLayer.segments`; it returns configurations only and
   does not render a competing layout.

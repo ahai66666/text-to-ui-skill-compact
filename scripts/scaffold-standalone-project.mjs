@@ -21,7 +21,6 @@ if (!fs.existsSync(rootPackagePath)) fs.writeFileSync(rootPackagePath, JSON.stri
 if (fs.existsSync(rootPackagePath)) {
   const rootPackage = JSON.parse(fs.readFileSync(rootPackagePath, "utf8"));
   rootPackage.dependencies ??= {};
-  for (const name of packages) rootPackage.dependencies[`@text-to-ui/${name}`] = `file:vendor/@text-to-ui/${name}`;
   rootPackage.devDependencies ??= {};
   rootPackage.devDependencies.vite = "7.3.6";
   rootPackage.scripts ??= {};
@@ -34,7 +33,7 @@ const scriptsRoot = path.join(projectRoot, "scripts");
 fs.mkdirSync(scriptsRoot, { recursive: true });
 const writeNew = (name, content) => { const file = path.join(projectRoot, name); if (!fs.existsSync(file)) fs.writeFileSync(file, content); };
 // A generated page may live inside a larger pnpm workspace. Create a local
-// workspace boundary so installs resolve the copied vendor packages from this
+// workspace boundary so installs resolve dependencies from this
 // project instead of an ancestor's stale lockfile/package snapshot. Preserve an
 // existing project-owned workspace file.
 writeNew('pnpm-workspace.yaml', 'packages:\n  - "."\nallowBuilds:\n  esbuild: true\n');

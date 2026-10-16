@@ -12,7 +12,7 @@ not substitute literal values once an approved variable is available.
 1. Read the active `profiles[]` entry in `assets/design-system/mapping-registry.json` and confirm its Pixso document and component library.
 2. Run `node scripts/validate-mapping-registry.mjs` and `node scripts/build-pixso-token-manifest.mjs --check`, then inspect the active Pixso file.
 3. Pass the Token Gate in `references/pixso-mcp.md`.
-4. Create or reconcile `Color`, `Dimension`, and `Typography` in that order. Color uses only the 53 direct core paths in `core-color-token-table.md`; non-color variables may carry `foundation/`, `semantic/`, `component/`, or `layout/` prefixes.
+4. Reconcile approved primitive collections from pixso-core-baseline.json; resolve code semantic aliases to them rather than creating semantic/component variable collections.
 5. Create text styles and effect styles from the generated manifest.
 6. Build or reconcile core components and variants.
 7. Assemble Patterns and pages only from those component instances.

@@ -45,16 +45,14 @@ automatic services → fresh run → calibrated capture bundle → compile → v
 
 Public lifecycle commands:
 
-Run these commands from the complete repository root. In a separately
-installed Skill, invoke the same scripts from `RULES_ROOT/scripts/` and pass
-the complete repository path explicitly where required.
+Run these commands from RULES_ROOT (this compact directory). Gallery is optional; Bridge/Preview Hub use this package.
 
 ```bash
-node skill-support/scripts/pixso-import-orchestrator.mjs start --html-root <root> --url <url> --width 1728 --height 1152 --mode normal
-node skill-support/scripts/pixso-import-orchestrator.mjs capture --run-manifest <run-manifest>
-node skill-support/scripts/pixso-import-orchestrator.mjs compile --run-manifest <run-manifest> --visual-manifest <visual-manifest> --component-map skill-support/assets/design-system/mapping-registry.json --minimum-selector-coverage 0.95 --minimum-visual-evidence-coverage 0.95
-node skill-support/scripts/pixso-import-orchestrator.mjs publish --run-manifest <run-manifest>
-node skill-support/scripts/pixso-import-orchestrator.mjs diff --run-manifest <run-manifest> --reference <html-reference.png> --actual <pixso-structured.png> --out <visual-diff.json> --pixel-threshold 20 --max-different-ratio 0.005
+node scripts/pixso-import-orchestrator.mjs start --html-root <root> --url <url> --width 1728 --height 1152 --mode normal
+node scripts/pixso-import-orchestrator.mjs capture --run-manifest <run-manifest>
+node scripts/pixso-import-orchestrator.mjs compile --run-manifest <run-manifest> --visual-manifest <visual-manifest> --component-map assets/design-system/mapping-registry.json --minimum-selector-coverage 0.95 --minimum-visual-evidence-coverage 0.95
+node scripts/pixso-import-orchestrator.mjs publish --run-manifest <run-manifest>
+node scripts/pixso-import-orchestrator.mjs diff --run-manifest <run-manifest> --reference <html-reference.png> --actual <pixso-structured.png> --out <visual-diff.json> --pixel-threshold 20 --max-different-ratio 0.005
 ```
 
 Browser capture is the only browser-tool step. First calibrate the requested CSS
@@ -74,7 +72,7 @@ runtime, protocol, or capability mismatch requires loading the current plugin
 build. Do not auto-fallback to MCP or repeatedly create new runs. A timed-out
 publication is terminal and requires a fresh run.
 
-The plugin creates one hidden managed draft. It swaps that draft into the
+The plugin creates one visible managed draft. It swaps that draft into the
 canonical position only after readback succeeds and removes it on pause or
 failure, so a normal import leaves exactly one managed artboard.
 

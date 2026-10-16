@@ -838,6 +838,36 @@
     {
       "pixsoCollection": "Size & Layout",
       "pixsoMode": "Desktop",
+      "pixsoVariable": "icon/stroke/16",
+      "sourceToken": "tokens.icon.json:lucide.project-stroke-width-by-display-size.16",
+      "cssVariable": "--icon-outline-stroke-width-16",
+      "resolvedCssValue": "1",
+      "pixsoValue": 1,
+      "valueTransform": "identity"
+    },
+    {
+      "pixsoCollection": "Size & Layout",
+      "pixsoMode": "Desktop",
+      "pixsoVariable": "icon/stroke/20",
+      "sourceToken": "tokens.icon.json:lucide.project-stroke-width-by-display-size.20",
+      "cssVariable": "--icon-outline-stroke-width-20",
+      "resolvedCssValue": "1.25",
+      "pixsoValue": 1.25,
+      "valueTransform": "identity"
+    },
+    {
+      "pixsoCollection": "Size & Layout",
+      "pixsoMode": "Desktop",
+      "pixsoVariable": "icon/stroke/24",
+      "sourceToken": "tokens.icon.json:lucide.project-stroke-width-by-display-size.24",
+      "cssVariable": "--icon-outline-stroke-width-24",
+      "resolvedCssValue": "1.5",
+      "pixsoValue": 1.5,
+      "valueTransform": "identity"
+    },
+    {
+      "pixsoCollection": "Size & Layout",
+      "pixsoMode": "Desktop",
       "pixsoVariable": "radius/0",
       "sourceToken": "tokens.radius.json:radius.0",
       "cssVariable": "--radius-0",

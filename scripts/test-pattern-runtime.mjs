@@ -2,7 +2,7 @@
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import registry from "../assets/design-system/pattern-contracts.json" with { type: "json" };
-import { renderHtmlComponent } from '../../packages/components-html/src/index.js';
+import { renderHtmlComponent } from '../packages/components-html/src/index.js';
 import {
   createPatternRuntime,
   createSecondaryPageRuntime,
@@ -10,10 +10,10 @@ import {
   renderSecondaryPageHtml,
   resolvePatternContract,
   tokenCssVariable
-} from "../../packages/pattern-runtime/src/index.js";
+} from "../packages/pattern-runtime/src/index.js";
 
-const patternRuntimeCss = fs.readFileSync(new URL("../../packages/pattern-runtime/src/styles.css", import.meta.url), "utf8");
-const patternShellCss = fs.readFileSync(new URL("../../packages/components-html/src/pattern-shell.css", import.meta.url), "utf8");
+const patternRuntimeCss = fs.readFileSync(new URL("../packages/pattern-runtime/src/styles.css", import.meta.url), "utf8");
+const patternShellCss = fs.readFileSync(new URL("../packages/components-html/src/pattern-shell.css", import.meta.url), "utf8");
 const patternBaselineSource = fs.readFileSync(new URL("../../apps/component-gallery/pattern-baseline.js", import.meta.url), "utf8");
 assert.match(patternRuntimeCss, /\.tui-pattern-runtime\s*\{[\s\S]*grid-template-columns:\s*minmax\(0,\s*1fr\)/, "Pattern Runtime must keep Global Title Layer and pane grid in one column");
 assert.match(patternRuntimeCss, /\.tui-pattern-runtime\[data-pattern\][\s\S]*grid-template-columns:\s*minmax\(0,\s*1fr\)/, "Pattern Runtime root override must win over pattern shell pane columns");

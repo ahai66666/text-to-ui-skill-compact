@@ -35,7 +35,7 @@ for (const capability of ["sidebar", "button"]) {
 }
 const contextFile = path.join("/tmp", `text-to-ui-context-${process.pid}.json`);
 try {
-  execFileSync(process.execPath, [path.join(root, "skill-support/scripts/resolve-context.mjs"), "--task", "Coremail 邮件工作台", "--framework", "html", "--mode", "fast-preview", "--confirmed", "--out", contextFile], { stdio: "ignore" });
+  execFileSync(process.execPath, [path.join(root, "scripts/resolve-context.mjs"), "--task", "Coremail 邮件工作台", "--framework", "html", "--mode", "fast-preview", "--confirmed", "--out", contextFile], { stdio: "ignore" });
   const context = JSON.parse(fs.readFileSync(contextFile, "utf8"));
   for (const logicalName of ["Sidebar Item/Default", "Button/Primary/Default"]) {
     if (!context.renderer?.components?.some((item) => item.logicalName === logicalName && item.rendererKey)) failures.push(`Coremail HTML renderer contract must include ${logicalName}`);

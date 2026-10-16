@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 import { compileOperationPlan, loadComponentMap, loadTokenResources, readJson } from "./pixso-native-scene-lib.mjs";
 import { buildCoremailScene } from "./coremail-semantic-adapter.mjs";
 
-const repo = path.resolve(fileURLToPath(new URL("../..", import.meta.url)));
+const repo = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const temporary = fs.mkdtempSync(path.join(os.tmpdir(), "text-to-ui-pixso-mcp-"));
 const output = path.join(temporary, "calls.json");
 const fixtureRoot = path.join(repo, "fixtures/mail-workbench-native-scene");
@@ -18,12 +18,12 @@ const pageSpec = readJson(path.join(fixtureRoot, "page-spec.json"));
 const layoutContract = readJson(path.join(fixtureRoot, "layout-contract.json"));
 const pageData = readJson(pageDataPath);
 const visualSnapshot = readJson(path.join(fixtureRoot, "html-visual-snapshot.json"));
-const componentMap = loadComponentMap(path.join(repo, "skill-support/assets/design-system/pixso-native-component-map.json"));
+const componentMap = loadComponentMap(path.join(repo, "assets/design-system/pixso-native-component-map.json"));
 const tokens = loadTokenResources();
 const scene = buildCoremailScene({ pageSpec, layoutContract, pageData, componentMap, visualSnapshot, tokens, assetBaseDir: fixtureRoot });
 const plan = path.join(temporary, "operation-plan.json");
 fs.writeFileSync(plan, JSON.stringify(compileOperationPlan(scene, { componentMap, tokens })));
-execFileSync(process.execPath, [path.join(repo, "skill-support/scripts/prepare-pixso-mcp-batches.mjs"), "--plan", plan, "--out", output], { stdio: "pipe" });
+execFileSync(process.execPath, [path.join(repo, "scripts/prepare-pixso-mcp-batches.mjs"), "--plan", plan, "--out", output], { stdio: "pipe" });
 const calls = readJson(output);
 
 assert.equal(calls.kind, "pixso-mcp-eval-call-plan");

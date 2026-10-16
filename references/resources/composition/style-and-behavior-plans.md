@@ -1,2 +1,0 @@
-## Style and behavior plans
-

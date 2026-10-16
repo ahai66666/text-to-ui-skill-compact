@@ -137,7 +137,7 @@ Recommended structure:
 ## Reuse Rules
 
 - Inspect the bundled baseline under `assets/design-system/` before designing or coding.
-- Use `assets/design-system/core-color-token-table.md` as the complete baseline Pixso color scope. Bind directly to its 53 core variables and do not create duplicate semantic color variables.
+- Use `assets/design-system/core-color-token-table.md` as the complete baseline Pixso color scope. Bind directly to its current approved core variables and do not create duplicate semantic color variables.
 - Use `assets/design-system/dual-output-token-map.json` as the renderer bridge.
   Copy exact source Token → CSS custom property → Pixso Variable mappings into
   `page-spec.json`; equal resolved values are not a valid mapping.

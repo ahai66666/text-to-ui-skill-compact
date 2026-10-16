@@ -8,7 +8,7 @@ import { spawnSync } from 'node:child_process';
 const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'tui-layout-binding-'));
 const contractPath = path.join(temp, 'layout-contract.json');
 const pagePath = path.join(temp, 'page-spec.json');
-const validator = path.resolve('skill-support/scripts/validate-page-layout-binding.mjs');
+const validator = path.resolve('scripts/validate-page-layout-binding.mjs');
 const contract = { schemaVersion: 1, platform: 'harmonyos-pc', pattern: 'pattern-b-three-pane', paneOrder: ['primary-navigation', 'secondary-list', 'main-detail'], finalPaneLeadingSlot: 'main-detail-operations', requiredSlots: ['primary-navigation-shell', 'global-title-layer', 'global-primary-action', 'main-detail-actions'] };
 const page = { schemaVersion: 1, layoutContractPath: 'layout-contract.json', shell: { pattern: 'pattern-b-three-pane', paneOrder: [...contract.paneOrder], finalPaneLeadingSlot: contract.finalPaneLeadingSlot, requiredSlots: [...contract.requiredSlots] } };
 const run = () => spawnSync(process.execPath, [validator, '--page-spec', pagePath, '--layout-contract', contractPath], { encoding: 'utf8' });

@@ -1,6 +1,6 @@
-# 新建页面任务流程：动态页面引用独立组件
+# 新建页面任务流程：优先复用组件，缺失时独立创建
 
-适用于本 Skill 生成的所有 HTML 页面，包括第一版预览。页面、组件和运行样式分别存放，其他模型只需设计页面参数。
+适用于本 Skill 生成的所有 HTML 页面，包括第一版预览。页面、组件和运行样式分别存放，其他模型先设计页面参数，缺失业务能力时另写独立模块和样式。
 
 ## 固定文件职责
 
@@ -11,6 +11,7 @@
 | components/<id>/contract.json | 此组件的原始契约 |
 | components/index.js | 本页可调用的组件注册表 |
 | components/_runtime/ | 公共 HTML 工厂、Pattern、CSS 与 Token 依赖 |
+| page-components/<id>/index.js 与 styles.css | 无现有能力时创建的业务组件及其样式，模型维护 |
 | generated-page.js | 按 Pattern 动态组合并调用本地组件 |
 | generated-entry.js | 挂载、事件绑定和渲染就绪信号 |
 | main.js | 唯一导入 styles/index.css，再调用挂载模块 |
@@ -72,15 +73,17 @@ node "<RULES_ROOT>/scripts/query-resources.mjs" \
 | page-bindings.json | logicalName、支持的 options/slots、semanticContext、behaviorPlan、stylePlan、composition |
 | styles/page-composition.css | Token 布局和业务容器样式 |
 
-只使用登记的组件能力。能力缺失时定位契约并通过维护流程补齐共享组件。业务组合模块可通过 renderComponent 调用组件。
+先查组件库和本项目已有业务组件：有组件则直接引用，用参数、插槽和数据组装，保留原实现与样式。不要重新生成已有组件。
 
-## 4. 脚本先准备组件与样式
+没有合适组件时，先在配方记录检索和候选不适用原因，再新建 page-components/<id>/index.js 与 styles.css。pageModules 声明 compositionId、source、stylesheet；模块导出 mount(host, { renderComponent })，内部标准控件仍调用已有组件。页面 CSS 只负责组件之间的排列，业务组件自己的 CSS 留在其目录。已有共享组件本身需修正时走维护流程。
 
-一键入口自动执行 scripts/prepare-page-components.mjs：按实际绑定创建独立组件入口，复制依赖，记录来源摘要，阻止未登记组件和不支持的参数。分阶段准备的命令见 references/components/local-component-delivery.md。
+## 4. 引用已有组件，装配已有样式
 
-随后 scripts/prepare-page-styles.mjs 生成 styles/index.css、base.css 和样式清单，并接入 main.js。模型只写 styles/page-composition.css：不写 @import，不读写标准组件 CSS，不覆盖 Pattern 几何。标准 CSS 保留原始依赖并由统一入口加载，详见 references/components/local-component-delivery.md。
+一键入口自动执行 scripts/prepare-page-components.mjs：按实际绑定为已有组件建立调用入口，复制原始实现依赖，记录来源摘要，阻止未登记组件和不支持的参数。分阶段准备的命令见 references/components/local-component-delivery.md。
 
-components/ 与上述样式管理文件由脚本维护。公共工厂当前仍有集中注册代码，共享运行时只复制一次，不通过文本截取拆分工厂。
+随后 scripts/prepare-page-styles.mjs 生成 styles/index.css、base.css 和样式清单，并接入 main.js。模型写页面组合 CSS，缺失能力的业务组件独立编写其 CSS 并由 pageModules.stylesheet 声明；样式入口自动收集：不写 @import，不读写标准组件 CSS，不覆盖 Pattern 几何。标准 CSS 保留原始依赖并由统一入口加载，详见 references/components/local-component-delivery.md。
+
+components/ 与样式总入口由脚本维护；page-components/ 中的新业务模块及其 CSS 由模型维护，可再次引用。公共工厂当前仍有集中注册代码，共享运行时只复制一次，不通过文本截取拆分工厂。
 
 ## 5. 页面引用组件并动态渲染
 
@@ -98,7 +101,7 @@ node "<RULES_ROOT>/scripts/generate-compliant-page.mjs" \
 
 ## 6. 查看真实页面
 
-在项目安装可用的 Vite 依赖，构建并打开 HTTP 预览。等待 document.querySelector("#app").__tuiReady，确认 data-tui-ready="ready"，再检查实际布局、主要交互和组件证据。
+先执行 node <RULES_ROOT>/scripts/validate-page-project.mjs --project <PROJECT_DIR> --skill-root <RULES_ROOT>；无浏览器证据只报告源码通过。然后在项目安装可用的 Vite 依赖，构建并打开 HTTP 预览。等待 document.querySelector("#app").__tuiReady，确认 data-tui-ready="ready"，再检查实际布局、主要交互和组件证据。
 
 完成条件：
 1. index.html 为宿主；页面、组件和样式分别存放，main.js 统一加载 CSS。
