@@ -24,7 +24,7 @@ try {
     fs.mkdirSync(path.dirname(target),{recursive:true});fs.copyFileSync(path.join(root,file),target);
   }
   const marker={schemaVersion:1,profile,sourceRelativePath:path.relative(out,root),sourceVersion:JSON.parse(fs.readFileSync(path.join(root,"package.json"))).version,sourceDigest:deliveryManifest(root).sourceDigest,
-    policy:"All six routes remain discoverable. Development commands use the matching compact authoring source; page generation and current Pixso execution stay local."};
+    policy:"All six routes remain discoverable. Development commands use the matching compact authoring source; page generation and current Pixso execution stay local. Only component icons are bundled; the external Symbol library is excluded from every profile."};
   fs.writeFileSync(path.join(stage,".compact-distribution.json"),JSON.stringify(marker,null,2)+"\n");
   const pkgFile=path.join(stage,"package.json"),pkg=JSON.parse(fs.readFileSync(pkgFile));
   const maintenance=[];

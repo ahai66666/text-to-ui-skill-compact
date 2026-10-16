@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "kind": "text-to-ui-resource-index",
   "policy": "Machine index; query projections only. Edit resource fragments and rebuild, never edit compatibility aggregates.",
-  "digest": "a79053f328d6dcb6bc84c6b44a719e21c28932751f2e333d5386396c28762ff2",
+  "digest": "f3d3acb7fe92cb0451df6b4b5da6a2f76e90c505f2a8bd0d4969a8c5e7d0a120",
   "aliases": {
     "patterns.global-title-layer": "patterns.left-brand-anchor",
     "patterns.approved-shell-patterns": "patterns.reusable-pattern-primary-navigation-shell",
@@ -368,7 +368,7 @@
     },
     {
       "path": "references/resources/component-visual/buttons.md",
-      "sha256": "7f2271e10fd1bed3f6e780c5d2cad8fb84d35daac43da7ed6b37b1578e8990d5"
+      "sha256": "72b3a3a2b0e080775f55af5c0bdb29aab916a0b4d73b03e027549caeb2da83a2"
     },
     {
       "path": "references/resources/component-visual/cards.md",
@@ -488,7 +488,7 @@
     },
     {
       "path": "references/resources/foundations/size.md",
-      "sha256": "022d33998c26fb8873e1a893024c30b843a23a69ac24483ef95de3a2a20edf85"
+      "sha256": "4b4482be90777d7ae623073a43234c733b69d4640fe6267e72a2046c282d2699"
     },
     {
       "path": "references/resources/foundations/spacing.md",
@@ -3794,8 +3794,8 @@
       "appliesTo": {},
       "requires": [],
       "readPolicy": "explicit-query",
-      "bytes": 7870,
-      "sha256": "022d33998c26fb8873e1a893024c30b843a23a69ac24483ef95de3a2a20edf85",
+      "bytes": 7867,
+      "sha256": "4b4482be90777d7ae623073a43234c733b69d4640fe6267e72a2046c282d2699",
       "kind": "document"
     },
     {
@@ -3818,8 +3818,8 @@
       "appliesTo": {},
       "requires": [],
       "readPolicy": "explicit-query",
-      "bytes": 5639,
-      "sha256": "7f2271e10fd1bed3f6e780c5d2cad8fb84d35daac43da7ed6b37b1578e8990d5",
+      "bytes": 5663,
+      "sha256": "72b3a3a2b0e080775f55af5c0bdb29aab916a0b4d73b03e027549caeb2da83a2",
       "kind": "document"
     },
     {

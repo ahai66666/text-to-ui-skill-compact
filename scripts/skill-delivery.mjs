@@ -4,12 +4,14 @@ import os from "node:os";
 import crypto from "node:crypto";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { spawnSync } from "node:child_process";
+import { belongsInSkill } from "./distribution-policy.mjs";
 
 const excluded = new Set(["node_modules", "dist", "outputs", ".git", ".text-to-ui", "__pycache__", ".DS_Store", ".delivery-manifest.json", ".text-to-ui-delivery-manifest.json"]);
 export function skillFiles(root, relative = "") {
   return fs.readdirSync(path.join(root, relative), { withFileTypes: true }).flatMap(entry => {
     if (excluded.has(entry.name)) return [];
     const file = path.join(relative, entry.name);
+    if (!belongsInSkill(file)) return [];
     return entry.isDirectory() ? skillFiles(root, file) : entry.isFile() ? [file] : [];
   }).sort();
 }

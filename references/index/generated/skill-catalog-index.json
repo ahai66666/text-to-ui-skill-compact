@@ -464,7 +464,7 @@
         },
         {
           "path": "skill-support/assets/icons/icon-aliases.json",
-          "sha256": "ca3cd2bd5020185fda34cfe4fde1b648537fba9e439f1605beac9c1ef54e7b78",
+          "sha256": "45cdccec1de711c0e515f7eaa9cb5527f6d2cf7923f6db031ca8d5629e8027db",
           "availability": "local"
         },
         {
@@ -577,22 +577,22 @@
       "files": [
         {
           "path": "package.json",
-          "sha256": "33427780c235ec961167eefc48db88a2a0d537b02ceaa410a185fe6674a24fde",
+          "sha256": "728e6f70aa661ec55bc8de8746add06fb36b830310192e3009dc757f311bc92c",
           "availability": "local"
         },
         {
           "path": "SKILL.md",
-          "sha256": "bf2a5b04a5faa96f02de739e6cb900f3f9f70013b3a0b780ce5d372c48bc3f46",
+          "sha256": "a9a30c373aed1a8db5c075e4a8179f38073533451cb17ffa3f0b19eb7d54cea5",
           "availability": "local"
         },
         {
           "path": "skill-support/package.json",
-          "sha256": "33427780c235ec961167eefc48db88a2a0d537b02ceaa410a185fe6674a24fde",
+          "sha256": "728e6f70aa661ec55bc8de8746add06fb36b830310192e3009dc757f311bc92c",
           "availability": "local"
         },
         {
           "path": "skill-support/scripts/skill-delivery.mjs",
-          "sha256": "f8e2d5dec41533534c2d5ec2f23985690505a4d9e0a5e5a3307251b253114d7a",
+          "sha256": "eddb60e300d9d2e4a01bf7d08d88486e530039a59d5c639ae0898ea3079463d0",
           "availability": "local"
         },
         {
@@ -720,7 +720,7 @@
         },
         {
           "path": "skill-support/references/index/generated/resource-index.json",
-          "sha256": "3158c36b78a7e8c196e1aeeed81a38547ffb8233b19551546fefb825e854b93c",
+          "sha256": "f1f1d498a3322a9e4b356f82ed50cdb4601db41e3356b0fbe88a30ef2a1c7f80",
           "availability": "local"
         },
         {
@@ -1440,7 +1440,7 @@
         },
         {
           "path": "skill-support/references/resources/foundations/size.md",
-          "sha256": "022d33998c26fb8873e1a893024c30b843a23a69ac24483ef95de3a2a20edf85",
+          "sha256": "4b4482be90777d7ae623073a43234c733b69d4640fe6267e72a2046c282d2699",
           "availability": "local"
         },
         {
@@ -1450,7 +1450,7 @@
         },
         {
           "path": "skill-support/references/resources/component-visual/buttons.md",
-          "sha256": "7f2271e10fd1bed3f6e780c5d2cad8fb84d35daac43da7ed6b37b1578e8990d5",
+          "sha256": "72b3a3a2b0e080775f55af5c0bdb29aab916a0b4d73b03e027549caeb2da83a2",
           "availability": "local"
         },
         {

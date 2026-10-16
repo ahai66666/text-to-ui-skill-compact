@@ -1,6 +1,6 @@
 {
   "name": "text-to-ui-compact",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "private": true,
   "description": "HTML-only Text-to-UI Skill with bundled component source, support tools, and design assets.",
   "license": "UNLICENSED",

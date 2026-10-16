@@ -19,6 +19,8 @@ description: Build HarmonyOS PC HTML pages using three-layer routing, focused st
 
 模型写 Blueprint、内容配方、绑定/行为计划、Token 业务布局。已有组件通过参数和插槽复用；能力缺失先记录 registryQueries、reviewedCandidates、missingCapability，再用 page-composite 配方和 pageModules 声明独立业务模块及 stylesheet。共享组件缺陷走维护流程，不得以自定义近似控件绕过。禁止内联整页控件、重画已登记组件、覆盖组件内部或 Pattern 几何。运行时工厂仍包含公共集中注册代码，不能宣称运行载荷已完全按组件裁剪。
 
+图标只保留组件所需的语义别名、预编译 SVG 和本地素材。HarmonyOS Symbol 图标库、字体与目录元数据不随维护源或使用包分发；项目将来使用外部 Symbol 时，由项目提供明确资源，只引入实际选中的 SVG。现有组件无需读取外部库。详见 references/icon-selection.md。
+
 ## 三层路由与按需读取
 
 1. Workflow：选择 references/routes/index.json 中的 new-page、micro-revision、existing-html-to-pixso、pixso-component-library、converter-diagnosis 或 skill-maintenance。

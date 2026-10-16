@@ -21,7 +21,7 @@
     "existing-html-to-pixso": {
       "id": "existing-html-to-pixso",
       "dynamicMaterials": [],
-      "materialsDigest": "6c7d0910d85d273df8d1277cbdf9a611033facb77fdb051c0d021e0c73349291",
+      "materialsDigest": "d66f0d008a91541478d16f152244de236e4271fa0462d2a61d5bf7b4c8de255b",
       "materials": [
         {
           "path": "packages/tokens/src/token-runtime-map.json",
@@ -39,7 +39,7 @@
           "path": "skill-support/assets/icons/icon-aliases.json",
           "role": "icon-registry",
           "required": true,
-          "sha256": "ca3cd2bd5020185fda34cfe4fde1b648537fba9e439f1605beac9c1ef54e7b78"
+          "sha256": "45cdccec1de711c0e515f7eaa9cb5527f6d2cf7923f6db031ca8d5629e8027db"
         },
         {
           "path": "skill-support/references/components/component-readiness-policy.json",
@@ -63,7 +63,7 @@
           "path": "skill-support/references/index/generated/resource-index.json",
           "role": "focused-resource-index",
           "required": true,
-          "sha256": "3158c36b78a7e8c196e1aeeed81a38547ffb8233b19551546fefb825e854b93c"
+          "sha256": "f1f1d498a3322a9e4b356f82ed50cdb4601db41e3356b0fbe88a30ef2a1c7f80"
         },
         {
           "path": "skill-support/references/layouts/html-layout-routing.md",
@@ -124,7 +124,7 @@
         "selected-component-contracts",
         "selected-component-runtime"
       ],
-      "materialsDigest": "0a16520297424defeeb1cfce34c578fd1ff93be02418933db81972cb333589f4",
+      "materialsDigest": "209678bd5c68c33b5f70831506ac6850060ca21e6a403bb6635f5801880558c9",
       "materials": [
         {
           "path": "packages/pattern-runtime/README.md",
@@ -154,7 +154,7 @@
           "path": "skill-support/assets/icons/icon-aliases.json",
           "role": "icon-registry",
           "required": true,
-          "sha256": "ca3cd2bd5020185fda34cfe4fde1b648537fba9e439f1605beac9c1ef54e7b78"
+          "sha256": "45cdccec1de711c0e515f7eaa9cb5527f6d2cf7923f6db031ca8d5629e8027db"
         },
         {
           "path": "skill-support/references/components/component-readiness-policy.json",
@@ -202,7 +202,7 @@
           "path": "skill-support/references/index/generated/resource-index.json",
           "role": "focused-resource-index",
           "required": true,
-          "sha256": "3158c36b78a7e8c196e1aeeed81a38547ffb8233b19551546fefb825e854b93c"
+          "sha256": "f1f1d498a3322a9e4b356f82ed50cdb4601db41e3356b0fbe88a30ef2a1c7f80"
         },
         {
           "path": "skill-support/references/index/task-routes.source.json",
@@ -263,7 +263,7 @@
     "micro-revision": {
       "id": "micro-revision",
       "dynamicMaterials": [],
-      "materialsDigest": "eb98cbf3584164caf45ad7739a49720ca97ed100a270668f7dbe51b44298cfcf",
+      "materialsDigest": "ed7e644c4bd653ba726eb6bb6e6d485a27167da74da0ba5f5cc48a0d34612875",
       "materials": [
         {
           "path": "packages/tokens/src/token-runtime-map.json",
@@ -281,7 +281,7 @@
           "path": "skill-support/assets/icons/icon-aliases.json",
           "role": "icon-registry",
           "required": true,
-          "sha256": "ca3cd2bd5020185fda34cfe4fde1b648537fba9e439f1605beac9c1ef54e7b78"
+          "sha256": "45cdccec1de711c0e515f7eaa9cb5527f6d2cf7923f6db031ca8d5629e8027db"
         },
         {
           "path": "skill-support/references/components/component-readiness-policy.json",
@@ -305,7 +305,7 @@
           "path": "skill-support/references/index/generated/resource-index.json",
           "role": "focused-resource-index",
           "required": true,
-          "sha256": "3158c36b78a7e8c196e1aeeed81a38547ffb8233b19551546fefb825e854b93c"
+          "sha256": "f1f1d498a3322a9e4b356f82ed50cdb4601db41e3356b0fbe88a30ef2a1c7f80"
         },
         {
           "path": "skill-support/references/layouts/html-layout-routing.md",
@@ -348,7 +348,7 @@
     "pixso-component-library": {
       "id": "pixso-component-library",
       "dynamicMaterials": [],
-      "materialsDigest": "355456e681c7056269a68e6ecca57b59e7d15355c2dc1b00f6174ee98e7bff84",
+      "materialsDigest": "37dd50948c6363cf58de24d472f6928d7ea9fd33becc2a3755780630e3edf6d7",
       "materials": [
         {
           "path": "packages/tokens/src/token-runtime-map.json",
@@ -366,7 +366,7 @@
           "path": "skill-support/assets/icons/icon-aliases.json",
           "role": "icon-registry",
           "required": true,
-          "sha256": "ca3cd2bd5020185fda34cfe4fde1b648537fba9e439f1605beac9c1ef54e7b78"
+          "sha256": "45cdccec1de711c0e515f7eaa9cb5527f6d2cf7923f6db031ca8d5629e8027db"
         },
         {
           "path": "skill-support/references/components/component-readiness-policy.json",
@@ -390,7 +390,7 @@
           "path": "skill-support/references/index/generated/resource-index.json",
           "role": "focused-resource-index",
           "required": true,
-          "sha256": "3158c36b78a7e8c196e1aeeed81a38547ffb8233b19551546fefb825e854b93c"
+          "sha256": "f1f1d498a3322a9e4b356f82ed50cdb4601db41e3356b0fbe88a30ef2a1c7f80"
         },
         {
           "path": "skill-support/references/layouts/html-layout-routing.md",
@@ -463,7 +463,7 @@
     "converter-diagnosis": {
       "id": "converter-diagnosis",
       "dynamicMaterials": [],
-      "materialsDigest": "42ddb2a7bad876b8127b32f27d60f19fc1f49e599785548d41cc04964799881a",
+      "materialsDigest": "5f97a59f96f62fa78b58f8ada98ff723692da90af7daf03c69e834b463e897e2",
       "materials": [
         {
           "path": "packages/tokens/src/token-runtime-map.json",
@@ -481,7 +481,7 @@
           "path": "skill-support/assets/icons/icon-aliases.json",
           "role": "icon-registry",
           "required": true,
-          "sha256": "ca3cd2bd5020185fda34cfe4fde1b648537fba9e439f1605beac9c1ef54e7b78"
+          "sha256": "45cdccec1de711c0e515f7eaa9cb5527f6d2cf7923f6db031ca8d5629e8027db"
         },
         {
           "path": "skill-support/references/components/component-readiness-policy.json",
@@ -505,7 +505,7 @@
           "path": "skill-support/references/index/generated/resource-index.json",
           "role": "focused-resource-index",
           "required": true,
-          "sha256": "3158c36b78a7e8c196e1aeeed81a38547ffb8233b19551546fefb825e854b93c"
+          "sha256": "f1f1d498a3322a9e4b356f82ed50cdb4601db41e3356b0fbe88a30ef2a1c7f80"
         },
         {
           "path": "skill-support/references/layouts/html-layout-routing.md",
@@ -578,7 +578,7 @@
     "skill-maintenance": {
       "id": "skill-maintenance",
       "dynamicMaterials": [],
-      "materialsDigest": "0611f5a0d19778abc4d199728c9397e9009b2b07786b153d0f9201d372803806",
+      "materialsDigest": "9b20b50cb01ffde6ddbc7947290addfa61f315c3e745063e684de1cf7d77b844",
       "materials": [
         {
           "path": "packages/tokens/src/token-runtime-map.json",
@@ -602,7 +602,7 @@
           "path": "skill-support/assets/icons/icon-aliases.json",
           "role": "icon-registry",
           "required": true,
-          "sha256": "ca3cd2bd5020185fda34cfe4fde1b648537fba9e439f1605beac9c1ef54e7b78"
+          "sha256": "45cdccec1de711c0e515f7eaa9cb5527f6d2cf7923f6db031ca8d5629e8027db"
         },
         {
           "path": "skill-support/references/components/component-readiness-policy.json",
@@ -644,13 +644,13 @@
           "path": "skill-support/references/index/generated/resource-index.json",
           "role": "focused-resource-index",
           "required": true,
-          "sha256": "3158c36b78a7e8c196e1aeeed81a38547ffb8233b19551546fefb825e854b93c"
+          "sha256": "f1f1d498a3322a9e4b356f82ed50cdb4601db41e3356b0fbe88a30ef2a1c7f80"
         },
         {
           "path": "skill-support/references/index/generated/skill-catalog-index.json",
           "role": "skill-catalog-index",
           "required": true,
-          "sha256": "1c15686a17eda724ce34e580187f532b189d22546730bab27eb302836546dd67"
+          "sha256": "31107dcb202e46746feec1cf1ea4102e1f15bdf968bfd8ffe74111d60c566124"
         },
         {
           "path": "skill-support/references/layouts/html-layout-routing.md",
@@ -697,5 +697,5 @@
       ]
     }
   },
-  "indexDigest": "de7e5a1103ce90f79f4dace1a23093d5ee0aa5461d4ed175da06176fda721af4"
+  "indexDigest": "e245f027637bbeb45e6ceb85052d5ea5aae2169ba8df50ca1bcbc152b361da93"
 }

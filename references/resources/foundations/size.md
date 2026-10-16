@@ -28,7 +28,7 @@ The token index is an ordered scale name, not a multiplier. Use exact pixel valu
 
 ### Icon Size Tokens
 
-All rendered sizes scale from the HarmonyOS Symbol 24 × 24 source artboard. The
+All rendered sizes scale from the canonical SVG 24 × 24 source artboard. The
 24 × 24 coordinate system is not the default display size. Every icon request
 declares a semantic size Token and resolves to 16px, 20px, or an explicitly
 approved 24px. Preserve the original viewBox while scaling the SVG root and its

@@ -22,7 +22,7 @@
     "action/save": { "source": "lucide", "name": "save" },
     "action/settings": { "source": "lucide", "name": "settings" },
     "action/sort-ascending": { "source": "lucide", "name": "list-sort-ascending" },
-    "choice/check": { "source": "asset", "path": "assets/icons/harmonyos/regular/checkbox-check.svg" },
+    "choice/check": { "source": "asset", "path": "assets/icons/components/checkbox-check.svg" },
     "field/search": { "source": "lucide", "name": "search" },
     "field/date": { "source": "lucide", "name": "calendar-days" },
     "field/calendar": { "source": "lucide", "name": "calendar-days" },

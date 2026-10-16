@@ -76,7 +76,7 @@ Split Dropdown Button is a 40px Ghost action control with two independent hit ta
 Split Dropdown action menus:
 
 - Menu items use the complete `body-l` style (16px / 22px / Regular 400).
-- Split Dropdown action-menu items use Icon + Text. Icons use `--icon-size-md` (20px), text uses `body-l`, and their gap uses `--gap-menu-item-content` (`--space-3`, 8px). Use semantic HarmonyOS Symbol aliases; do not substitute character glyphs.
+- Split Dropdown action-menu items use Icon + Text. Icons use `--icon-size-md` (20px), text uses `body-l`, and their gap uses `--gap-menu-item-content` (`--space-3`, 8px). Use registered semantic icon aliases (default Lucide Regular); do not substitute character glyphs.
 - Opening the trigger sets `aria-expanded="true"`. Selecting an item closes the menu; `Escape` closes it and returns focus to the trigger; clicking outside closes it.
 - Do not hide the page's primary action inside the folded menu. Use Split Dropdown only when lower-priority actions do not fit or would add avoidable clutter.
 
